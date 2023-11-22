@@ -19,9 +19,9 @@
 
 ```json
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>technologiestiftung/renovate-config"],
-	"baseBranches": ["staging"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>technologiestiftung/renovate-config"],
+  "baseBranches": ["staging"]
 }
 ```
 
@@ -57,9 +57,13 @@ tbd...
 
 tbd...
 
-## Tests
+## Notes
 
-tbd...
+This is a time slider
+"layerSlider":
+
+When setting up this had to be removed from devDependencies:
+"canvas": "^2.11.0",
 
 ## Contributing
 
