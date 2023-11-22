@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<div id="searchForm" class="col" role="search">
+    <div class="input-group has-feedback flex-nowrap">
+        <input id="searchInput" class="form-control" type="text" name="text" placeholder="<%= placeholder %>" value="<%= searchString %>" autocomplete="off">
+        <span class="bootstrap-icon x-icon">
+            <i class="bi-x-lg"></i>
+        </span>
+        <button class="btn btn-outline-default btn-search" type="button" title="<%= buttonSearchTitle %>">
+            <i class="bi-search"></i>
+        </button>
+        <ul id="searchInputUL" class="dropdown-menu-search dropdown-menu-right list-group">
+        </ul>
+    </div>
+</div>
+<% if (quickHelp === true || typeof quickHelp === "object") { %>
+<button class="btn btn-search-question col-auto d-none d-md-block" type="button" title="<%= buttonOpenHelpTitle %>">
+    <span class="bootstrap-icon question-icon">
+        <i class="bi-question-circle-fill"></i>
+    </span>
+</button>
+<% } %>

@@ -1,0 +1,209 @@
+@import "../../../css/mixins.scss";
+@import "~variables";
+
+/**************** Menu ***********************/
+/**************** Themenbaum ****************/
+/* ----------------------Themenbaum light -----------------------------*/
+/*Haupt Themenliste */
+/*Unterlisten*/
+/*-------------------Selection/Settings----------------------*/
+.submenu-style {
+    padding: 5px 0;
+    border-bottom: 1px solid $light_grey;
+}
+#root, ul#tree, ul#legend-menu, .portal-title {
+    .tabable {
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            @include primary_action_hover;
+        }
+        &:focus {
+            @include primary_action_focus;
+        }
+    }
+}
+
+ul#tree {
+    border: none;
+    font-family: $font_family_accent;
+    padding: 0;
+    min-width: 380px;
+
+    &.fixed {
+        display: block;
+    }
+    .title {
+        padding: 4px 0 0 5px;
+        font-size: $font-size-base;
+        cursor: pointer;
+    }
+    .menu-row {
+        // line-height: 180%;
+        flex-basis: 100%;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        > a {
+            display: flex;
+        }
+    }
+    .closed {
+        &:not(.SelectedLayer) {
+            border-bottom: 1px solid $light_grey;
+        }
+    }
+    .last-item {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        -webkit-padding-start: 0;
+        overflow-y: auto;
+        overflow-x: auto;
+        max-width: 500px;
+        max-height: 55vh;
+        .title {
+            padding: 4px 0 0 5px;
+            font-size: $font-size-base;
+            cursor: pointer;
+        }
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px 5px;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            a {
+                font-size: $font-size-lg;
+                margin: 0;
+                color: $dark_grey;
+                flex-grow: 1;
+                &:hover {
+                    color: $dark_grey;
+                    background-color: lighten($light_grey_inactive, 40%);
+                }
+
+            }
+        }
+    }
+    .checked {
+        color: $secondary_selected;
+        &:hover {
+            background-color: $accent_active;
+        }
+    }
+    .bootstrap-icon {
+        cursor: pointer;
+        font-size: $font-size-lg;
+        padding: 4px 2px 1px 2px;
+    }
+    .bi-info-circle-fill, .bi-gear, .bi-paint-bucket, .bi-x-circle {
+        font-size: 1.125rem;
+
+        &:not(:hover) {
+            color: $secondary_icon_button;
+        }
+    }
+    .highlightLayerInformationIcon {
+        color: $light_blue;
+    }
+    li.layer-catalog {
+        > .header {
+            padding: 8px 5px 7px 5px;
+            background-color: $dark_grey;
+            color: $accent_contrast;
+            font-size: $font_size_big;
+        }
+        > div > a {
+            flex-grow: 1;
+            color: $accent_contrast;
+            .form-label {
+                padding: 1px 0 0 5px;
+            }
+        }
+    }
+    .catalog-selection {
+        font-size: $font-size-sm;
+        font-weight: 400;
+        > select {
+            margin-left: 5px;
+            height: 20px;
+            padding: 2px;
+            font-size: $font-size-sm;
+        }
+    }
+    .themen-folder {
+        font-weight: 400;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .rotate-adjust {
+        transform: rotate(180deg);
+        transition: 0.5s;
+        font-size: $font-size-lg;
+        cursor: pointer;
+    }
+    .rotate-adjust-back {
+        transform: rotate(0deg);
+        transition: 0.5s;
+        font-size: $font-size-lg;
+        cursor: pointer;
+    }
+    .rotate-pin {
+        transform: rotate(270deg);
+        transition: 0.5s;
+        font-size: $font_size_big;
+        cursor: pointer;
+    }
+    .rotate-pin-back {
+        transform: rotate(360deg);
+        transition: 0.5s;
+        font-size: $font_size_big;
+        cursor: pointer;
+    }
+    #SelectedLayer {
+        a {
+            padding: 1px 0 0 5px;
+        }
+    }
+    .SelectedLayer {
+        .layer-selection-save {
+            font-size: $font-size-sm;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+    .dropdown-item.disabled, .dropdown-item:disabled {
+        background-color: $dropdown-item-disabled-bg;
+    }
+}
+ul#tree.light {
+    overflow-y: auto;
+    font-size: $font-size-base;
+    color: $dark_grey;
+    li {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        > div > a {
+            color: $dark_grey;
+            flex-grow: 1;
+        }
+        span.title {
+            padding: 4px 0 0 5px;
+            cursor: pointer;
+        }
+    }
+    .dropdown-item.disabled, .dropdown-item:disabled {
+        background-color: $light_grey;
+    }
+}
+
+.layer-dropdown-item {
+    white-space: normal;
+}

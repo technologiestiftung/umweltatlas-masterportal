@@ -1,0 +1,14 @@
+.copyright {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    font-size: .8rem;
+    z-index: 1000;
+    border-radius: .4rem 0 0 !important;
+    padding: .3rem .6rem;
+}
+
+.copyright a {
+    cursor: pointer;
+}

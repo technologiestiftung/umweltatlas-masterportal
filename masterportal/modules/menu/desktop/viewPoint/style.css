@@ -1,0 +1,13 @@
+.menu-style {
+    font-size: $font_size_big;
+}
+
+.viewpoint-style {
+    font-size: $font-size-base;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.viewpoint-style:last-child {
+    border-bottom: 0;
+}

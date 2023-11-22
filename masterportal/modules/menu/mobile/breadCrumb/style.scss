@@ -1,0 +1,32 @@
+@import "~variables";
+$background_color_1: rgb(65, 65, 65);
+
+.breadcrumb-mobile {
+    >.breadcrumb {
+        margin-bottom: 0;
+        background-color: $dark_grey;
+        color: $white;
+        font-size: $font_size_big;
+        padding: 14px 15px;
+        >li {
+            >span {
+                &:hover {
+                    cursor: pointer;
+                }
+                text-decoration: underline;
+            }
+            &+li {
+                &:before {
+                    color: $white;
+                }
+            }
+        }
+    }
+    span.title {
+        padding-left: 6px;
+        font-size: $font_size_big;
+    }
+    span.bootstrap-icon {
+        padding: 5px;
+    }
+}

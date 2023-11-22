@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+    <form class="form-horizontal" role="form">
+        <div class="form-group form-group-sm row">
+            <label class="treefilter-label col-form-label col-4">Gattung</label>
+            <div class="col-8">
+                <div class="input-group input-group-sm">
+                    <input id="categoryInput" class="form-control form-control-sm" type="text" placeholder="Keine Auswahl" value="<%= treeCategory %>" title="<%= treeCategory %>">
+                    <div id="categoryToggle">
+                        <button class="btn btn-outline-default dropdown-toggle-category" data-bs-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right treeList" role="menu">
+                                <% categoryArray.forEach(function (category, index) { %>
+                                    <li><a class="categoryPick" href="#" title="<%= category %>"><%= category %></a></li>
+                                <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <% if (errors.category !== undefined) { %>
+                <span class="col-7 offset-5 treeFilterError"><%= errors.category %></span>
+            <% } %>
+        </div>
+        <div class="form-group form-group-sm row">
+            <label class="treefilter-label col-form-label col-4">Baumart</label>
+            <div class="col-8">
+                <div class="input-group input-group-sm">
+                    <input id="typeInput" class="form-control form-control-sm" type="text" title="<%= treeType %>" value="<% if (treeCategory === "") {print ('""')} else{ print (treeType)} %>" placeholder="Alle Arten" <% if (treeCategory === "") print ('disabled') %>>
+                    <div id="typeToggle">
+                        <button class="btn btn-outline-default dropdown-toggle-type" data-bs-toggle="dropdown" <% if (treeCategory === "") print ('disabled') %>>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right treeTypeList" role="menu">
+                            <% if (typeArray.length >= 1) { %>
+                                <% typeArray.forEach(function (type, index) { %>
+                                    <li><a class="typePick" href="#" title="<%= type %>"><%= type %></a></li>
+                                <% }); %>
+                            <% } else { %>
+                                <li><a href="#">Keine Treffer</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-group-sm row">
+            <label class="treefilter-label col-form-label col-4">Pflanzjahr</label>
+            <div id="yearMin" class="col-3 <% if (errors.yearError !== undefined) print('has-error') %>">
+                <input type="text" class="form-control form-control-sm value=<%= yearMin %>>
+            </div>
+            <div class="col-1">
+                <span class="bootstrap-icon" style="vertical-align: bottom;"><i class="bi-dash-lg"></i></span>
+            </div>
+            <div id="yearMax" class="col-3 <% if (errors.yearError !== undefined) print('has-error') %>">
+                <input type="text" class="form-control form-control-sm value=<%= yearMax %>>
+            </div>
+            <br>
+            <% if (errors.yearError !== undefined) { %>
+                <span id="yearError" class="col-7 offset-5 treeFilterError"><%= errors.yearError %></span>
+            <% } %>
+        </div>
+        <div class="form-group form-group-sm row">
+            <label class="treefilter-label col-form-label col-4">Kronendurchmesser[m]</label>
+            <div id="diameterMin" class="col-3">
+                <input type="text" class="form-control form-control-sm value=<%= diameterMin %>>
+            </div>
+            <div class="col-1">
+                <span class="bootstrap-icon" style="vertical-align: bottom;"><i class="bi-dash-lg"></i></span>
+            </div>
+            <div id="diameterMax" class="col-3">
+                <input type="text" class="form-control form-control-sm value=<%= diameterMax %>>
+            </div>
+            <br>
+            <% if (errors.diamterError !== undefined) { %>
+                <span id="diamterError" class="col-7 offset-5 treeFilterError"><%= errors.diamterError %></span>
+            <% } %>
+        </div>
+        <div class="form-group form-group-sm row">
+            <label class="treefilter-label col-form-label col-4">Stammumfang[cm]</label>
+            <div id="perimeterMin" class="col-3">
+                <input type="text" class="form-control form-control-sm" value=<%= perimeterMin %>>
+            </div>
+            <div class="col-1">
+                <span class="bootstrap-icon" style="vertical-align: bottom;"><i class="bi-dash-lg"></i></span>
+            </div>
+            <div id="perimeterMax" class="col-3">
+                <input type="text" class="form-control form-control-sm" value=<%= perimeterMax %>>
+            </div>
+            <br>
+            <% if (errors.perimeterError !== undefined) { %>
+                <span id="perimeterError" class="col-7 offset-5 treeFilterError"><%= errors.perimeterError %></span>
+            <% } %>
+        </div>
+        <div class="form-group form-group-sm row">
+            <div class="col-12">
+                <button id="filterRemoveButton" class="btn btn-secondary col-5" type="button">Aufheben</button>
+                <button id="filterbutton" class="btn btn-secondary col-5 offset-2" type="button">Filtern</button>
+            </div>
+        </div>
+    </form>
+<% if (filterHits === "" || filterHits === "223210") { %>
+<div class="text-right">
+    Gesamtzahl Straßenbäume: <strong>223.210</strong>
+</div>
+<% } else  { %>
+<div class="text-right">
+    Anzahl der gefilterten Bäume: <strong id="treeCounter"><%= filterHits %></strong>
+</div>
+<% } %>

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "1",
+    "name": "CSW HMDK Summary",
+    "url": "http://metaver.de/csw?service=CSW&version=2.0.2&request=GetRecordById&typeNames=csw:Record&elementsetname=summary",
+    "typ": "CSW"
+  },
+  {
+    "id": "3",
+    "name": "CSW HMDK Full",
+    "url": "http://metaver.de/csw?service=CSW&version=2.0.2&request=GetRecordById&typeNames=csw:Record&elementsetname=full",
+    "typ": "CSW"
+  },
+  {
+    "id" : "2",
+    "name" : "Metadaten-URL",
+    "url" : "http://metaver.de/trefferanzeige?docuuid=",
+    "typ" : "URL"
+  },
+  {
+    "id" : "4",
+    "name" : "BKG Geokodierungsdienst Suggest",
+    "url" : "/bkg_suggest",
+    "typ" : "GDZ"
+  },
+  {
+    "id" : "5",
+    "name" : "BKG Geokodierungsdienst Geosearch",
+    "url" : "/bkg_geosearch",
+    "typ" : "GDZ"
+  },
+  {
+    "id" : "6",
+    "name" : "Hamburg Gazetteer",
+    "url" : "/geodienste_hamburg_de/HH_WFS_DOG?service=WFS&request=GetFeature&version=2.0.0",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "8",
+    "name" : "Hamburg Gazetteer",
+    "url" : "/geodienste_hamburg_de/HH_WFS_GAGES?service=WFS&request=GetFeature&version=2.0.0",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "88",
+    "name" : "Hamburg Gazetteer",
+    "url" : "https://geodienste.hamburg.de/HH_WFS_GAGES",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "10",
+    "name" : "OSM Suche",
+    "url" : "https://nominatim.openstreetmap.org/search?",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "11",
+    "name" : "Komoot Photon Suche",
+    "url" : "https://photon.komoot.io/api/?",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "1001",
+    "name" : "Deegree WPS RZ2 Produktion",
+    "url" : "https://geodienste.hamburg.de/HH_WPS",
+    "version": "1.1.0",
+    "typ" : "WPS"
+  },
+  {
+    "id" : "1002",
+    "name" : "Deegree WPS RZ2 Test",
+    "url" : "https://geodienste.hamburg.de/HH_WPS_Test",
+    "typ" : "WPS"
+  },
+  {
+    "id" : "80001",
+    "name" : "Email Service by PHP",
+    "url" : "https://geoportal-hamburg.de/smtp/sendmail.php",
+    "typ" : "EmailService"
+  },
+  {
+    "id" : "80002",
+    "name" : "Email Service by PHP",
+    "url" : "https://geoportal-hamburg.de/smtp/sendmail.php",
+    "typ" : "EmailService"
+  },
+  {
+    "id": "mapfish_qs",
+    "name": "Print Service QS",
+    "url": "https://geoportaltest.metropolregion.hamburg.de/mapfish_print/print/",
+    "typ": "Print"
+  },
+  {
+    "id": "mapfish",
+    "name": "Print Service Prod",
+    "url": "https://geodienste.hamburg.de/mapfish_print_internet/print/",
+    "typ": "Print"
+  },
+  {
+    "id": "elastic",
+    "name": "Elastic Prod",
+    "url": "https://geodienste.hamburg.de/layers-internet/_search",
+    "typ": "Search"
+  },
+  {
+    "id": "elastic",
+    "name": "Elastic Prod",
+     "url": "https://geodienste.hamburg.de/layers/_search/template",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_qs",
+    "name": "Elastic QS",
+     "url": "https://test-geodienste.hamburg.de/layers/_search/template",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_test",
+    "name": "Elastic Test",
+     "url": "https://test-geodienste.hamburg.de/layers/_search/template?source_content_type=application/json&source=",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_mrh",
+    "name": "Elastic mrh Prod",
+     "url": "https://geodienste.hamburg.de/layers-mrh/_search/template",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_mrh_qs",
+    "name": "Elastic mrh QS",
+     "url": "https://test-geodienste.hamburg.de/layers-mrh/_search/template",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_all",
+    "name": "Elastic All Prod",
+     "url": "https://geodienste.hamburg.de/layers-all/_search/template",
+     "typ": "Search"
+  },
+  {
+    "id": "elastic_all_qs",
+    "name": "Elastic All QS",
+     "url": "https://test-geodienste.hamburg.de/layers-all/_search/template",
+     "typ": "Search"
+  }
+]

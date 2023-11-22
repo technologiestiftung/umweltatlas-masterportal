@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+portalconfigs/
+scripte/
+jsdoc/
+lib/
+examples/
+/portal/*
+!/portal/basic
+!/portal/master
+!/portal/masterCustom
+!/portal/masterDefault
