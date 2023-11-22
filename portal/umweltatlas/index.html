@@ -10,15 +10,10 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
 
-        <title>Umweltatlas</title>
-        <link
-            rel="stylesheet"
-            href="../mastercode/2_39_0_dev_last_change_at_2023-11-15__15-47-58/css/masterportal.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://geodienste.hamburg.de/lgv-config/css/fonts.css"
-        />
+        <title>Berliner Umweltatlas</title>
+        <!-- enter your own Portal Title for the website at this -->
+        <link rel="stylesheet" href="../../build/css/masterportal.css" />
+        <!-- Here you can configure your own fonts as url -->
     </head>
     <body>
         <div id="masterportal-root"></div>
@@ -28,6 +23,7 @@
             class="centered-box-wrapper loader-is-loading loader-is-initially-loading"
         >
             <div class="centered-box-content">
+                <!-- Here you can configure the start screen -->
                 <div id="portal-logo-box">
                     <img
                         id="portal-logo"
@@ -41,18 +37,15 @@
                 <div id="loader-spinner-itself" class="default"></div>
             </div>
             <div id="generic-masterportal-logo">
-                <img src="../../img/Logo_Masterportal.svg" />
+                <img
+                    src="../../img/Logo_Masterportal.svg"
+                /><!-- This logo should not be changed, as it is a central part of the Masterportal -->
             </div>
         </div>
 
-        <script src="https://geodienste.hamburg.de/lgv-config/special_loaders.js"></script>
         <script
             type="text/javascript"
-            src="https://geoportal-hamburg.de/mastercode/cesium/latest/Cesium.js"
-        ></script>
-        <script
-            type="text/javascript"
-            src="../mastercode/2_39_0_dev_last_change_at_2023-11-15__15-47-58/js/masterportal.js"
+            src="../../build/js/masterportal.js"
         ></script>
     </body>
 </html>

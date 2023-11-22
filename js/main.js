@@ -4,24 +4,28 @@
  */
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import {fetch} from "./layerList";
+import { fetch } from "./layerList";
 import "../css/bootstrap.scss";
 // CSS-Handling: Importieren von Css damit Webpack das verarbeitet.
 import "../css/style.css";
 import HttpApi from "i18next-http-backend";
 import i18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 import utilsLogin from "../src/modules/tools/login/utils/utilsLogin";
+// import "../css/uatlas.scss";
 
 const scriptTags = document.getElementsByTagName("script"),
     scriptTagsArray = Array.prototype.slice.call(scriptTags);
 let strippedLocation = null,
     loadConfigJs = null,
     context = null,
-    configPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/") + 1) + "config.js";
+    configPath =
+        window.location.pathname.substring(
+            0,
+            window.location.pathname.lastIndexOf("/") + 1
+        ) + "config.js";
 
 // wenn Config.js nicht in der index.html als Script-Tag eingebunden ist, muss sie zunächst zugefügt und geladen werden
 if (!("Config" in window)) {
-
     // temporary solution for portals that didn't have loaded Cesium in index.html until lazy loading is implemented
     if (typeof Cesium === "undefined") {
         global.Cesium = null;
@@ -32,7 +36,13 @@ if (!("Config" in window)) {
         strippedLocation = window.location.href.split("?").shift();
 
         // GET parameters are there for a reason - do not drop them!
-        configPath = strippedLocation.substring(0, strippedLocation.lastIndexOf("/") + 1) + "config.js" + window.location.search;
+        configPath =
+            strippedLocation.substring(
+                0,
+                strippedLocation.lastIndexOf("/") + 1
+            ) +
+            "config.js" +
+            window.location.search;
     }
 
     // add mouseevent polyfill to fix ie11 clickhandler
@@ -51,11 +61,27 @@ if (!("Config" in window)) {
          * @returns {Event} mouseEvent
          * @constructor
          */
-        function MouseEvent (eventType, params) {
-            const paramsObj = params || {bubbles: false, cancelable: false},
+        function MouseEvent(eventType, params) {
+            const paramsObj = params || { bubbles: false, cancelable: false },
                 mouseEvent = document.createEvent("MouseEvent");
 
-            mouseEvent.initMouseEvent(eventType, paramsObj.bubbles, paramsObj.cancelable, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            mouseEvent.initMouseEvent(
+                eventType,
+                paramsObj.bubbles,
+                paramsObj.cancelable,
+                window,
+                0,
+                0,
+                0,
+                0,
+                0,
+                false,
+                false,
+                false,
+                false,
+                0,
+                null
+            );
 
             return mouseEvent;
         }
@@ -74,10 +100,16 @@ if (!("Config" in window)) {
             if (window.location.search !== "") {
                 // GET parameters are there for a reason - do not drop them!
                 configPath = configPath.split("?");
-                configPath = configPath.shift() + "?" + configPath.concat([window.location.search.slice(1)]).join("&");
+                configPath =
+                    configPath.shift() +
+                    "?" +
+                    configPath
+                        .concat([window.location.search.slice(1)])
+                        .join("&");
             }
 
-            configPath += (configPath.indexOf("?") !== -1 ? "&" : "?") + "noext";
+            configPath +=
+                (configPath.indexOf("?") !== -1 ? "&" : "?") + "noext";
         }
     }, this);
 
@@ -109,11 +141,18 @@ if (!("Config" in window)) {
             document.getElementById("loader").style.display = "none";
         }
         if (document.getElementById("map")) {
-            document.getElementById("map").appendChild(document.createTextNode("Die Portalkonfiguration konnte nicht vom Pfad '" + configPath + "'' geladen werden. Bitte wenden sie sich an den Administrator."));
+            document
+                .getElementById("map")
+                .appendChild(
+                    document.createTextNode(
+                        "Die Portalkonfiguration konnte nicht vom Pfad '" +
+                            configPath +
+                            "'' geladen werden. Bitte wenden sie sich an den Administrator."
+                    )
+                );
         }
     });
-}
-else {
+} else {
     fetch(Config.layerConf);
 }
 /**
@@ -128,19 +167,27 @@ else {
  * @param {Array} config.changeLanguageOnStartWhen the incidents that changes the language on startup as Array where the order is important
  * @returns {Void}  -
  */
-function initLanguage (portalLanguageConfig) {
+function initLanguage(portalLanguageConfig) {
     // default language configuration
-    const portalLanguage = Object.assign({
-        "enabled": false,
-        "debug": false,
-        "languages": {
-            "de": "deutsch",
-            "en": "english"
+    const portalLanguage = Object.assign(
+        {
+            enabled: false,
+            debug: false,
+            languages: {
+                de: "deutsch",
+                en: "english",
+            },
+            fallbackLanguage: "de",
+            changeLanguageOnStartWhen: [
+                "querystring",
+                "localStorage",
+                "navigator",
+                "htmlTag",
+            ],
+            loadPath: "/locales/{{lng}}/{{ns}}.json",
         },
-        "fallbackLanguage": "de",
-        "changeLanguageOnStartWhen": ["querystring", "localStorage", "navigator", "htmlTag"],
-        "loadPath": "/locales/{{lng}}/{{ns}}.json"
-    }, portalLanguageConfig);
+        portalLanguageConfig
+    );
 
     // init i18next
     if (Config.portalLanguage !== undefined && Config.portalLanguage.enabled) {
@@ -148,9 +195,13 @@ function initLanguage (portalLanguageConfig) {
     }
     i18next
         .use(HttpApi)
-        .on("languageChanged", function (lng) {
-            Radio.trigger("i18next", "languageChanged", lng);
-        }, this)
+        .on(
+            "languageChanged",
+            function (lng) {
+                Radio.trigger("i18next", "languageChanged", lng);
+            },
+            this
+        )
         .init({
             debug: portalLanguage.debug,
 
@@ -185,7 +236,7 @@ function initLanguage (portalLanguageConfig) {
 
             backend: {
                 loadPath: portalLanguage.loadPath,
-                crossDomain: false
+                crossDomain: false,
             },
 
             detection: {
@@ -208,8 +259,8 @@ function initLanguage (portalLanguageConfig) {
                 // cookieDomain: "myDomain",
 
                 // only detect languages that are in the whitelist
-                checkWhitelist: true
-            }
+                checkWhitelist: true,
+            },
         });
     i18next.on("initialized", () => {
         if (!portalLanguage.enabled) {
@@ -221,10 +272,10 @@ function initLanguage (portalLanguageConfig) {
     Backbone.i18next = i18next;
 }
 
-
 // SCSS-Handling: Importieren von allen scss-Files im modules-Ordner
 context = require.context("../modules/", true, /.+\.scss?$/);
 
 context.keys().forEach(context);
 
 export default context;
+
