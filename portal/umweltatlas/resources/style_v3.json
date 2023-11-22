@@ -1,0 +1,332 @@
+[
+
+
+
+
+
+  {
+
+  "styleId": "s_gaserhaltung",
+
+  "rules": [
+
+     {
+
+      "style": {
+
+    "legendValue": "Gasbeleuchtung",
+
+        "polygonStrokeColor": [31, 120, 180, 1],
+
+        "polygonStrokeWidth": 3,
+
+        "polygonFillColor": [166, 206, 227, 0.5]
+
+      }
+
+    }
+
+  ]
+
+},
+
+
+
+         {
+
+  "styleId": "s_vorrangnetz",
+
+  "rules": [
+
+    {
+
+  "conditions": {
+
+  "properties": {
+
+  "vorrangtyp": "Bus"
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "Bus",
+
+       "type": "linestring",
+
+   "lineStrokeColor": [128, 0, 128, 1]
+
+      }
+
+    },
+
+   {
+
+  "conditions": {
+
+  "properties": {
+
+  "vorrangtyp": "Tram"
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "Tram",
+
+       "type": "linestring",
+
+  "lineStrokeColor": [204, 0, 0, 1]
+
+      }
+
+    }
+
+  ]
+
+},
+
+
+
+{
+
+  "styleId": "s_ewdichte",
+
+  "rules": [
+
+ {
+
+"conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [0, 4]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "0 - 4",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [204, 255, 102, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [5, 30]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "5 - 30",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [255, 255, 0, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [31, 70]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "31 - 70",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [255, 204, 102, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [71, 150]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "71 - 150",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [255, 153, 0, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [151, 250]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "151 - 250",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [255, 102, 0, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [251, 350]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "251 - 350",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [255, 0, 0, 1]
+
+    }
+
+},{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [351, 450]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "351 - 450",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [204, 0, 204, 1]
+
+    }
+
+  },{
+
+  "conditions": {
+
+  "properties": {
+
+    "ew_ha_2020": [451, 550]
+
+  }
+
+  },
+
+     "style": {
+
+      "legendValue": "451 - 550",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [153, 0, 153, 1]
+
+    }
+
+},   {
+
+     "style": {
+
+      "legendValue": ">550",
+
+       "type": "linestring",
+
+        "polygonStrokeColor": [171, 171, 171, 1],
+
+        "polygonStrokeWidth": 1,
+
+        "polygonFillColor": [0, 0, 153, 1]
+
+    }
+
+    }
+
+  ]
+
+}
+
+]
+

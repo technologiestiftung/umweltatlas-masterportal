@@ -59,6 +59,7 @@ npm-debug.log
 !/portal/master
 !/portal/masterCustom
 !/portal/masterDefault
+!/portal/umweltatlas
 
 #ignore pipeline files
 .gitlab-ci.yml
