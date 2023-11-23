@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<div class="menu-row">
+
+<% if (isSelected) { %>
+    <div class="menu-row selected">
+<% } else { %>
+    <div class="menu-row">
+<% } %>
+
     <% if (isSelected) { %>
         <a href="#" id="<%= domId %>" class="layer-item tabable checked" tabindex="0">
         <span class="bootstrap-icon" title="<%=removeTopicText%>"><i class="bi-check2-square"></i></span>

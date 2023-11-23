@@ -1,12 +1,47 @@
 .btn-primary {
     background-color: #e69636 !important;
+    border-color: #e69636 !important;
 }
 
 .upload-button-wrapper {
     background-color: #e69636 !important;
+    border-color: #e69636 !important;
 }
 
-ul#tree .checked {
+.vh-center-outer-wrapper.drop-area-fake {
+    border-radius: 0px;
+    border-color: #cccccc;
+    border-radius: 1px;
+}
+
+.drop-area-fake .caption {
+    color: #cccccc !important;
+}
+/* disabled="disabled" */
+
+#Baselayer .selected {
     background-color: #1a4435;
+}
+
+.has-feedback .input-group-text {
+    background-color: #fcf3e8;
+}
+
+#root .nav-link:hover {
+    background-color: #333333 !important;
+}
+
+@keyframes fade {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#portal-logo {
+    animation: fade 2s infinite;
 }
 

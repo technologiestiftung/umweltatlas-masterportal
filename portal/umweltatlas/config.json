@@ -17,7 +17,7 @@
       "placeholder": "Stichwort- und Adresssuche"
     },
     "mapView": {
-      "backgroundImage": "../resources/img/backgroundCanvas.jpeg",
+      "backgroundImage": "./resources/img/backgroundCanvas.jpeg",
       "startCenter": [384630, 5829290],
       "extent": [370000, 5822000, 394000, 5840000],
       "startZoomLevel": 0,
@@ -141,14 +141,15 @@
         }
       },
       "portalTitle": {
-        "title": "Umweltatlas Kartenanwendung",
-        "logo": "https://www.berlin.de/imgscaler/J7faHFUopiZCs7a6TBD4a0FV_3fzAUg09J8gvQZEBWg/rbig2zu1/L3N5czExLXByb2QvdW13ZWx0YXRsYXMvNDBfamFocmVfdWEzMDBkcGkuZ2lm.jpg",
+        "title": "Berliner Umweltatlas",
+        "logo": "./resources/img/logo-umweltatlas.svg",
         "link": "https://www.berlin.de/umweltatlas/",
         "toolTip": "Umweltatlas Berlin"
       }
     },
     "controls": {
       "zoom": true,
+      "totalView": true,
       "orientation": {
         "zoomMode": "once"
       },
@@ -22950,3 +22951,4 @@
     }
   }
 }
+
