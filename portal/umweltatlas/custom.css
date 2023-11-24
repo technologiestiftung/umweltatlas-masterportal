@@ -27,8 +27,16 @@
     background-color: #fcf3e8;
 }
 
+#root .nav-link {
+    /* color: #333333 !important; */
+}
 #root .nav-link:hover {
     background-color: #333333 !important;
+    color: white important;
+}
+
+.portal-title .tabable:hover {
+    background-color: white !important;
 }
 
 @keyframes fade {
@@ -43,5 +51,10 @@
 
 #portal-logo {
     animation: fade 2s infinite;
+}
+
+.right-bar:first-child {
+    bottom: 40px;
+    position: absolute;
 }
 

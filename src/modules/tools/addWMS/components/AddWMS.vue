@@ -1,11 +1,11 @@
 <script>
-import {mapGetters, mapMutations} from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 import getters from "../store/gettersAddWMS";
-import {getComponent} from "../../../../utils/getComponent";
+import { getComponent } from "../../../../utils/getComponent";
 import ToolTemplate from "../../ToolTemplate.vue";
 import mutations from "../store/mutationsAddWMS";
-import {WMSCapabilities} from "ol/format.js";
-import {intersects} from "ol/extent";
+import { WMSCapabilities } from "ol/format.js";
+import { intersects } from "ol/extent";
 import crs from "@masterportal/masterportalapi/src/crs";
 import axios from "axios";
 import LoaderOverlay from "../../../../utils/loaderOverlay";
@@ -13,7 +13,7 @@ import LoaderOverlay from "../../../../utils/loaderOverlay";
 export default {
     name: "AddWMS",
     components: {
-        ToolTemplate
+        ToolTemplate,
     },
     data: function () {
         return {
@@ -21,12 +21,12 @@ export default {
             uniqueId: 100,
             invalidUrl: false,
             wmsUrl: "",
-            version: ""
+            version: "",
         };
     },
     computed: {
         ...mapGetters("Tools/AddWMS", Object.keys(getters)),
-        ...mapGetters("Maps", ["projection"])
+        ...mapGetters("Maps", ["projection"]),
     },
     watch: {
         /**
@@ -34,17 +34,19 @@ export default {
          * @param {Boolean} isActive Value deciding whether the tool gets activated or deactivated.
          * @returns {void}
          */
-        active (isActive) {
+        active(isActive) {
             if (isActive) {
                 this.setFocusToFirstControl();
             }
-        }
+        },
     },
-    created () {
+    created() {
         this.$on("close", this.close);
 
         if (!["custom", "default"].includes(this.treeTyp)) {
-            console.error("The addWMS tool is currently only supported for the custom and default theme trees!");
+            console.error(
+                "The addWMS tool is currently only supported for the custom and default theme trees!"
+            );
             this.close();
         }
     },
@@ -55,7 +57,7 @@ export default {
          * Sets the focus to the first control
          * @returns {void}
          */
-        setFocusToFirstControl () {
+        setFocusToFirstControl() {
             this.$nextTick(() => {
                 if (this.$refs.wmsUrl) {
                     this.$refs.wmsUrl.focus();
@@ -66,7 +68,7 @@ export default {
          * Closes this tool window by setting active to false
          * @returns {void}
          */
-        close () {
+        close() {
             this.setActive(false);
             // The value "isActive" of the Backbone model is also set to false to change the CSS class in the menu (menu/desktop/tool/view.toggleIsActiveClass)
             const model = getComponent(this.id);
@@ -102,66 +104,113 @@ export default {
             if (url === "") {
                 this.invalidUrl = true;
                 return;
-            }
-            else if (url.includes("http:")) {
-                this.$store.dispatch("Alerting/addSingleAlert", i18next.t("common:modules.tools.addWMS.errorHttpsMessage"));
+            } else if (url.includes("http:")) {
+                this.$store.dispatch(
+                    "Alerting/addSingleAlert",
+                    i18next.t("common:modules.tools.addWMS.errorHttpsMessage")
+                );
                 return;
             }
             LoaderOverlay.show();
             axios({
                 timeout: 4000,
-                url: url + "?request=GetCapabilities&service=WMS"
+                url: url + "?request=GetCapabilities&service=WMS",
             })
-                .then(response => response.data)
-                .then((data) => {
-                    LoaderOverlay.hide();
-                    try {
-                        const parser = new WMSCapabilities(),
-                            uniqId = this.getAddWmsUniqueId(),
-                            capability = parser.read(data),
-                            version = capability?.version,
-                            checkVersion = this.isVersionEnabled(version),
-                            currentExtent = Radio.request("Parser", "getPortalConfig")?.mapView?.extent;
+                .then((response) => response.data)
+                .then(
+                    (data) => {
+                        LoaderOverlay.hide();
+                        try {
+                            const parser = new WMSCapabilities(),
+                                uniqId = this.getAddWmsUniqueId(),
+                                capability = parser.read(data),
+                                version = capability?.version,
+                                checkVersion = this.isVersionEnabled(version),
+                                currentExtent = Radio.request(
+                                    "Parser",
+                                    "getPortalConfig"
+                                )?.mapView?.extent;
 
-                        let checkExtent = this.getIfInExtent(capability, currentExtent),
-                            finalCapability = capability;
+                            let checkExtent = this.getIfInExtent(
+                                    capability,
+                                    currentExtent
+                                ),
+                                finalCapability = capability;
 
-                        if (!checkVersion) {
-                            const reversedData = this.getReversedData(data);
+                            if (!checkVersion) {
+                                const reversedData = this.getReversedData(data);
 
-                            finalCapability = parser.read(reversedData);
-                            checkExtent = this.getIfInExtent(finalCapability, currentExtent);
+                                finalCapability = parser.read(reversedData);
+                                checkExtent = this.getIfInExtent(
+                                    finalCapability,
+                                    currentExtent
+                                );
+                            }
+
+                            if (!checkExtent) {
+                                this.$store.dispatch(
+                                    "Alerting/addSingleAlert",
+                                    i18next.t(
+                                        "common:modules.tools.addWMS.ifInExtent"
+                                    )
+                                );
+                                return;
+                            }
+
+                            this.version = version;
+                            this.wmsUrl = url;
+
+                            if (
+                                Radio.request("Parser", "getItemByAttributes", {
+                                    id: "ExternalLayer",
+                                }) === undefined
+                            ) {
+                                Radio.trigger(
+                                    "Parser",
+                                    "addFolder",
+                                    "Externe Fachdaten",
+                                    "ExternalLayer",
+                                    "tree",
+                                    0
+                                );
+                                Radio.trigger("ModelList", "renderTree");
+                                $("#Overlayer")
+                                    .parent()
+                                    .after($("#ExternalLayer").parent());
+                            }
+                            Radio.trigger(
+                                "Parser",
+                                "addFolder",
+                                finalCapability.Service.Title,
+                                uniqId,
+                                "ExternalLayer",
+                                0
+                            );
+                            finalCapability.Capability.Layer.Layer.forEach(
+                                (layer) => {
+                                    this.parseLayer(layer, uniqId, 1);
+                                }
+                            );
+                            Radio.trigger(
+                                "ModelList",
+                                "closeAllExpandedFolder"
+                            );
+
+                            this.$store.dispatch(
+                                "Alerting/addSingleAlert",
+                                i18next.t(
+                                    "common:modules.tools.addWMS.completeMessage"
+                                )
+                            );
+                        } catch (e) {
+                            this.displayErrorMessage();
                         }
-
-                        if (!checkExtent) {
-                            this.$store.dispatch("Alerting/addSingleAlert", i18next.t("common:modules.tools.addWMS.ifInExtent"));
-                            return;
-                        }
-
-                        this.version = version;
-                        this.wmsUrl = url;
-
-                        if (Radio.request("Parser", "getItemByAttributes", {id: "ExternalLayer"}) === undefined) {
-                            Radio.trigger("Parser", "addFolder", "Externe Fachdaten", "ExternalLayer", "tree", 0);
-                            Radio.trigger("ModelList", "renderTree");
-                            $("#Overlayer").parent().after($("#ExternalLayer").parent());
-                        }
-                        Radio.trigger("Parser", "addFolder", finalCapability.Service.Title, uniqId, "ExternalLayer", 0);
-                        finalCapability.Capability.Layer.Layer.forEach(layer => {
-                            this.parseLayer(layer, uniqId, 1);
-                        });
-                        Radio.trigger("ModelList", "closeAllExpandedFolder");
-
-                        this.$store.dispatch("Alerting/addSingleAlert", i18next.t("common:modules.tools.addWMS.completeMessage"));
-
-                    }
-                    catch (e) {
+                    },
+                    () => {
+                        LoaderOverlay.hide();
                         this.displayErrorMessage();
                     }
-                }, () => {
-                    LoaderOverlay.hide();
-                    this.displayErrorMessage();
-                });
+                );
         },
 
         /**
@@ -183,7 +232,10 @@ export default {
          * @returns {void}
          */
         displayErrorMessage: function () {
-            this.$store.dispatch("Alerting/addSingleAlert", i18next.t("common:modules.tools.addWMS.errorMessage"));
+            this.$store.dispatch(
+                "Alerting/addSingleAlert",
+                i18next.t("common:modules.tools.addWMS.errorMessage")
+            );
         },
 
         /**
@@ -200,27 +252,48 @@ export default {
             if (Object.prototype.hasOwnProperty.call(object, "Layer")) {
                 const uniqId = this.getAddWmsUniqueId();
 
-                Radio.trigger("Parser", "addFolder", object.Title, uniqId, parentId, level, false, false, object.invertLayerOrder);
-                object.Layer.forEach(layer => {
+                Radio.trigger(
+                    "Parser",
+                    "addFolder",
+                    object.Title,
+                    uniqId,
+                    parentId,
+                    level,
+                    false,
+                    false,
+                    object.invertLayerOrder
+                );
+                object.Layer.forEach((layer) => {
                     this.parseLayer(layer, uniqId, level + 1);
                 });
-            }
-            else {
+            } else {
                 const datasets = [];
 
                 if (object?.MetadataURL?.[0].OnlineResource) {
                     datasets.push({
                         customMetadata: true,
                         csw_url: object.MetadataURL[0].OnlineResource,
-                        attributes: {}
+                        attributes: {},
                     });
                 }
-                Radio.trigger("Parser", "addLayer", object.Title, this.getParsedTitle(object.Title), parentId, level, object.Name, this.wmsUrl, this.version, {
-                    maxScale: object?.MaxScaleDenominator?.toString(),
-                    minScale: object?.MinScaleDenominator?.toString(),
-                    legendURL: object?.Style?.[0].LegendURL?.[0].OnlineResource?.toString(),
-                    datasets
-                });
+                Radio.trigger(
+                    "Parser",
+                    "addLayer",
+                    object.Title,
+                    this.getParsedTitle(object.Title),
+                    parentId,
+                    level,
+                    object.Name,
+                    this.wmsUrl,
+                    this.version,
+                    {
+                        maxScale: object?.MaxScaleDenominator?.toString(),
+                        minScale: object?.MinScaleDenominator?.toString(),
+                        legendURL:
+                            object?.Style?.[0].LegendURL?.[0].OnlineResource?.toString(),
+                        datasets,
+                    }
+                );
             }
         },
 
@@ -238,8 +311,11 @@ export default {
 
             if (parseInt(parsedVersion[0], 10) < 1) {
                 return false;
-            }
-            else if (parsedVersion.length >= 2 && parseInt(parsedVersion[0], 10) === 1 && parseInt(parsedVersion[1], 10) < 3) {
+            } else if (
+                parsedVersion.length >= 2 &&
+                parseInt(parsedVersion[0], 10) === 1 &&
+                parseInt(parsedVersion[1], 10) < 3
+            ) {
                 return false;
             }
 
@@ -253,10 +329,20 @@ export default {
          * @returns {Boolean} true or false
          */
         getIfInExtent: function (capability, currentExtent) {
-            const layer = capability?.Capability?.Layer?.BoundingBox?.filter(bbox => {
-                    return bbox?.crs && bbox?.crs.includes("EPSG") && crs.getProjection(bbox?.crs) !== undefined && Array.isArray(bbox?.extent) && bbox?.extent.length === 4;
-                }),
-                layerEPSG4326Projection = layer.find((element) => element.crs === "EPSG:4326");
+            const layer = capability?.Capability?.Layer?.BoundingBox?.filter(
+                    (bbox) => {
+                        return (
+                            bbox?.crs &&
+                            bbox?.crs.includes("EPSG") &&
+                            crs.getProjection(bbox?.crs) !== undefined &&
+                            Array.isArray(bbox?.extent) &&
+                            bbox?.extent.length === 4
+                        );
+                    }
+                ),
+                layerEPSG4326Projection = layer.find(
+                    (element) => element.crs === "EPSG:4326"
+                );
             let layerExtent;
 
             // If there is no extent defined or the extent is not right defined, it will import the external wms layer(s).
@@ -268,23 +354,62 @@ export default {
                 let firstLayerExtent = [],
                     secondLayerExtent = [];
 
-                layer.forEach(singleLayer => {
+                layer.forEach((singleLayer) => {
                     if (singleLayer.crs === this.projection.getCode()) {
-                        firstLayerExtent = [singleLayer.extent[0], singleLayer.extent[1]];
-                        secondLayerExtent = [singleLayer.extent[2], singleLayer.extent[3]];
+                        firstLayerExtent = [
+                            singleLayer.extent[0],
+                            singleLayer.extent[1],
+                        ];
+                        secondLayerExtent = [
+                            singleLayer.extent[2],
+                            singleLayer.extent[3],
+                        ];
                     }
                 });
 
-                if (layerEPSG4326Projection && !firstLayerExtent.length && !secondLayerExtent.length) {
-                    firstLayerExtent = crs.transform(layer[0].crs, this.projection.getCode(), [layerEPSG4326Projection.extent[1], layerEPSG4326Projection.extent[0]]);
-                    secondLayerExtent = crs.transform(layer[0].crs, this.projection.getCode(), [layerEPSG4326Projection.extent[3], layerEPSG4326Projection.extent[2]]);
-                }
-                else if (!firstLayerExtent.length && !secondLayerExtent.length) {
-                    firstLayerExtent = crs.transform(layer[0].crs, this.projection.getCode(), [layer[0].extent[0], layer[0].extent[1]]);
-                    secondLayerExtent = crs.transform(layer[0].crs, this.projection.getCode(), [layer[0].extent[2], layer[0].extent[3]]);
+                if (
+                    layerEPSG4326Projection &&
+                    !firstLayerExtent.length &&
+                    !secondLayerExtent.length
+                ) {
+                    firstLayerExtent = crs.transform(
+                        layer[0].crs,
+                        this.projection.getCode(),
+                        [
+                            layerEPSG4326Projection.extent[1],
+                            layerEPSG4326Projection.extent[0],
+                        ]
+                    );
+                    secondLayerExtent = crs.transform(
+                        layer[0].crs,
+                        this.projection.getCode(),
+                        [
+                            layerEPSG4326Projection.extent[3],
+                            layerEPSG4326Projection.extent[2],
+                        ]
+                    );
+                } else if (
+                    !firstLayerExtent.length &&
+                    !secondLayerExtent.length
+                ) {
+                    firstLayerExtent = crs.transform(
+                        layer[0].crs,
+                        this.projection.getCode(),
+                        [layer[0].extent[0], layer[0].extent[1]]
+                    );
+                    secondLayerExtent = crs.transform(
+                        layer[0].crs,
+                        this.projection.getCode(),
+                        [layer[0].extent[2], layer[0].extent[3]]
+                    );
                 }
 
-                layerExtent = [firstLayerExtent[0], firstLayerExtent[1], secondLayerExtent[0], secondLayerExtent[1]];
+                layerExtent = [
+                    firstLayerExtent[0],
+                    firstLayerExtent[1],
+                    secondLayerExtent[0],
+                    secondLayerExtent[1],
+                ];
 
                 return intersects(currentExtent, layerExtent);
             }
@@ -300,8 +425,14 @@ export default {
         getReversedData: function (data) {
             let reversedData = new XMLSerializer().serializeToString(data);
 
-            reversedData = reversedData.replace(/<SRS>/g, "<CRS>").replace(/<\/SRS>/g, "</CRS>").replace(/SRS=/g, "CRS=");
-            reversedData = new DOMParser().parseFromString(reversedData, "text/xml");
+            reversedData = reversedData
+                .replace(/<SRS>/g, "<CRS>")
+                .replace(/<\/SRS>/g, "</CRS>")
+                .replace(/SRS=/g, "CRS=");
+            reversedData = new DOMParser().parseFromString(
+                reversedData,
+                "text/xml"
+            );
 
             return reversedData;
         },
@@ -326,8 +457,8 @@ export default {
          */
         getParsedTitle: function (title) {
             return String(title).replace(/\s+/g, "-").replace(/\//g, "-");
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -341,16 +472,9 @@ export default {
         :deactivate-gfi="deactivateGFI"
     >
         <template #toolBody>
-            <div
-                v-if="active"
-                id="add-wms"
-                class="addWMS win-body"
-            >
-                <div
-                    v-if="invalidUrl"
-                    class="addwms_error"
-                >
-                    {{ $t('common:modules.tools.addWMS.errorEmptyUrl') }}
+            <div v-if="active" id="add-wms" class="addWMS win-body">
+                <div v-if="invalidUrl" class="addwms_error">
+                    {{ $t("common:modules.tools.addWMS.errorEmptyUrl") }}
                 </div>
                 <input
                     id="wmsUrl"
@@ -360,45 +484,43 @@ export default {
                     class="form-control wmsUrlsChanged"
                     :placeholder="$t('common:modules.tools.addWMS.placeholder')"
                     @keydown.enter="inputUrl"
-                >
+                />
                 <button
                     id="addWMSButton"
                     type="button"
                     class="btn btn-primary"
                     @click="importLayers"
                 >
-                    <span
-                        class=""
-                        aria-hidden="true"
-                    >{{ $t('common:modules.tools.addWMS.textLoadLayer') }}</span>
-                    <span
-                        class="bootstrap-icon"
-                        aria-hidden="true"
-                    >
+                    <span class="" aria-hidden="true">{{
+                        $t("common:modules.tools.addWMS.textLoadLayer")
+                    }}</span>
+                    <span class="bootstrap-icon" aria-hidden="true">
                         <i class="bi-check-lg" />
                     </span>
                 </button>
+                <p>replace me</p>
             </div>
         </template>
     </ToolTemplate>
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
-    .addWMS {
-        min-width: 400px;
-    }
-    .WMS_example_text {
-        margin-top: 10px;
-        color: $light_grey;
-    }
-    #addWMSButton {
-        margin-top: 15px;
-        width: 50%;
-    }
-    .addwms_error {
-        font-size: $font-size-lg;
-        color: $light_red;
-        margin-bottom: 10px;
-    }
+@import "~variables";
+.addWMS {
+    min-width: 400px;
+}
+.WMS_example_text {
+    margin-top: 10px;
+    color: $light_grey;
+}
+#addWMSButton {
+    margin-top: 15px;
+    width: 50%;
+}
+.addwms_error {
+    font-size: $font-size-lg;
+    color: $light_red;
+    margin-bottom: 10px;
+}
 </style>
+

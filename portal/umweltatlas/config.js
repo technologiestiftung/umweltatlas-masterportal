@@ -1,22 +1,28 @@
 const Config = {
     wfsImgPath: "./resources/img/",
     namedProjections: [
-        ["EPSG:25832", "+title=ETRS89/UTM 32N +proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"],
-        ["EPSG:25833", "+title=ETRS89/UTM 33N +proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"]
+        [
+            "EPSG:25832",
+            "+title=ETRS89/UTM 32N +proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+        ],
+        [
+            "EPSG:25833",
+            "+title=ETRS89/UTM 33N +proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+        ],
     ],
     footer: {
         urls: [
             {
-                "bezeichnung": "common:modules.footer.designation",
-                "url": "https://www.berlin.de/sen/sbw/",
-                "alias": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
-                "alias_mobil": "SenSBW"
-            }
+                bezeichnung: "common:modules.footer.designation",
+                url: "https://www.berlin.de/sen/sbw/",
+                alias: "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+                alias_mobil: "SenSBW",
+            },
         ],
-        showVersion: true
+        showVersion: true,
     },
     quickHelp: {
-        imgPath: "./resources/img/"
+        imgPath: "./resources/img/",
     },
     layerConf: "./resources/services-internet.json",
     restConf: "./resources/rest-services-internet.json",
@@ -24,7 +30,7 @@ const Config = {
     scaleLine: true,
     mouseHover: {
         numFeaturesToShow: 2,
-        infoText: "(weitere Objekte. Bitte zoomen.)"
+        infoText: "(weitere Objekte. Bitte zoomen.)",
     },
     portalLanguage: {
         enabled: false,
@@ -32,16 +38,9 @@ const Config = {
         languages: {
             de: "Deutsch",
             en: "English",
-            es: "Español",
-            it: "Italiano",
-            platt: "Platt",
-            pt: "Português",
-            ru: "Русский",
-            tr: "Türkçe",
-            ua: "Українська"
         },
         fallbackLanguage: "de",
-        changeLanguageOnStartWhen: ["querystring", "localStorage", "htmlTag"]
+        changeLanguageOnStartWhen: ["querystring", "localStorage", "htmlTag"],
     },
 };
 
@@ -49,3 +48,4 @@ const Config = {
 if (typeof module !== "undefined") {
     module.exports = Config;
 }
+

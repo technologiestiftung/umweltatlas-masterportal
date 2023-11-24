@@ -149,11 +149,10 @@
     },
     "controls": {
       "zoom": true,
-      "totalView": true,
       "orientation": {
         "zoomMode": "once"
       },
-      "attributions": true,
+      "attributions": { "isInitOpenDesktop": false },
       "mousePosition": true
     }
   },
@@ -184,7 +183,7 @@
         {
           "id": "basemap_raster_grau",
 
-          "visibility": true
+          "visibility": false
         },
 
         {
@@ -322,7 +321,8 @@
 
                   "Ordner": [
                     {
-                      "Titel": "1990 (Daten folgen)"
+                      "Titel": "1990 (Daten folgen)",
+                      "isFolderSelectable": false
                     }
                   ]
                 }
