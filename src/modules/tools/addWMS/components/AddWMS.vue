@@ -498,7 +498,7 @@ export default {
                         <i class="bi-check-lg" />
                     </span>
                 </button>
-                <p>replace me</p>
+                <p>replace me @todo</p>
             </div>
         </template>
     </ToolTemplate>

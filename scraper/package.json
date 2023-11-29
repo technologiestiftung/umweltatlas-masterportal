@@ -1,5 +1,6 @@
 {
   "name": "berlin_umweltatlas_scraper",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +12,8 @@
   "dependencies": {
     "async": "^3.2.4",
     "axios": "^1.2.2",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.2"
   }
 }
 
