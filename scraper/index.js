@@ -33,7 +33,6 @@ const unwantedIds = ["k01_06_07ph2010:2", "k01_06_07ph2010:3"];
 function findServiceById(idName) {
     let oneService;
     oneService = services.filter((object) => object.id === idName)[0];
-
     if (!oneService) {
         oneService = servicesMasterLight.filter(
             (object) => object.id === idName
@@ -103,34 +102,34 @@ function eachSubGroup(subGroupLinks, group) {
         subGroupLinks,
         function (subGroupLink, callbackEachSubGroup) {
             console.log("subGroupLink: ", subGroupLink);
-            const temp = "/umweltatlas/boden/rieselfelder/";
-            // axios
-            //     .get("https://www.berlin.de" + subGroupLink)
-            //     .then((response) => {
-            axios.get("https://www.berlin.de" + temp).then((response) => {
-                const body = response.data;
-                const $ = cheerio.load(body);
-                const title = $(".herounit-article h1").text();
-                const subGroup = {
-                    Titel: title,
-                    isFolderSelectable: false,
-                    Ordner: [],
-                };
-                group.Ordner.push(subGroup);
+            // const temp = "/umweltatlas/boden/rieselfelder/";
+            axios
+                .get("https://www.berlin.de" + subGroupLink)
+                .then((response) => {
+                    // axios.get("https://www.berlin.de" + temp).then((response) => {
+                    const body = response.data;
+                    const $ = cheerio.load(body);
+                    const title = $(".herounit-article h1").text();
+                    const subGroup = {
+                        Titel: title,
+                        isFolderSelectable: false,
+                        Ordner: [],
+                    };
+                    group.Ordner.push(subGroup);
 
-                const subGroupYearLinks = $(
-                    "#layout-grid__area--maincontent section:first .textile a"
-                )
-                    .map((i, el) => $(el).attr("href"))
-                    .get();
+                    const subGroupYearLinks = $(
+                        "#layout-grid__area--maincontent section:first .textile a"
+                    )
+                        .map((i, el) => $(el).attr("href"))
+                        .get();
 
-                // console.log("subGroupYearLinks", subGroupYearLinks);
-                eachYearOfSubGroup(
-                    subGroupYearLinks,
-                    subGroup,
-                    callbackEachSubGroup
-                );
-            });
+                    // console.log("subGroupYearLinks", subGroupYearLinks);
+                    eachYearOfSubGroup(
+                        subGroupYearLinks,
+                        subGroup,
+                        callbackEachSubGroup
+                    );
+                });
         },
         function (err) {
             fs.writeFile(
@@ -139,7 +138,7 @@ function eachSubGroup(subGroupLinks, group) {
                 (err) => {
                     fs.writeFile(
                         "./out/newservices.json",
-                        JSON.stringify(services),
+                        JSON.stringify(servicesWant),
                         (err) => {
                             console.log("!DONE!");
                         }
