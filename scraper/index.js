@@ -6,6 +6,7 @@ import axios from "axios";
 // const { config } = require("process");
 import fetch from "node-fetch";
 import services from "./services-internet.js";
+import servicesMasterLight from "./services-internet-masterportallight.js";
 import missingServices from "./missingServices.js";
 services.push(...missingServices);
 const nameChapterNumberLookup = {};
@@ -24,12 +25,21 @@ const unwantedLayers = [
     "Aufnahmepunkte",
     "Hintergrund dig. Karte 1:50.000",
     "Kürzel",
+    "Texte geomorphologischer Einheiten",
 ];
 
 const unwantedIds = ["k01_06_07ph2010:2", "k01_06_07ph2010:3"];
 
 function findServiceById(idName) {
-    return services.filter((object) => object.id === idName)[0];
+    let oneService;
+    oneService = services.filter((object) => object.id === idName)[0];
+
+    if (!oneService) {
+        oneService = servicesMasterLight.filter(
+            (object) => object.id === idName
+        )[0];
+    }
+    return oneService;
 }
 
 async function getData(iframeLink) {
@@ -93,34 +103,34 @@ function eachSubGroup(subGroupLinks, group) {
         subGroupLinks,
         function (subGroupLink, callbackEachSubGroup) {
             console.log("subGroupLink: ", subGroupLink);
-            // const temp = "/umweltatlas/boden/planungshinweise-bodenschutz/";
-            axios
-                .get("https://www.berlin.de" + subGroupLink)
-                .then((response) => {
-                    // axios.get("https://www.berlin.de" + temp).then((response) => {
-                    const body = response.data;
-                    const $ = cheerio.load(body);
-                    const title = $(".herounit-article h1").text();
-                    const subGroup = {
-                        Titel: title,
-                        isFolderSelectable: false,
-                        Ordner: [],
-                    };
-                    group.Ordner.push(subGroup);
+            const temp = "/umweltatlas/boden/rieselfelder/";
+            // axios
+            //     .get("https://www.berlin.de" + subGroupLink)
+            //     .then((response) => {
+            axios.get("https://www.berlin.de" + temp).then((response) => {
+                const body = response.data;
+                const $ = cheerio.load(body);
+                const title = $(".herounit-article h1").text();
+                const subGroup = {
+                    Titel: title,
+                    isFolderSelectable: false,
+                    Ordner: [],
+                };
+                group.Ordner.push(subGroup);
 
-                    const subGroupYearLinks = $(
-                        "#layout-grid__area--maincontent section:first .textile a"
-                    )
-                        .map((i, el) => $(el).attr("href"))
-                        .get();
+                const subGroupYearLinks = $(
+                    "#layout-grid__area--maincontent section:first .textile a"
+                )
+                    .map((i, el) => $(el).attr("href"))
+                    .get();
 
-                    // console.log("subGroupYearLinks", subGroupYearLinks);
-                    eachYearOfSubGroup(
-                        subGroupYearLinks,
-                        subGroup,
-                        callbackEachSubGroup
-                    );
-                });
+                // console.log("subGroupYearLinks", subGroupYearLinks);
+                eachYearOfSubGroup(
+                    subGroupYearLinks,
+                    subGroup,
+                    callbackEachSubGroup
+                );
+            });
         },
         function (err) {
             fs.writeFile(
