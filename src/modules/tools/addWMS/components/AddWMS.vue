@@ -498,7 +498,13 @@ export default {
                         <i class="bi-check-lg" />
                     </span>
                 </button>
-                <p>replace me @todo</p>
+                <!-- @todo replace -->
+                <br />
+                <img
+                    src="./wmsplacesholder.png"
+                    alt=""
+                    style="max-width: 200px; padding-top: 10px"
+                />
             </div>
         </template>
     </ToolTemplate>

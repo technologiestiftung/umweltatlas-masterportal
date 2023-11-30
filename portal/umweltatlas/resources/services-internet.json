@@ -22,7 +22,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/9be97dd1-3dea-3897-bf6c-e36f5d898247"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2015/kartenbeschreibung/"
   },
   {
     "id": "k01_01boges2010:1",
@@ -47,7 +47,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ca7601d2-77bc-3711-ba4e-41fa1ba7c838"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2010/kartenbeschreibung/"
   },
   {
     "id": "k01_01boges2005:1",
@@ -72,7 +72,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b5358d32-5377-3c55-881b-3b2bf2ce2d35"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2005/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2005/kartenbeschreibung/"
   },
   {
     "id": "boges2001:1",
@@ -97,7 +97,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
   },
   {
     "id": "boges2001:2",
@@ -122,7 +122,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
   },
   {
     "id": "boges2001:3",
@@ -147,7 +147,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
   },
   {
     "id": "boges2001:4",
@@ -172,7 +172,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/2001/kartenbeschreibung/"
   },
   {
     "id": "boges:1",
@@ -197,7 +197,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e1457623-9674-3009-b99a-0ee03342d8af"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/1990/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodengesellschaften/1990/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_06_01bodart2015:2",
@@ -222,7 +222,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/9be97dd1-3dea-3897-bf6c-e36f5d898247"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "wmsk01_06_01bodart2015:3",
@@ -247,7 +247,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/9be97dd1-3dea-3897-bf6c-e36f5d898247"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "wmsk01_06_01bodart2015:1",
@@ -272,7 +272,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/9be97dd1-3dea-3897-bf6c-e36f5d898247"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_02flach2015:1",
@@ -297,7 +297,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_04nfeld2015:1",
@@ -322,7 +322,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_05humus2015:1",
@@ -347,7 +347,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k_01_06_6kohlenstoffvor2015:1",
@@ -372,7 +372,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_07ph2015:1",
@@ -397,7 +397,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_08sumkat2015:1",
@@ -422,7 +422,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_09kataus2015:1",
@@ -447,7 +447,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_10wasdur2015:1",
@@ -472,7 +472,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/152e195a-2458-36ed-ab0e-02ccb300c20d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2015/methode/"
   },
   {
     "id": "k01_06_01bodart2010:2",
@@ -497,7 +497,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ca7601d2-77bc-3711-ba4e-41fa1ba7c838"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_01bodart2010:3",
@@ -522,7 +522,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ca7601d2-77bc-3711-ba4e-41fa1ba7c838"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_01bodart2010:1",
@@ -547,7 +547,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ca7601d2-77bc-3711-ba4e-41fa1ba7c838"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_02flach2010:1",
@@ -572,7 +572,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_04nfeld2010:1",
@@ -597,7 +597,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_05humus2010:1",
@@ -622,7 +622,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "wmsk_01_06_6kohlenstoffvor2010:1",
@@ -647,7 +647,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "wmsk_01_06_6kohlenstoffvor2010:2",
@@ -672,7 +672,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "wmsk_01_06_6kohlenstoffvor2010:3",
@@ -697,7 +697,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "wmsk_01_06_6kohlenstoffvor2010:4",
@@ -722,24 +722,24 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_07ph2010:1",
     "name": "pH-Werte im Oberboden",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_07ph2010:2",
     "missing": true,
     "name": "missing service",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_07ph2010:3",
     "missing": true,
     "name": "missing service",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_08sumkat2010:1",
@@ -764,7 +764,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_09kataus2010:1",
@@ -789,7 +789,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_09kataus2010:2",
@@ -814,7 +814,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_09kataus2010:3",
@@ -839,7 +839,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_10wasdur2010:1",
@@ -864,7 +864,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b3c985f1-ed43-3116-977f-954e7c815309"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2010/methode/"
   },
   {
     "id": "k01_06_01bodart2005:2",
@@ -889,7 +889,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b5358d32-5377-3c55-881b-3b2bf2ce2d35"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_01bodart2005:3",
@@ -914,7 +914,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b5358d32-5377-3c55-881b-3b2bf2ce2d35"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_01bodart2005:1",
@@ -939,7 +939,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b5358d32-5377-3c55-881b-3b2bf2ce2d35"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_02flach2005:1",
@@ -964,7 +964,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_04nfeld2005:1",
@@ -989,7 +989,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_05humus2005:1",
@@ -1014,7 +1014,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_07ph2005:1",
@@ -1039,7 +1039,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_07ph2005:2",
@@ -1064,7 +1064,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_07ph2005:3",
@@ -1089,7 +1089,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_07ph2005:4",
@@ -1114,7 +1114,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_08sumkat2005:1",
@@ -1139,7 +1139,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_09kataus2005:1",
@@ -1164,7 +1164,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_09kataus2005:2",
@@ -1189,7 +1189,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_09kataus2005:3",
@@ -1214,7 +1214,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_09kataus2005:4",
@@ -1239,7 +1239,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "k01_06_10wasdur2005:1",
@@ -1264,7 +1264,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/69f57d76-97eb-34e5-a384-b0af9d1c2a0b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2005/methode/"
   },
   {
     "id": "kb01_06_01bodart:4",
@@ -1289,7 +1289,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "kb01_06_01bodart:5",
@@ -1314,7 +1314,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "kb01_06_01bodart:2",
@@ -1339,7 +1339,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "kb01_06_01bodart:3",
@@ -1364,7 +1364,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "kb01_06_01bodart:1",
@@ -1389,7 +1389,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/f245cffd-8611-383c-9f57-7aee562c3982"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "kb01_06_02flach:1",
@@ -1414,7 +1414,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_02flach:2",
@@ -1439,7 +1439,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_02flach:3",
@@ -1464,7 +1464,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_04nfeld:1",
@@ -1489,7 +1489,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_04nfeld:2",
@@ -1514,7 +1514,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_04nfeld:3",
@@ -1539,7 +1539,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_05humus:1",
@@ -1564,7 +1564,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_05humus:2",
@@ -1589,7 +1589,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_05humus:3",
@@ -1614,7 +1614,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_07ph:1",
@@ -1639,7 +1639,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_07ph:2",
@@ -1664,7 +1664,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_07ph:3",
@@ -1689,7 +1689,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_08sumkat:1",
@@ -1714,7 +1714,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_08sumkat:2",
@@ -1739,7 +1739,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_08sumkat:3",
@@ -1764,7 +1764,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_09kataus:1",
@@ -1789,7 +1789,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_09kataus:2",
@@ -1814,7 +1814,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_09kataus:3",
@@ -1839,7 +1839,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_10wasdur:1",
@@ -1864,7 +1864,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_10wasdur:2",
@@ -1889,7 +1889,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "kb01_06_10wasdur:3",
@@ -1914,7 +1914,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/0a66d24e-061f-3e3a-aeb0-fe3244e20857"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/2001/methode/"
   },
   {
     "id": "k01_06_01bodart1990:2",
@@ -1939,7 +1939,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_01bodart1990:3",
@@ -1964,7 +1964,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_01bodart1990:4",
@@ -1989,7 +1989,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_01bodart1990:1",
@@ -2014,7 +2014,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_04nfeld1990:1",
@@ -2039,7 +2039,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_04nfeld1990:2",
@@ -2064,7 +2064,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_05humus1990:1",
@@ -2089,7 +2089,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_05humus1990:2",
@@ -2114,7 +2114,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_07ph1990:1",
@@ -2139,7 +2139,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_07ph1990:2",
@@ -2164,7 +2164,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_08sumkat1990:1",
@@ -2189,7 +2189,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_08sumkat1990:2",
@@ -2214,7 +2214,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_09kataus1990:1",
@@ -2239,7 +2239,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_09kataus1990:2",
@@ -2264,7 +2264,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_10wasdur1990:1",
@@ -2289,7 +2289,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "k01_06_10wasdur1990:2",
@@ -2314,7 +2314,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/4213ab3f-1d9f-3099-bf7a-973ea32dd3cf"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenkundliche-kennwerte/1990/methode/"
   },
   {
     "id": "wmsk01_11_01selten2015:1",
@@ -2339,7 +2339,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_02eigen2015:1",
@@ -2364,7 +2364,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "wmsk01_11_03natnae2015:1",
@@ -2389,7 +2389,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "wmsk01_11_04austau2015:1",
@@ -2414,7 +2414,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_06schad2015:1",
@@ -2439,7 +2439,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_07naehr2015:1",
@@ -2464,7 +2464,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_08wasser2015:1",
@@ -2489,7 +2489,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_09filter2015:1",
@@ -2514,7 +2514,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "wmsk01_11_10bindung2015:1",
@@ -2539,7 +2539,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_11kohlestoffpuff2015:1",
@@ -2564,7 +2564,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bb492d1f-c806-349a-a998-bc491ad22e07"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2015/methode/"
   },
   {
     "id": "k01_11_01selten2010:1",
@@ -2589,7 +2589,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_02eigen2010:1",
@@ -2614,7 +2614,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_03natnae2010:1",
@@ -2639,7 +2639,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_03natnae2010:2",
@@ -2664,7 +2664,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_03natnae2010:3",
@@ -2689,7 +2689,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_04austau2010:1",
@@ -2714,7 +2714,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_06schad2010:1",
@@ -2739,7 +2739,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_06schad2010:2",
@@ -2764,7 +2764,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_06schad2010:3",
@@ -2789,7 +2789,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_07naehr2010:1",
@@ -2814,7 +2814,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_07naehr2010:2",
@@ -2839,7 +2839,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_07naehr2010:3",
@@ -2864,7 +2864,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_08wasser2010:1",
@@ -2889,7 +2889,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_09filter2010:1",
@@ -2914,13 +2914,13 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5aa4d072-63a9-3f0e-80e7-d308bf487944"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_10bindung2010:1",
     "missing": true,
     "name": "missing service",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2010/methode/"
   },
   {
     "id": "k01_11_01selten2005:1",
@@ -2945,7 +2945,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_02eigen2005:1",
@@ -2970,7 +2970,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_03natnae2005:1",
@@ -2995,7 +2995,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_03natnae2005:2",
@@ -3020,7 +3020,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_03natnae2005:3",
@@ -3045,7 +3045,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_03natnae2005:4",
@@ -3070,7 +3070,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_04austau2005:1",
@@ -3095,7 +3095,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_06schad2005:1",
@@ -3120,7 +3120,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_06schad2005:2",
@@ -3145,7 +3145,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_06schad2005:3",
@@ -3170,7 +3170,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_06schad2005:4",
@@ -3195,7 +3195,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_07naehr2005:1",
@@ -3220,7 +3220,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_07naehr2005:2",
@@ -3245,7 +3245,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_07naehr2005:3",
@@ -3270,7 +3270,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_07naehr2005:4",
@@ -3295,7 +3295,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_08wasser2005:1",
@@ -3320,7 +3320,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_09filter2005:1",
@@ -3345,7 +3345,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "k01_11_10bindung2005:1",
@@ -3370,7 +3370,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/42832566-10e8-36da-a385-29f1b9bf4722"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2005/methode/"
   },
   {
     "id": "kb01_11_01selten:1",
@@ -3395,7 +3395,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_01selten:2",
@@ -3420,7 +3420,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_01selten:3",
@@ -3445,7 +3445,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_02eigen:1",
@@ -3470,7 +3470,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_02eigen:2",
@@ -3495,7 +3495,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_02eigen:3",
@@ -3520,7 +3520,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_03natnae:1",
@@ -3545,7 +3545,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_03natnae:2",
@@ -3570,7 +3570,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_03natnae:3",
@@ -3595,7 +3595,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_04austau:1",
@@ -3620,7 +3620,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_04austau:2",
@@ -3645,7 +3645,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_04austau:3",
@@ -3670,7 +3670,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_06schad:1",
@@ -3695,7 +3695,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_06schad:2",
@@ -3720,7 +3720,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_06schad:3",
@@ -3745,7 +3745,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_07naehr:1",
@@ -3770,7 +3770,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_07naehr:2",
@@ -3795,7 +3795,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_07naehr:3",
@@ -3820,7 +3820,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_08wasser:1",
@@ -3845,7 +3845,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_08wasser:2",
@@ -3870,7 +3870,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_08wasser:3",
@@ -3895,7 +3895,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_09filter:1",
@@ -3920,7 +3920,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_09filter:2",
@@ -3945,7 +3945,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_09filter:3",
@@ -3970,7 +3970,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_10bindung:1",
@@ -3995,7 +3995,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_10bindung:2",
@@ -4020,7 +4020,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "kb01_11_10bindung:3",
@@ -4045,7 +4045,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/ddcd311d-7af5-3b80-83ca-134ab41b61f3"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/2001/methode/"
   },
   {
     "id": "k01_11_01selten1990:1",
@@ -4070,7 +4070,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_01selten1990:2",
@@ -4095,7 +4095,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_02eigen1990:1",
@@ -4120,7 +4120,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_02eigen1990:2",
@@ -4145,7 +4145,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_03natnae1990:1",
@@ -4170,7 +4170,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_03natnae1990:2",
@@ -4195,7 +4195,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_04austau1990:1",
@@ -4220,7 +4220,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_04austau1990:2",
@@ -4245,7 +4245,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_06schad1990:1",
@@ -4270,7 +4270,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_06schad1990:2",
@@ -4295,7 +4295,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_07naehr1990:1",
@@ -4320,7 +4320,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_07naehr1990:2",
@@ -4345,7 +4345,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_09filter1990:1",
@@ -4370,7 +4370,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_09filter1990:2",
@@ -4395,7 +4395,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_10bindung1990:1",
@@ -4420,7 +4420,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_11_10bindung1990:2",
@@ -4445,7 +4445,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/cc15cf5b-19aa-392b-b504-b54432f459c2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionskriterien/1990/methode/"
   },
   {
     "id": "k01_12_01lebens2015:1",
@@ -4470,7 +4470,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_02ertrag2015:1",
@@ -4495,7 +4495,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_03puff2015:1",
@@ -4520,7 +4520,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_04regel2015:1",
@@ -4545,7 +4545,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_05archiv2015:1",
@@ -4570,7 +4570,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_06leist2015:1",
@@ -4595,7 +4595,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2015/methode/"
   },
   {
     "id": "k01_12_01lebens2010:1",
@@ -4620,7 +4620,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_01lebens2010:2",
@@ -4645,7 +4645,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_01lebens2010:3",
@@ -4670,7 +4670,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_02ertrag2010:1",
@@ -4695,7 +4695,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_03puff2010:1",
@@ -4720,7 +4720,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_03puff2010:2",
@@ -4745,7 +4745,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_03puff2010:3",
@@ -4770,7 +4770,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_04regel2010:1",
@@ -4795,7 +4795,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_05archiv2010:1",
@@ -4820,7 +4820,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_06leist2010:1",
@@ -4845,7 +4845,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_06leist2010:2",
@@ -4870,7 +4870,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_06leist2010:3",
@@ -4895,7 +4895,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2010/methode/"
   },
   {
     "id": "k01_12_01lebens2005:1",
@@ -4920,7 +4920,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_01lebens2005:2",
@@ -4945,7 +4945,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_01lebens2005:3",
@@ -4970,7 +4970,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_01lebens2005:4",
@@ -4995,7 +4995,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_02ertrag2005:1",
@@ -5020,7 +5020,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_03puff2005:1",
@@ -5045,7 +5045,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_03puff2005:2",
@@ -5070,7 +5070,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_03puff2005:3",
@@ -5095,7 +5095,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_03puff2005:4",
@@ -5120,7 +5120,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_04regel2005:1",
@@ -5145,7 +5145,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_05archiv2005:1",
@@ -5170,7 +5170,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_06leist2005:1",
@@ -5195,7 +5195,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_06leist2005:2",
@@ -5220,7 +5220,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_06leist2005:3",
@@ -5245,7 +5245,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "k01_12_06leist2005:4",
@@ -5270,7 +5270,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2005/methode/"
   },
   {
     "id": "kb01_12_01lebens:1",
@@ -5295,7 +5295,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_01lebens:2",
@@ -5320,7 +5320,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_01lebens:3",
@@ -5345,7 +5345,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_02ertrag:1",
@@ -5370,7 +5370,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_02ertrag:2",
@@ -5395,7 +5395,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_02ertrag:3",
@@ -5420,7 +5420,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_03puff:1",
@@ -5445,7 +5445,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_03puff:2",
@@ -5470,7 +5470,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_03puff:3",
@@ -5495,7 +5495,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_04regel:1",
@@ -5520,7 +5520,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_04regel:2",
@@ -5545,7 +5545,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_04regel:3",
@@ -5570,7 +5570,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_05archiv:1",
@@ -5595,7 +5595,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_05archiv:2",
@@ -5620,7 +5620,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_05archiv:3",
@@ -5645,7 +5645,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_06leist:1",
@@ -5670,7 +5670,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_06leist:2",
@@ -5695,7 +5695,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "kb01_12_06leist:3",
@@ -5720,7 +5720,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/2001/methode/"
   },
   {
     "id": "k01_12_01lebens1990:1",
@@ -5745,7 +5745,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/index.php/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/index.php/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_01lebens1990:2",
@@ -5770,7 +5770,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/index.php/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/index.php/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_02ertrag1990:1",
@@ -5795,7 +5795,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_02ertrag1990:2",
@@ -5820,7 +5820,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_03puff1990:1",
@@ -5845,7 +5845,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_03puff1990:2",
@@ -5870,7 +5870,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_04regel1990:1",
@@ -5895,7 +5895,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_04regel1990:2",
@@ -5920,7 +5920,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_05archiv1990:1",
@@ -5945,7 +5945,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_05archiv1990:2",
@@ -5970,7 +5970,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_06leist1990:1",
@@ -5995,7 +5995,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_12_06leist1990:2",
@@ -6020,7 +6020,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/fc058907-6863-3850-b463-19b1b4034a1d"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/bodenfunktionen/1990/methode/"
   },
   {
     "id": "k01_13bodplan2015:1",
@@ -6045,7 +6045,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/37e7741e-a474-3501-8db1-a7e3c8c8a8d2"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2015/kartenbeschreibung/"
   },
   {
     "id": "k01_13bodplan2010:1",
@@ -6070,7 +6070,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/e71049a4-8188-31f4-93bc-c3a5c4b97689"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2010/kartenbeschreibung/"
   },
   {
     "id": "k01_13bodplan2005:1",
@@ -6095,7 +6095,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/abd8662f-0bfc-3506-bffc-3114d19a3b37"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2005/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2005/kartenbeschreibung/"
   },
   {
     "id": "k01_13bodplan2001:1",
@@ -6120,7 +6120,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
   },
   {
     "id": "k01_13bodplan2001:2",
@@ -6145,7 +6145,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
   },
   {
     "id": "k01_13bodplan2001:3",
@@ -6170,7 +6170,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/bf2aa044-ada5-3ba1-ac30-55f342788b55"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/planungshinweise-bodenschutz/2001/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg_raster2021:0",
@@ -6195,7 +6195,7 @@
     "gfiTheme": "default",
     "transparent": "True",
     "tilesize": "512",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg2021:2",
@@ -6220,7 +6220,7 @@
     "gfiTheme": "default",
     "transparent": "True",
     "tilesize": "512",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg2021:0",
@@ -6245,7 +6245,7 @@
     "gfiTheme": "default",
     "transparent": "True",
     "tilesize": "512",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg2021:1",
@@ -6270,7 +6270,7 @@
     "gfiTheme": "default",
     "transparent": "True",
     "tilesize": "512",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2021/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_02versieg2016:1",
@@ -6295,7 +6295,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/9e5f4bf6-5bdb-38ab-a21d-96fc2e37bb40"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2016/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2016/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg2011:1",
@@ -6320,7 +6320,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/031ab7a1-3856-32c6-84c0-b8c3e08e4119"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2011/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2011/kartenbeschreibung/"
   },
   {
     "id": "k01_02versieg2005:1",
@@ -6345,7 +6345,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/b6e74ede-5111-34cf-bedd-872fd276313b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2005/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2005/kartenbeschreibung/"
   },
   {
     "id": "versiegelung2001:1",
@@ -6370,7 +6370,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/1fdfc892-2c3b-3d5c-889f-e586de192d13"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2001/kartenbeschreibung/"
   },
   {
     "id": "versiegelung2001:2",
@@ -6395,7 +6395,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/1fdfc892-2c3b-3d5c-889f-e586de192d13"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/2001/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/2001/kartenbeschreibung/"
   },
   {
     "id": "versiegelung:1",
@@ -6420,7 +6420,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/8e8be94e-d6a0-3c32-a4f3-77b0c5b71f9b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/1990/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/1990/kartenbeschreibung/"
   },
   {
     "id": "versiegelung:2",
@@ -6445,7 +6445,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/8e8be94e-d6a0-3c32-a4f3-77b0c5b71f9b"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/versiegelung/1990/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/versiegelung/1990/kartenbeschreibung/"
   },
   {
     "id": "wmsk_entsiegelungspotenziale:1",
@@ -6470,7 +6470,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5b02005b-ed3b-3afb-b733-9b29b65d032f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/entsiegelungspotenziale/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/entsiegelungspotenziale/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "wmsk_entsiegelungspotenziale:2",
@@ -6495,7 +6495,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/5b02005b-ed3b-3afb-b733-9b29b65d032f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/entsiegelungspotenziale/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/entsiegelungspotenziale/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_1moorbodtyp2015:2",
@@ -6520,7 +6520,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_1moorbodtyp2015:3",
@@ -6545,7 +6545,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_1moorbodtyp2015:1",
@@ -6570,7 +6570,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_1moorbodtyp2015:4",
@@ -6595,7 +6595,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_2moor_cspeicher2015:2",
@@ -6620,7 +6620,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_2moor_cspeicher2015:3",
@@ -6645,7 +6645,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_2moor_cspeicher2015:1",
@@ -6670,7 +6670,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_19_2moor_cspeicher2015:4",
@@ -6695,7 +6695,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/05fc75f6-13ac-3339-acce-500bf10238a0"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/moore/2015/kartenbeschreibung/"
   },
   {
     "id": "wmsk_01_14_01geoskizze:1",
@@ -6720,7 +6720,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/410adf10-430b-3ac8-bfa8-8bc85c34cbc6"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/geologische-skizze/2007/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/geologische-skizze/2007/kartenbeschreibung/"
   },
   {
     "id": "wmsk_01_14_01geoskizze:2",
@@ -6745,7 +6745,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/410adf10-430b-3ac8-bfa8-8bc85c34cbc6"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/geologische-skizze/2007/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/geologische-skizze/2007/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_20gk25:1",
@@ -6770,7 +6770,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/af1ee7c7-2dd5-3c68-9b9d-cf0d6091f0c1"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/geologische-karte/1937/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/geologische-karte/1937/kartenbeschreibung/"
   },
   {
     "id": "wmsk01_20gk25:2",
@@ -6795,7 +6795,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/af1ee7c7-2dd5-3c68-9b9d-cf0d6091f0c1"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/geologische-karte/1937/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/geologische-karte/1937/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:1",
@@ -6820,7 +6820,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:2",
@@ -6845,7 +6845,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:3",
@@ -6870,7 +6870,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:4",
@@ -6895,7 +6895,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:5",
@@ -6920,7 +6920,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:6",
@@ -6945,7 +6945,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "k_inggeo:7",
@@ -6970,7 +6970,7 @@
         "rs_id": "https://registry.gdi-de.org/id/de.be.csw/6b1785f4-95cd-32fa-b568-4587dd302c9f"
       }
     ],
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/ingenieurgeologische-karte/fortlaufend-aktualisiert/kartenbeschreibung/"
   },
   {
     "id": "ua_rieselfelder:a_rieselfelder_pkt",
@@ -6997,7 +6997,7 @@
     "transparent": true,
     "singleTile": true,
     "layerAttribution": "Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet \"Umweltatlas Berlin / [Titel des Datensatzes]\".",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
   },
   {
     "id": "ua_rieselfelder:b_rieselfeldbezirke",
@@ -7024,7 +7024,7 @@
     "transparent": true,
     "singleTile": true,
     "layerAttribution": "Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet \"Umweltatlas Berlin / [Titel des Datensatzes]\".",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
   },
   {
     "id": "ua_rieselfelder:c_sondernutzungsflaechen",
@@ -7051,7 +7051,7 @@
     "transparent": true,
     "singleTile": true,
     "layerAttribution": "Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet \"Umweltatlas Berlin / [Titel des Datensatzes]\".",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
   },
   {
     "id": "ua_rieselfelder:d_rieselfelder",
@@ -7078,6 +7078,7 @@
     "transparent": true,
     "singleTile": true,
     "layerAttribution": "Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet \"Umweltatlas Berlin / [Titel des Datensatzes]\".",
-    "uainfo": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
+    "infoURL": "https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
   }
 ]
+

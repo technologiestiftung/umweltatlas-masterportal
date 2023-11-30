@@ -2,8 +2,8 @@
 import getters from "../store/gettersLayerInformation";
 import mutations from "../store/mutationsLayerInformation";
 import ToolWindow from "../../../share-components/ToolWindow.vue";
-import {isWebLink} from "../../../utils/urlHelper";
-import {mapActions, mapGetters, mapMutations} from "vuex";
+import { isWebLink } from "../../../utils/urlHelper";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 
 /**
  * The Layer Information that gives the user information, links and the legend for a layer
@@ -11,73 +11,111 @@ import {mapActions, mapGetters, mapMutations} from "vuex";
 export default {
     name: "LayerInformation",
     components: {
-        ToolWindow
+        ToolWindow,
     },
-    data () {
+    data() {
         return {
             activeTab: "layerinfo-legend",
-            openDropdown: false
+            openDropdown: false,
         };
     },
     computed: {
         ...mapGetters("LayerInformation", Object.keys(getters)),
         ...mapGetters(["metaDataCatalogueId"]),
-        showAdditionalMetaData () {
-            return this.layerInfo.metaURL !== null && typeof this.abstractText !== "undefined" && this.abstractText !== this.noMetaDataMessage && this.abstractText !== this.noMetadataLoaded;
+        showAdditionalMetaData() {
+            return (
+                this.layerInfo.metaURL !== null &&
+                typeof this.abstractText !== "undefined" &&
+                this.abstractText !== this.noMetaDataMessage &&
+                this.abstractText !== this.noMetadataLoaded
+            );
         },
-        showCustomMetaData () {
+        showCustomMetaData() {
             return this.customText;
         },
-        showPublication () {
-            return typeof this.datePublication !== "undefined" && this.datePublication !== null && this.datePublication !== "";
+        // showInfoURL() {
+        //     return this.infoURL;
+        // },
+        showPublication() {
+            return (
+                typeof this.datePublication !== "undefined" &&
+                this.datePublication !== null &&
+                this.datePublication !== ""
+            );
         },
-        showRevision () {
-            return typeof this.dateRevision !== "undefined" && this.dateRevision !== null && this.dateRevision !== "";
+        showRevision() {
+            return (
+                typeof this.dateRevision !== "undefined" &&
+                this.dateRevision !== null &&
+                this.dateRevision !== ""
+            );
         },
-        showPeriodicity () {
-            return this.periodicityKey !== "" && this.periodicityKey !== null && this.periodicityKey !== undefined;
+        showPeriodicity() {
+            return (
+                this.periodicityKey !== "" &&
+                this.periodicityKey !== null &&
+                this.periodicityKey !== undefined
+            );
         },
-        showDownloadLinks () {
+        showDownloadLinks() {
             return this.downloadLinks !== null;
         },
-        showUrl () {
-            return (this.layerInfo.url !== null && this.layerInfo.typ !== "SensorThings" && this.showUrlGlobal === true) || (this.layerInfo.url !== null && this.layerInfo.typ !== "SensorThings" && this.showUrlGlobal === undefined && this.layerInfo.urlIsVisible !== false);
+        showUrl() {
+            return (
+                (this.layerInfo.url !== null &&
+                    this.layerInfo.typ !== "SensorThings" &&
+                    this.showUrlGlobal === true) ||
+                (this.layerInfo.url !== null &&
+                    this.layerInfo.typ !== "SensorThings" &&
+                    this.showUrlGlobal === undefined &&
+                    this.layerInfo.urlIsVisible !== false)
+            );
         },
-        showAttachFile () {
+        showAttachFile() {
             return this.downloadLinks && this.downloadLinks.length > 1;
         },
-        layerUrl () {
-            return Array.isArray(this.layerInfo.url) ? this.layerInfo.url.map((url, i) => ({url, typ: this.layerInfo.typ?.[i]})).map(this.getGetCapabilitiesUrl) : this.getGetCapabilitiesUrl({url: this.layerInfo.url, typ: this.layerInfo.typ});
+        layerUrl() {
+            return Array.isArray(this.layerInfo.url)
+                ? this.layerInfo.url
+                      .map((url, i) => ({ url, typ: this.layerInfo.typ?.[i] }))
+                      .map(this.getGetCapabilitiesUrl)
+                : this.getGetCapabilitiesUrl({
+                      url: this.layerInfo.url,
+                      typ: this.layerInfo.typ,
+                  });
         },
-        showMoreLayers () {
+        showMoreLayers() {
             if (this.layerInfo.metaIdArray) {
-                return this.layerInfo.metaIdArray.length > 1 && !this.layerInfo.metaIdArray.every(item => item === null);
+                return (
+                    this.layerInfo.metaIdArray.length > 1 &&
+                    !this.layerInfo.metaIdArray.every((item) => item === null)
+                );
             }
             return false;
         },
-        showInformation () {
+        showInformation() {
             return this.active;
         },
-        legendURL () {
+        legendURL() {
             return this.layerInfo.legendURL;
-        }
+        },
     },
 
-    created () {
+    created() {
         this.setConfigs();
     },
 
-    mounted () {
+    mounted() {
         if (this.metaDataCatalogueId) {
             this.setMetaDataCatalogueId(this.metaDataCatalogueId);
         }
         // might be caught from self when triggerClose() is called
         Backbone.Events.listenTo(Radio.channel("Layer"), {
-            "setLayerInfoChecked": (value) => {
+            setLayerInfoChecked: (value) => {
                 if (!value) {
                     this.close();
                 }
-            }
+            },
         });
     },
 
@@ -85,7 +123,7 @@ export default {
         ...mapActions("LayerInformation", [
             "changeLayerInfo",
             "activate",
-            "setConfigParams"
+            "setConfigParams",
         ]),
         ...mapMutations("LayerInformation", Object.keys(mutations)),
         isWebLink,
@@ -93,7 +131,7 @@ export default {
          * Closes the LayerInformation
          * @returns {void}
          */
-        close () {
+        close() {
             this.setActive(false);
             this.$emit("close");
         },
@@ -101,16 +139,19 @@ export default {
          * Trigger (Radio) close related events
          * @returns {void}
          */
-        triggerClose () {
+        triggerClose() {
             Radio.trigger("Layer", "setLayerInfoChecked", false);
-            Radio.trigger("LayerInformation", "unhighlightLayerInformationIcon");
+            Radio.trigger(
+                "LayerInformation",
+                "unhighlightLayerInformationIcon"
+            );
         },
         /**
          * Changes the abstract Text in case of group layer, closes the dropdown manually
          * @param {Event} ev click event of dropdown
          * @returns {void}
          */
-        changeLayerAbstract (ev) {
+        changeLayerAbstract(ev) {
             ev.stopPropagation();
             this.changeLayerInfo(ev.target.text);
             this.setCurrentLayerName(ev.target.text);
@@ -121,7 +162,7 @@ export default {
          * @param {String} tab the tab name
          * @returns {Boolean}  true if the given tab name is active
          */
-        isActiveTab (tab) {
+        isActiveTab(tab) {
             return this.activeTab === tab;
         },
         /**
@@ -129,7 +170,7 @@ export default {
          * @param {Object[]} evt the target of current click event
          * @returns {void}
          */
-        setActiveTab (evt) {
+        setActiveTab(evt) {
             if (evt && evt.target && evt.target.hash) {
                 this.activeTab = evt.target.hash.substring(1);
             }
@@ -139,15 +180,20 @@ export default {
          * @param {String} tab name of the tab depending on property activeTab
          * @returns {String} classNames of the tab
          */
-        getTabPaneClasses (tab) {
-            return {active: this.isActiveTab(tab), show: this.isActiveTab(tab), "tab-pane": true, fade: true};
+        getTabPaneClasses(tab) {
+            return {
+                active: this.isActiveTab(tab),
+                show: this.isActiveTab(tab),
+                "tab-pane": true,
+                fade: true,
+            };
         },
         /**
          * stops the click event from closing the menu tree
          * @param {String} evt click event
          * @returns {void}
          */
-        onClick (evt) {
+        onClick(evt) {
             evt.stopPropagation();
         },
         /**
@@ -155,11 +201,11 @@ export default {
          * @param {String} evt click event
          * @returns {void}
          */
-        onClickDropdown (evt) {
+        onClickDropdown(evt) {
             evt.stopPropagation();
             this.openDropdown = true;
         },
-        setConfigs () {
+        setConfigs() {
             this.setConfigParams(Config);
         },
         /**
@@ -168,7 +214,7 @@ export default {
          * @param {String} typ service type (e.g., WMS)
          * @returns {String} GetCapabilities URL
          */
-        getGetCapabilitiesUrl ({url, typ}) {
+        getGetCapabilitiesUrl({ url, typ }) {
             const urlObject = new URL(url, location.href);
 
             if (typ !== "OAF") {
@@ -176,8 +222,8 @@ export default {
                 urlObject.searchParams.set("REQUEST", "GetCapabilities");
             }
             return urlObject.href;
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -189,21 +235,17 @@ export default {
         @close="triggerClose"
     >
         <template #title>
-            <span>{{ $t("common:modules.layerInformation.informationAndLegend") }}</span>
+            <span>{{
+                $t("common:modules.layerInformation.informationAndLegend")
+            }}</span>
         </template>
         <template #body>
             <div class="body">
-                <h4
-                    class="subtitle"
-                    :title="title"
-                >
+                <h4 class="subtitle" :title="title">
                     {{ title }}
                 </h4>
 
-                <div
-                    v-if="showMoreLayers"
-                    class="dropdown mb-2"
-                >
+                <div v-if="showMoreLayers" class="dropdown mb-2">
                     <button
                         id="changeLayerInfo"
                         class="btn btn-outline-default dropdown-toggle"
@@ -211,81 +253,83 @@ export default {
                         type="button"
                         @click="onClickDropdown"
                     >
-                        {{ $t("common:modules.layerInformation.changeLayerInfo") }}
+                        {{
+                            $t(
+                                "common:modules.layerInformation.changeLayerInfo"
+                            )
+                        }}
                         <span class="caret" />
                     </button>
-                    <ul
-                        class="dropdown-menu"
-                        :class="{ show: openDropdown }"
-                    >
-                        <li
-                            v-for="name in layerInfo.layerNames"
-                            :key="name"
-                        >
+                    <ul class="dropdown-menu" :class="{ show: openDropdown }">
+                        <li v-for="name in layerInfo.layerNames" :key="name">
                             <a
                                 href="#"
                                 class="dropdown-item abstractChange"
                                 :class="{ active: name === currentLayerName }"
                                 @click="changeLayerAbstract"
-                            >{{ $t(name) }}</a>
+                                >{{ $t(name) }}</a
+                            >
                         </li>
                     </ul>
                 </div>
-                <div
-                    class="mb-2 abstract"
-                    v-html="abstractText"
-                />
+                <div class="mb-2 abstract" v-html="abstractText" />
                 <div v-if="showAdditionalMetaData">
-                    <p
-                        v-for="url in metaURLs"
-                        :key="url"
-                        class="float-end"
-                    >
-                        <a
-                            :href="url"
-                            target="_blank"
-                            @click="onClick"
-                        >
-                            {{ $t("common:modules.layerInformation.additionalMetadata") }}
+                    <p v-for="url in metaURLs" :key="url" class="float-end">
+                        <a :href="url" target="_blank" @click="onClick">
+                            {{
+                                $t(
+                                    "common:modules.layerInformation.additionalMetadata"
+                                )
+                            }}
                         </a>
                     </p>
                 </div>
                 <p v-if="showPublication">
-                    {{ $t("common:modules.layerInformation.publicationCreation") }}: {{ datePublication }}
+                    {{
+                        $t(
+                            "common:modules.layerInformation.publicationCreation"
+                        )
+                    }}: {{ datePublication }}
                 </p>
                 <p v-if="showRevision">
-                    {{ $t("common:modules.layerInformation.lastModified") }}: {{ dateRevision }}
+                    {{ $t("common:modules.layerInformation.lastModified") }}:
+                    {{ dateRevision }}
                 </p>
                 <p v-if="showPeriodicity">
-                    {{ $t("common:modules.layerInformation.periodicityTitle") }}: {{ $t(periodicityKey) }}
+                    {{
+                        $t("common:modules.layerInformation.periodicityTitle")
+                    }}: {{ $t(periodicityKey) }}
                 </p>
-                <template
-                    v-if="showCustomMetaData"
-                >
-                    <div
-                        v-for="(key, value) in customText"
-                        :key="key"
-                    >
-                        <p
-                            v-if="isWebLink(key)"
-                            class="mb-0"
-                        >
+                <template v-if="showCustomMetaData">
+                    <div v-for="(key, value) in customText" :key="key">
+                        <p v-if="isWebLink(key)" class="mb-0">
                             {{ value + ": " }}
-                            <a
-                                :href="value"
-                                target="_blank"
-                            >{{ key }}</a>
+                            <a :href="value" target="_blank">{{ key }}</a>
                         </p>
-                        <p
-                            v-else
-                            class="mb-0"
-                        >
+                        <p v-else class="mb-0">
                             {{ value + ": " + key }}
                         </p>
                     </div>
                 </template>
-                <hr>
+                <hr />
                 <ul class="nav nav-tabs">
+                    <li
+                        v-if="legendURL !== 'ignore'"
+                        value="layerinfo-text"
+                        class="nav-item"
+                        role="button"
+                        tabindex="0"
+                        @click="onClick"
+                        @keydown.enter="onClick"
+                    >
+                        <a
+                            href="#layerinfo-text"
+                            class="nav-link"
+                            :class="{ active: isActiveTab('layerinfo-text') }"
+                            @click="setActiveTab"
+                            >layer text
+                        </a>
+                    </li>
                     <li
                         v-if="legendURL !== 'ignore'"
                         value="layerinfo-legend"
@@ -298,9 +342,9 @@ export default {
                         <a
                             href="#layerinfo-legend"
                             class="nav-link"
-                            :class="{active: isActiveTab('layerinfo-legend') }"
+                            :class="{ active: isActiveTab('layerinfo-legend') }"
                             @click="setActiveTab"
-                        >{{ $t("common:modules.layerInformation.legend") }}
+                            >{{ $t("common:modules.layerInformation.legend") }}
                         </a>
                     </li>
                     <li
@@ -315,9 +359,15 @@ export default {
                         <a
                             href="#LayerInfoDataDownload"
                             class="nav-link"
-                            :class="{active: isActiveTab('LayerInfoDataDownload') }"
+                            :class="{
+                                active: isActiveTab('LayerInfoDataDownload'),
+                            }"
                             @click="setActiveTab"
-                        >{{ $t("common:modules.layerInformation.downloadDataset") }}
+                            >{{
+                                $t(
+                                    "common:modules.layerInformation.downloadDataset"
+                                )
+                            }}
                         </a>
                     </li>
                     <li
@@ -332,13 +382,58 @@ export default {
                         <a
                             href="#url"
                             class="nav-link"
-                            :class="{active: isActiveTab('url') }"
+                            :class="{ active: isActiveTab('url') }"
                             @click="setActiveTab"
-                        >{{ Array.isArray(layerInfo.url) ? $t("common:modules.layerInformation.multiAddress") : $t(layerInfo.typ) + " - " + $t("common:modules.layerInformation.addressSuffix") }}
+                            >{{
+                                Array.isArray(layerInfo.url)
+                                    ? $t(
+                                          "common:modules.layerInformation.multiAddress"
+                                      )
+                                    : $t(layerInfo.typ) +
+                                      " - " +
+                                      $t(
+                                          "common:modules.layerInformation.addressSuffix"
+                                      )
+                            }}
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content">
+                    <div id="layer-accordions">
+                        <input type="checkbox" id="section1" />
+                        <label for="section1" class="accordion-header">
+                            <span class="header-title">Umweltatlas</span>
+                            <span class="header-icon">▼</span>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Ausführliche Informationen zum ausgewählten
+                                Datensatz, wie Informations- und
+                                Datengrundlagen, Methoden sowie relevante
+                                Begleitliteratur und einem Kartenimpressum
+                                finden Sie im
+                                <a href="#">Umweltatlas</a>.
+                            </p>
+                        </div>
+
+                        <input type="checkbox" id="section2" />
+                        <label for="section2" class="accordion-header">
+                            <span class="header-title">Umweltatlas</span>
+                            <span class="header-icon">▼</span>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Ausführliche Informationen zum ausgewählten
+                                Datensatz, wie Informations- und
+                                Datengrundlagen, Methoden sowie relevante
+                                Begleitliteratur und einem Kartenimpressum
+                                finden Sie im
+                                <a href="#">Umweltatlas</a>.
+                            </p>
+                        </div>
+
+                        <!-- Add more sections as needed -->
+                    </div>
                     <div
                         v-if="legendURL !== 'ignore'"
                         id="layerinfo-legend"
@@ -347,6 +442,26 @@ export default {
                         :type="String('layerinfo-legend')"
                     />
                     <div
+                        id="layerinfo-text"
+                        class="row"
+                        :class="getTabPaneClasses('layerinfo-text')"
+                        :show="isActiveTab('layerinfo-text')"
+                        :type="String('layerinfo-text')"
+                    >
+                        <a
+                            :href="layerInfo.infoURL"
+                            target="_blank"
+                            @click="onClick"
+                        >
+                            {{ layerInfo.infoURL }}
+                        </a>
+
+                        <!-- <iframe
+                            src="https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
+                            frameborder="0"
+                        ></iframe> -->
+                    </div>
+                    <div
                         id="LayerInfoDataDownload"
                         class="row"
                         :class="getTabPaneClasses('LayerInfoDataDownload')"
@@ -354,10 +469,7 @@ export default {
                         :type="String('LayerInfoDataDownload')"
                     >
                         <div class="col-lg-7">
-                            <ul
-                                v-if="showDownloadLinks"
-                                class="pt-5"
-                            >
+                            <ul v-if="showDownloadLinks" class="pt-5">
                                 <li
                                     v-for="downloadLink in downloadLinks"
                                     :key="downloadLink.linkName"
@@ -372,11 +484,12 @@ export default {
                                 </li>
                             </ul>
                         </div>
-                        <div
-                            v-if="(showAttachFile)"
-                            class="col-lg-5 pt-5"
-                        >
-                            <span class="download-note">{{ $t(("common:modules.layerInformation.attachFileMessage")) }}</span>
+                        <div v-if="showAttachFile" class="col-lg-5 pt-5">
+                            <span class="download-note">{{
+                                $t(
+                                    "common:modules.layerInformation.attachFileMessage"
+                                )
+                            }}</span>
                         </div>
                     </div>
                     <div
@@ -386,15 +499,14 @@ export default {
                         :class="getTabPaneClasses('url')"
                         :type="String('url')"
                     >
-                        <div
-                            v-if="Array.isArray(layerInfo.url)"
-                            class="pt-5"
-                        >
+                        <div v-if="Array.isArray(layerInfo.url)" class="pt-5">
                             <ul
                                 v-for="(layerInfoUrl, i) in layerInfo.url"
                                 :key="layerInfoUrl"
                             >
-                                {{ layerInfo.layerNames[i] }}
+                                {{
+                                    layerInfo.layerNames[i]
+                                }}
                                 <li>
                                     <a
                                         :href="layerUrl[i]"
@@ -406,12 +518,10 @@ export default {
                                 </li>
                             </ul>
                         </div>
-                        <div
-                            v-else
-                            class="pt-5"
-                        >
+                        <div v-else class="pt-5">
                             <ul>
                                 <li>
+                                    ?????
                                     <a
                                         :href="layerUrl"
                                         target="_blank"
@@ -430,121 +540,121 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
+@import "~variables";
 
-    .subtitle {
-        color: $light_red;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: inline-block;
-        max-width: 100%;
-        padding-top: 1px;
-        margin-bottom: 9px;
-    }
-    hr {
-        margin: 15px 0 10px 0;
-    }
+.subtitle {
+    color: $light_red;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+    padding-top: 1px;
+    margin-bottom: 9px;
+}
+hr {
+    margin: 15px 0 10px 0;
+}
 
-    .body {
-        >ul {
-            background-color: $white;
-        }
-        max-height: 66vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding: 5px 10px;
-        font-size: $font-size-base;
-    }
-
-    .layerInformation {
-        position: absolute;
-        overflow: unset;
-        top: 20px;
-        right: 60px;
-        max-width:600px;
-        width: 45vw;
-        margin: 0 10px 30px 10px;
-        z-index: 1010;
+.body {
+    > ul {
         background-color: $white;
-        box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.176);
-        border: 1px solid $light_grey;
+    }
+    max-height: 66vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px 10px;
+    font-size: $font-size-base;
+}
 
-        @include media-breakpoint-down(sm) {
-            inset: 12px auto auto 0;
-            max-width:750px;
-            width: 95vw;
-            max-height: 80vh;
+.layerInformation {
+    position: absolute;
+    overflow: unset;
+    top: 20px;
+    right: 60px;
+    max-width: 600px;
+    width: 45vw;
+    margin: 0 10px 30px 10px;
+    z-index: 1010;
+    background-color: $white;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.176);
+    border: 1px solid $light_grey;
+
+    @include media-breakpoint-down(sm) {
+        inset: 12px auto auto 0;
+        max-width: 750px;
+        width: 95vw;
+        max-height: 80vh;
+    }
+}
+
+.header {
+    padding: 10px 10px 5px 10px;
+    border-bottom: 1px solid $light_grey;
+    cursor: move;
+}
+.bi-x-lg {
+    &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}
+
+.nav-tabs {
+    display: flex;
+    > li {
+        font-size: $font-size-base;
+        > a {
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
-
-    .header {
-        padding: 10px 10px 5px 10px;
-        border-bottom: 1px solid $light_grey;
-        cursor: move;
-    }
-    .bi-x-lg {
-        &:hover {
-            opacity: 0.7;
-            cursor: pointer;
-        }
-    }
-
-    .nav-tabs {
-        display: flex;
-        >li {
-            font-size: $font-size-base;
-            >a {
-                text-overflow: ellipsis;
-                overflow: hidden;
-            }
-        }
-    }
-    .tab-content {
-        .tab-pane {
-            >ul {
-                >li {
-                    >a {
-                        font-size: $font-size-base;
-                        text-overflow: ellipsis;
-                        display: inline-block;
-                        max-width: 95%;
-                        overflow: hidden;
-                    }
+}
+.tab-content {
+    .tab-pane {
+        > ul {
+            > li {
+                > a {
+                    font-size: $font-size-base;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    max-width: 95%;
+                    overflow: hidden;
                 }
             }
         }
-        #layerinfo-legend {
-            max-width: 95%;
-            overflow: auto;
-        }
     }
-
-    .mb-2 {
-        margin-bottom: 2rem;
+    #layerinfo-legend {
+        max-width: 95%;
+        overflow: auto;
     }
+}
 
-    .dropdown-toggle {
-        width: 100%;
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+.dropdown-menu {
+    width: 100%;
+    a.active {
+        background-color: $accent_active;
+        color: white;
     }
-
-    .dropdown-menu {
-        width: 100%;
-        a.active {
-            background-color: $accent_active;
-            color: white;
-        }
-        a:hover {
-            background-color: $accent_hover;
-        }
+    a:hover {
+        background-color: $accent_hover;
     }
+}
 
-    .download-note {
-        font-weight: bold;
-    }
+.download-note {
+    font-weight: bold;
+}
 
-    .pt-5 {
-        padding-top: 5px;
-    }
-
+.pt-5 {
+    padding-top: 5px;
+}
 </style>
+

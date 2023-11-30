@@ -290,7 +290,7 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                                 console.log("missing service", d.id);
                             }
                             // add link to beschreibung
-                            service.uainfo = beschreibungLink;
+                            service.infoURL = beschreibungLink;
                             servicesWant.push(service);
                             const name = service.name;
 

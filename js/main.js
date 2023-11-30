@@ -11,7 +11,6 @@ import "../css/style.css";
 import HttpApi from "i18next-http-backend";
 import i18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 import utilsLogin from "../src/modules/tools/login/utils/utilsLogin";
-// import "../css/uatlas.scss";
 
 const scriptTags = document.getElementsByTagName("script"),
     scriptTagsArray = Array.prototype.slice.call(scriptTags);

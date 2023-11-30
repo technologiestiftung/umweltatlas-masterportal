@@ -33,5 +33,7 @@ export default {
     noMetadataLoaded: "",
     metaURLs: [],
     currentLayerName: "",
-    showUrlGlobal: null
+    showUrlGlobal: null,
+    infoURL: "",
 };
+

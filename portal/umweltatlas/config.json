@@ -66,7 +66,7 @@
       },
       "contact": {
         "name": "translate#common:menu.contact",
-        "icon": "bi-envelope-fill",
+        "icon": "bi-envelope",
         "serviceId": "80002",
         "includeSystemInfo": true,
         "from": [
@@ -128,17 +128,6 @@
       "legend": {
         "name": "Legende",
         "icon": "bi-book"
-      },
-      "info": {
-        "name": "Informationen",
-        "children": {
-          "staticlinks": [
-            {
-              "name": "Umweltatlas",
-              "url": "https://www.berlin.de/umweltatlas/"
-            }
-          ]
-        }
       },
       "portalTitle": {
         "title": "Berliner Umweltatlas",

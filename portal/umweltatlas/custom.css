@@ -58,3 +58,60 @@
     position: absolute;
 }
 
+/*  layer accordions */
+#layer-accordions {
+    width: 100%; /* Or max-width for a specific size */
+    border-top: 3px solid #000; /* Top border as in the image */
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+#layer-accordions input {
+    display: none;
+}
+
+#layer-accordions label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #f2f2f2; /* Light grey background */
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#layer-accordions label:hover {
+    background-color: #edf8f4; /* Slightly darker on hover */
+}
+
+.accordion-header .header-title {
+    font-weight: bold;
+}
+
+.accordion-header .header-icon {
+    font-size: 1.5em;
+    transform: rotate(0); /* Arrow pointing down */
+    transition: transform 0.3s;
+}
+
+#layer-accordions input:checked + label .header-icon {
+    transform: rotate(180deg); /* Arrow pointing up when section is open */
+}
+
+#layer-accordions .content {
+    display: none;
+    padding: 1em;
+    background-color: #edf8f4; /* White background */
+    margin-bottom: 2px;
+}
+
+#layer-accordions input:checked + label + .content {
+    display: block;
+}
+
+/* Style for the link inside the content */
+#layer-accordions .content a {
+    color: #005bac; /* Blue color for the link */
+    text-decoration: none;
+}
+

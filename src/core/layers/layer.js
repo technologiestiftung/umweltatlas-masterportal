@@ -11,7 +11,7 @@ import Cluster from "ol/source/Cluster";
  * @param {Boolean} [initialize=true] to be set to false, if layer is no Child-Layer
  * @returns {void}
  */
-export default function Layer (attrs, layer, initialize = true) {
+export default function Layer(attrs, layer, initialize = true) {
     const defaults = {
         hitTolerance: 0,
         isNeverVisibleInTree: false,
@@ -49,23 +49,27 @@ export default function Layer (attrs, layer, initialize = true) {
         isClustered: false,
         filterRefId: undefined,
         scaleText: "",
-        renderer: "default"
+        renderer: "default",
     };
 
     this.layer = layer;
     this.observersAutoRefresh = [];
-    this.attributes = {...Object.assign({}, this.layer.values_, defaults, attrs)};
+    this.attributes = {
+        ...Object.assign({}, this.layer.values_, defaults, attrs),
+    };
     this.id = attrs.id;
 
     delete this.attributes.source;
     if (initialize) {
         this.initialize(attrs);
-    }
-    else if (attrs.isSelected === true || store.getters.treeType === "light") {
+    } else if (
+        attrs.isSelected === true ||
+        store.getters.treeType === "light"
+    ) {
         this.setIsVisibleInMap(attrs.isSelected);
     }
     this.setMinMaxResolutions();
-    this.checkForScale({scale: store.getters["Maps/scale"]});
+    this.checkForScale({ scale: store.getters["Maps/scale"] });
     this.registerInteractionMapViewListeners();
     this.onMapModeChanged(this);
     this.handleScaleRange();
@@ -73,35 +77,57 @@ export default function Layer (attrs, layer, initialize = true) {
     this.changeLang();
 
     if (typeof this.layer.getSource === "function") {
-        this.layer.getSource()?.on("featuresloaderror", async function () {
-            const url = this.attributes.url
-            + "&service="
-            + this.attributes.typ
-            + "&version="
-            + this.attributes.version
-            + "&request=describeFeatureType";
+        this.layer.getSource()?.on(
+            "featuresloaderror",
+            async function () {
+                const url =
+                    this.attributes.url +
+                    "&service=" +
+                    this.attributes.typ +
+                    "&version=" +
+                    this.attributes.version +
+                    "&request=describeFeatureType";
 
-            await this.errorHandling(await axios.get(url, {withCredentials: true})
-                .catch(function (error) {
-                    return error.toJSON().status;
-                }), this.get("name"));
-        }.bind(this));
-        this.layer.getSource()?.on("tileloaderror", async function (evt) {
-            const url = evt.tile.src_ ? evt.tile.src_ : evt.tile.url_;
+                await this.errorHandling(
+                    await axios
+                        .get(url, { withCredentials: true })
+                        .catch(function (error) {
+                            return error.toJSON().status;
+                        }),
+                    this.get("name")
+                );
+            }.bind(this)
+        );
+        this.layer.getSource()?.on(
+            "tileloaderror",
+            async function (evt) {
+                const url = evt.tile.src_ ? evt.tile.src_ : evt.tile.url_;
 
-            if (url) {
-                await this.errorHandling(await axios.get(url, {withCredentials: true})
-                    .catch(function (error) {
-                        return error.toJSON().status;
-                    }), this.get("name"));
-            }
-        }.bind(this));
-        this.layer.getSource()?.on("imageloaderror", async function (evt) {
-            await this.errorHandling(await axios.get(evt.image.src_, {withCredentials: true})
-                .catch(function (error) {
-                    return error.toJSON().status;
-                }), this.get("name"));
-        }.bind(this));
+                if (url) {
+                    await this.errorHandling(
+                        await axios
+                            .get(url, { withCredentials: true })
+                            .catch(function (error) {
+                                return error.toJSON().status;
+                            }),
+                        this.get("name")
+                    );
+                }
+            }.bind(this)
+        );
+        this.layer.getSource()?.on(
+            "imageloaderror",
+            async function (evt) {
+                await this.errorHandling(
+                    await axios
+                        .get(evt.image.src_, { withCredentials: true })
+                        .catch(function (error) {
+                            return error.toJSON().status;
+                        }),
+                    this.get("name")
+                );
+            }.bind(this)
+        );
     }
 }
 /**
@@ -111,7 +137,10 @@ export default function Layer (attrs, layer, initialize = true) {
  */
 Layer.prototype.initialize = function (attrs) {
     if (store.state.configJson?.Portalconfig.singleBaselayer !== undefined) {
-        this.set("singleBaselayer", store.state.configJson?.Portalconfig.singleBaselayer);
+        this.set(
+            "singleBaselayer",
+            store.state.configJson?.Portalconfig.singleBaselayer
+        );
     }
     if (attrs.clusterDistance) {
         this.set("isClustered", true);
@@ -126,9 +155,11 @@ Layer.prototype.initialize = function (attrs) {
             bridge.layerVisibilityChanged(this, attrs.isSelected);
         }
 
-        this.set("isRemovable", store.state.configJson?.Portalconfig.layersRemovable);
-    }
-    else {
+        this.set(
+            "isRemovable",
+            store.state.configJson?.Portalconfig.layersRemovable
+        );
+    } else {
         this.layer.setVisible(false);
     }
 };
@@ -144,24 +175,32 @@ Layer.prototype.errorHandling = function (errorCode, layerName) {
         alertingContent = "";
 
     if (this.get("datasets") && this.get("datasets")[0]) {
-        linkMetadata = i18next.t("common:modules:core:modelList:layer.errorHandling:LinkMetadata",
-            {linkMetadata: this.get("datasets")[0].show_doc_url + this.get("datasets")[0].md_id
-            });
+        linkMetadata = i18next.t(
+            "common:modules:core:modelList:layer.errorHandling:LinkMetadata",
+            {
+                linkMetadata:
+                    this.get("datasets")[0].show_doc_url +
+                    this.get("datasets")[0].md_id,
+            }
+        );
     }
     if (errorCode === 403) {
-        alertingContent = i18next.t("common:modules.core.modelList.layer.errorHandling.403",
-            {
-                layerName: layerName
-            })
-            + linkMetadata;
+        alertingContent =
+            i18next.t("common:modules.core.modelList.layer.errorHandling.403", {
+                layerName: layerName,
+            }) + linkMetadata;
 
-        store.dispatch("Alerting/addSingleAlert", {content: alertingContent, multipleAlert: true});
+        store.dispatch("Alerting/addSingleAlert", {
+            content: alertingContent,
+            multipleAlert: true,
+        });
     }
-    store.watch((state, getters) => getters["Alerting/showTheModal"], showTheModal => {
-        this.setIsSelected(showTheModal);
-    });
-
-
+    store.watch(
+        (state, getters) => getters["Alerting/showTheModal"],
+        (showTheModal) => {
+            this.setIsSelected(showTheModal);
+        }
+    );
 };
 /**
  * To be overwritten, does nothing.
@@ -169,7 +208,9 @@ Layer.prototype.errorHandling = function (errorCode, layerName) {
  */
 Layer.prototype.createLayer = function () {
     // do in children
-    console.warn("function Layer.createLayer must be overwritten in extended layers!");
+    console.warn(
+        "function Layer.createLayer must be overwritten in extended layers!"
+    );
 };
 /**
  * To be overwritten, does nothing.
@@ -177,32 +218,39 @@ Layer.prototype.createLayer = function () {
  */
 Layer.prototype.createLegend = function () {
     // do in children
-    console.warn("function Layer.createLegend must be overwritten in extended layers!");
+    console.warn(
+        "function Layer.createLegend must be overwritten in extended layers!"
+    );
 };
 /**
-* Register interaction with map view. Listens to change of scale.
-* @returns {void}
-*/
+ * Register interaction with map view. Listens to change of scale.
+ * @returns {void}
+ */
 Layer.prototype.registerInteractionMapViewListeners = function () {
-    store.watch((state, getters) => getters["Maps/scale"], scale => {
-        this.checkForScale({scale: scale});
-    });
+    store.watch(
+        (state, getters) => getters["Maps/scale"],
+        (scale) => {
+            this.checkForScale({ scale: scale });
+        }
+    );
 };
 /**
  * Sets this layers to visible, if it supports the map mode else sets the visibility to false.
  * @returns {void}
  */
 Layer.prototype.onMapModeChanged = function () {
-    store.watch((state, getters) => getters["Maps/mode"], mode => {
-        if (this.get("supported").indexOf(mode) >= 0) {
-            if (this.get("isVisibleInMap")) {
-                this.get("layer").setVisible(true);
+    store.watch(
+        (state, getters) => getters["Maps/mode"],
+        (mode) => {
+            if (this.get("supported").indexOf(mode) >= 0) {
+                if (this.get("isVisibleInMap")) {
+                    this.get("layer").setVisible(true);
+                }
+            } else {
+                this.get("layer").setVisible(false);
             }
         }
-        else {
-            this.get("layer").setVisible(false);
-        }
-    });
+    );
 };
 /**
  * Setter for ol/layer.setMaxResolution
@@ -234,13 +282,15 @@ Layer.prototype.removeLayer = function () {
  * @returns {void}
  */
 Layer.prototype.toggleIsSelected = function () {
-    const newValue = this.attributes.isSelected === undefined ? true : !this.attributes.isSelected;
+    const newValue =
+        this.attributes.isSelected === undefined
+            ? true
+            : !this.attributes.isSelected;
 
     this.setIsSelected(newValue);
     handleSingleBaseLayer(newValue, this);
     handleSingleTimeLayer(newValue, this);
 };
-
 
 /**
  * Checks whether the layer is visible or not based on the scale.
@@ -251,13 +301,17 @@ Layer.prototype.checkForScale = function (options) {
     if (this.get("checkForScale") !== false) {
         const lastValue = this.get("isOutOfRange");
 
-        if (options && parseFloat(options.scale, 10) <= parseInt(this.get("maxScale"), 10) && parseFloat(options.scale, 10) >= parseInt(this.get("minScale"), 10)) {
+        if (
+            options &&
+            parseFloat(options.scale, 10) <=
+                parseInt(this.get("maxScale"), 10) &&
+            parseFloat(options.scale, 10) >= parseInt(this.get("minScale"), 10)
+        ) {
             this.setIsOutOfRange(false);
             if (lastValue !== false) {
                 bridge.outOfRangeChanged(this, false);
             }
-        }
-        else {
+        } else {
             this.setIsOutOfRange(true);
             if (lastValue !== true) {
                 bridge.outOfRangeChanged(this, true);
@@ -284,7 +338,7 @@ Layer.prototype.setIsVisibleInMap = function (newValue) {
     this.set("isVisibleInMap", newValue);
     this.layer.setVisible(newValue);
     if (this.get("typ") === "GROUP" && this.get("layers")) {
-        this.get("layers").forEach(layer => {
+        this.get("layers").forEach((layer) => {
             layer.setVisible(newValue);
         });
     }
@@ -321,8 +375,7 @@ Layer.prototype.decTransparency = function () {
 
     if (decTransparency >= 0) {
         this.setTransparency(decTransparency);
-    }
-    else {
+    } else {
         this.setTransparency(0);
     }
     bridge.renderMenu();
@@ -338,8 +391,7 @@ Layer.prototype.incTransparency = function () {
 
     if (incTransparency <= 100) {
         this.setTransparency(incTransparency);
-    }
-    else {
+    } else {
         this.setTransparency(100);
     }
     bridge.renderMenu();
@@ -423,9 +475,11 @@ Layer.prototype.setIsSelected = function (newValue) {
     this.setIsVisibleInMap(newValue);
 
     if (newValue) {
-        store.dispatch("Maps/addLayerToIndex", {layer: this.layer, zIndex: this.get("selectionIDX")});
-    }
-    else {
+        store.dispatch("Maps/addLayerToIndex", {
+            layer: this.layer,
+            zIndex: this.get("selectionIDX"),
+        });
+    } else {
         map.removeLayer(this.layer);
         if (treeType !== "light") {
             this.resetSelectionIDX();
@@ -446,15 +500,14 @@ Layer.prototype.setIsSelected = function (newValue) {
     }
 };
 /**
-* Toggles the attribute isVisibleInMap. If is true, the layer is set visible.
-* @return {void}
-*/
+ * Toggles the attribute isVisibleInMap. If is true, the layer is set visible.
+ * @return {void}
+ */
 Layer.prototype.toggleIsVisibleInMap = function () {
     if (this.get("isVisibleInMap") === true) {
         this.setIsVisibleInMap(false);
         // this.setIsSelected(false);
-    }
-    else {
+    } else {
         this.setIsSelected(true);
     }
     if (store.getters.treeType !== "light" || store.state.mobile) {
@@ -468,7 +521,9 @@ Layer.prototype.toggleIsVisibleInMap = function () {
  * @returns {void}
  */
 Layer.prototype.updateLayerSource = function () {
-    const layers = bridge.getLayerModelsByAttributes({name: this.get("name")});
+    const layers = bridge.getLayerModelsByAttributes({
+        name: this.get("name"),
+    });
 
     if (layers && layers[0] && this.get("layerSource") !== null) {
         layers[0].setSource(this.get("layerSource"));
@@ -488,16 +543,27 @@ Layer.prototype.activateAutoRefresh = function (isLayerSelected, autoRefresh) {
     this.set("intervalAutoRefresh", -1);
 
     if (isLayerSelected) {
-        this.set("intervalAutoRefresh", setInterval(() => {
-            if (this.get("isVisibleInMap") && this.get("isAutoRefreshing")) {
-                this.setAutoRefreshEvent(layers[0]?.layer ? layers[0].layer : layers[0]);
-                layers.forEach(layer => {
-                    const layerSource = layer.getSource() instanceof Cluster ? layer.getSource().getSource() : layer.getSource();
+        this.set(
+            "intervalAutoRefresh",
+            setInterval(() => {
+                if (
+                    this.get("isVisibleInMap") &&
+                    this.get("isAutoRefreshing")
+                ) {
+                    this.setAutoRefreshEvent(
+                        layers[0]?.layer ? layers[0].layer : layers[0]
+                    );
+                    layers.forEach((layer) => {
+                        const layerSource =
+                            layer.getSource() instanceof Cluster
+                                ? layer.getSource().getSource()
+                                : layer.getSource();
 
-                    layerSource.refresh();
-                });
-            }
-        }, autoRefresh));
+                        layerSource.refresh();
+                    });
+                }
+            }, autoRefresh)
+        );
     }
 };
 /**
@@ -510,18 +576,29 @@ Layer.prototype.setAutoRefreshEvent = function (layer) {
     if (!layer) {
         return;
     }
-    const layerSource = layer.getSource() instanceof Cluster ? layer.getSource().getSource() : layer.getSource();
+    const layerSource =
+        layer.getSource() instanceof Cluster
+            ? layer.getSource().getSource()
+            : layer.getSource();
 
     layerSource.once("featuresloadend", () => {
-        this.observersAutoRefresh.forEach(handler => {
+        this.observersAutoRefresh.forEach((handler) => {
             if (typeof handler === "function") {
                 const features = layerSource.getFeatures();
 
                 if (layer.get("typ") === "GeoJSON") {
                     if (Array.isArray(features)) {
                         features.forEach((feature, idx) => {
-                            if (typeof feature?.getId === "function" && typeof feature.getId() === "undefined") {
-                                feature.setId("geojson-" + layer.get("id") + "-feature-id-" + idx);
+                            if (
+                                typeof feature?.getId === "function" &&
+                                typeof feature.getId() === "undefined"
+                            ) {
+                                feature.setId(
+                                    "geojson-" +
+                                        layer.get("id") +
+                                        "-feature-id-" +
+                                        idx
+                                );
                             }
                         });
                     }
@@ -556,15 +633,25 @@ Layer.prototype.handleScaleRange = function () {
  * @returns {void}
  */
 Layer.prototype.changeLang = function () {
-    this.attributes.selectedTopicsText = i18next.t("common:tree.removeSelection");
-    this.attributes.infosAndLegendText = i18next.t("common:tree.infosAndLegend");
+    this.attributes.selectedTopicsText = i18next.t(
+        "common:tree.removeSelection"
+    );
+    this.attributes.infosAndLegendText = i18next.t(
+        "common:tree.infosAndLegend"
+    );
     this.attributes.removeTopicText = i18next.t("common:tree.removeTopic");
     this.attributes.showTopicText = i18next.t("common:tree.showTopic");
     this.attributes.securedTopicText = i18next.t("common:tree.securedTopic");
-    this.attributes.changeClassDivisionText = i18next.t("common:tree.changeClassDivision");
+    this.attributes.changeClassDivisionText = i18next.t(
+        "common:tree.changeClassDivision"
+    );
     this.attributes.settingsText = i18next.t("common:tree.settings");
-    this.attributes.increaseTransparencyText = i18next.t("common:tree.increaseTransparency");
-    this.attributes.reduceTransparencyText = i18next.t("common:tree.reduceTransparency");
+    this.attributes.increaseTransparencyText = i18next.t(
+        "common:tree.increaseTransparency"
+    );
+    this.attributes.reduceTransparencyText = i18next.t(
+        "common:tree.reduceTransparency"
+    );
     this.attributes.removeLayerText = i18next.t("common:tree.removeLayer");
     this.attributes.levelUpText = i18next.t("common:tree.levelUp");
     this.attributes.levelDownText = i18next.t("common:tree.levelDown");
@@ -591,18 +678,24 @@ Layer.prototype.moveUp = function () {
  * @param {ol.Layer} layer the dedicated layer
  * @returns {void}
  */
-function handleSingleBaseLayer (isSelected, layer) {
+function handleSingleBaseLayer(isSelected, layer) {
     const id = layer.get("id"),
-        layerGroup = bridge.getLayerModelsByAttributes({parentId: layer.get("parentId")}),
-        singleBaselayer = layer.get("singleBaselayer") && layer.get("isBaseLayer") === true;
+        layerGroup = bridge.getLayerModelsByAttributes({
+            parentId: layer.get("parentId"),
+        }),
+        singleBaselayer =
+            layer.get("singleBaselayer") && layer.get("isBaseLayer") === true;
 
     if (isSelected) {
         if (singleBaselayer) {
             const map2D = mapCollection.getMap("2D");
 
-            layerGroup.forEach(aLayer => {
+            layerGroup.forEach((aLayer) => {
                 // folders parentId is baselayer too, but they have not a function checkForScale
-                if (aLayer.get("id") !== id && typeof aLayer.checkForScale === "function") {
+                if (
+                    aLayer.get("id") !== id &&
+                    typeof aLayer.checkForScale === "function"
+                ) {
                     aLayer.set("isSelected", false);
                     aLayer.set("isVisibleInMap", false);
                     if (aLayer.get("layer") !== undefined) {
@@ -610,7 +703,9 @@ function handleSingleBaseLayer (isSelected, layer) {
                     }
                     map2D?.removeLayer(aLayer.get("layer"));
                     // This makes sure that the Oblique Layer, if present in the layerList, is not selectable if switching between baseLayers
-                    aLayer.checkForScale({scale: store.getters["Maps/scale"]});
+                    aLayer.checkForScale({
+                        scale: store.getters["Maps/scale"],
+                    });
                 }
             });
             bridge.renderMenu();
@@ -625,22 +720,29 @@ function handleSingleBaseLayer (isSelected, layer) {
  * @param {Object} model the dedicated model from modelList
  * @returns {void}
  */
-export function handleSingleTimeLayer (isSelected, layer, model) {
-    const selectedLayers = bridge.getLayerModelsByAttributes({isSelected: true, type: "layer", typ: "WMS"}),
+export function handleSingleTimeLayer(isSelected, layer, model) {
+    const selectedLayers = bridge.getLayerModelsByAttributes({
+            isSelected: true,
+            type: "layer",
+            typ: "WMS",
+        }),
         id = layer?.get("id") || model.id,
-        timeLayer = layer || selectedLayers.find(it => it.id === id),
+        timeLayer = layer || selectedLayers.find((it) => it.id === id),
         isTimeLayer = timeLayer?.get("typ") === "WMS" && timeLayer?.get("time");
 
     if (isTimeLayer) {
         if (isSelected) {
             const map2D = mapCollection.getMap("2D");
 
-            selectedLayers.forEach(sLayer => {
+            selectedLayers.forEach((sLayer) => {
                 if (sLayer.get("time") && sLayer.get("id") !== id) {
-                    if (sLayer.get("id").endsWith(store.getters["WmsTime/layerAppendix"])) {
+                    if (
+                        sLayer
+                            .get("id")
+                            .endsWith(store.getters["WmsTime/layerAppendix"])
+                    ) {
                         sLayer.removeLayer(sLayer.get("id"));
-                    }
-                    else {
+                    } else {
                         map2D?.removeLayer(sLayer.get("layer"));
                         sLayer.set("isSelected", false);
                     }
@@ -650,17 +752,15 @@ export function handleSingleTimeLayer (isSelected, layer, model) {
             store.commit("WmsTime/setTimeSliderActive", {
                 active: true,
                 currentLayerId: timeLayer.get("id"),
-                playbackDelay: timeLayer?.get("time")?.playbackDelay || 1
+                playbackDelay: timeLayer?.get("time")?.playbackDelay || 1,
             });
 
             store.commit("WmsTime/setTimeSliderDefaultValue", {
-                currentLayerId: timeLayer.get("id")
+                currentLayerId: timeLayer.get("id"),
             });
 
-
             store.commit("WmsTime/setVisibility", true);
-        }
-        else {
+        } else {
             timeLayer.removeLayer(timeLayer.get("id"));
         }
     }
@@ -691,7 +791,7 @@ Layer.prototype.setIsJustAdded = function (value) {
  * @returns {void}
  */
 Layer.prototype.prepareFeaturesFor3D = function (features) {
-    features.forEach(feature => {
+    features.forEach((feature) => {
         let geometry = feature.getGeometry();
 
         geometry = this.setAltitudeOnGeometry(geometry);
@@ -709,12 +809,16 @@ Layer.prototype.setAltitudeOnGeometry = function (geometry) {
 
     if (type === "Point") {
         geometry.setCoordinates(this.getPointCoordinatesWithAltitude(coords));
-    }
-    else if (type === "MultiPoint") {
-        geometry.setCoordinates(this.getMultiPointCoordinatesWithAltitude(coords));
-    }
-    else {
-        console.error("Type: " + type + " is not supported yet for function \"setAltitudeOnGeometry\"!");
+    } else if (type === "MultiPoint") {
+        geometry.setCoordinates(
+            this.getMultiPointCoordinatesWithAltitude(coords)
+        );
+    } else {
+        console.error(
+            "Type: " +
+                type +
+                ' is not supported yet for function "setAltitudeOnGeometry"!'
+        );
     }
     return geometry;
 };
@@ -724,7 +828,7 @@ Layer.prototype.setAltitudeOnGeometry = function (geometry) {
  * @returns {Number[]} - newly set cooordinates.
  */
 Layer.prototype.getMultiPointCoordinatesWithAltitude = function (coords) {
-    return coords.map(coord => this.getPointCoordinatesWithAltitude(coord));
+    return coords.map((coord) => this.getPointCoordinatesWithAltitude(coord));
 };
 /**
  * Sets the altitude on point coordinates.
@@ -738,16 +842,14 @@ Layer.prototype.getPointCoordinatesWithAltitude = function (coord) {
     if (typeof altitude === "number") {
         if (coord.length === 2) {
             coord.push(parseFloat(altitude));
-        }
-        else if (coord.length === 3) {
+        } else if (coord.length === 3) {
             coord[2] = parseFloat(altitude);
         }
     }
     if (typeof altitudeOffset === "number") {
         if (coord.length === 2) {
             coord.push(parseFloat(altitudeOffset));
-        }
-        else if (coord.length === 3) {
+        } else if (coord.length === 3) {
             coord[2] = coord[2] + parseFloat(altitudeOffset);
         }
     }
@@ -762,7 +864,11 @@ Layer.prototype.toggleFilter = function () {
     const id = this.get("filterRefId");
 
     if (typeof id === "number") {
-        store.dispatch("Tools/Filter/jumpToFilter", {filterId: id}, {root: true});
+        store.dispatch(
+            "Tools/Filter/jumpToFilter",
+            { filterId: id },
+            { root: true }
+        );
     }
 };
 
@@ -777,12 +883,27 @@ Layer.prototype.showLayerInformation = function () {
         showDocUrl = null,
         layerMetaId = null;
 
-    if (this.get("datasets") && Array.isArray(this.get("datasets")) && this.get("datasets")[0] !== null && typeof this.get("datasets")[0] === "object") {
-        cswUrl = this.get("datasets")[0]?.csw_url ? this.get("datasets")[0].csw_url : null;
-        customMetadata = this.get("datasets")[0]?.customMetadata ? this.get("datasets")[0].customMetadata : false;
-        attributes = this.get("datasets")[0]?.attributes ? this.get("datasets")[0].attributes : null;
-        showDocUrl = this.get("datasets")[0]?.show_doc_url ? this.get("datasets")[0].show_doc_url : null;
-        layerMetaId = this.get("datasets")[0]?.md_id ? this.get("datasets")[0].md_id : null;
+    if (
+        this.get("datasets") &&
+        Array.isArray(this.get("datasets")) &&
+        this.get("datasets")[0] !== null &&
+        typeof this.get("datasets")[0] === "object"
+    ) {
+        cswUrl = this.get("datasets")[0]?.csw_url
+            ? this.get("datasets")[0].csw_url
+            : null;
+        customMetadata = this.get("datasets")[0]?.customMetadata
+            ? this.get("datasets")[0].customMetadata
+            : false;
+        attributes = this.get("datasets")[0]?.attributes
+            ? this.get("datasets")[0].attributes
+            : null;
+        showDocUrl = this.get("datasets")[0]?.show_doc_url
+            ? this.get("datasets")[0].show_doc_url
+            : null;
+        layerMetaId = this.get("datasets")[0]?.md_id
+            ? this.get("datasets")[0].md_id
+            : null;
     }
     const metaID = [],
         name = this.get("name");
@@ -790,18 +911,19 @@ Layer.prototype.showLayerInformation = function () {
     metaID.push(layerMetaId);
 
     store.dispatch("LayerInformation/layerInfo", {
-        "id": this.get("id"),
-        "metaID": layerMetaId,
-        "metaIdArray": metaID,
-        "layername": name,
-        "url": this.get("url"),
-        "legendURL": this.get("legendURL"),
-        "typ": this.get("typ"),
-        "cswUrl": cswUrl,
-        "customMetadata": customMetadata,
-        "attributes": attributes,
-        "showDocUrl": showDocUrl,
-        "urlIsVisible": this.get("urlIsVisible")
+        id: this.get("id"),
+        metaID: layerMetaId,
+        metaIdArray: metaID,
+        layername: name,
+        url: this.get("url"),
+        legendURL: this.get("legendURL"),
+        typ: this.get("typ"),
+        cswUrl: cswUrl,
+        customMetadata: customMetadata,
+        attributes: attributes,
+        showDocUrl: showDocUrl,
+        urlIsVisible: this.get("urlIsVisible"),
+        infoURL: this.get("infoURL"),
     });
 
     store.dispatch("LayerInformation/activate", true);
@@ -837,10 +959,16 @@ Layer.prototype.setObserverAutoInterval = function (handler) {
  * @returns {void}
  */
 Layer.prototype.setMinMaxResolutions = function () {
-    const resoByMaxScale = bridge.getResolutionByScale(this.get("maxScale"), "max"),
-        resoByMinScale = bridge.getResolutionByScale(this.get("minScale"), "min");
+    const resoByMaxScale = bridge.getResolutionByScale(
+            this.get("maxScale"),
+            "max"
+        ),
+        resoByMinScale = bridge.getResolutionByScale(
+            this.get("minScale"),
+            "min"
+        );
 
-    this.get("layer").setMaxResolution(resoByMaxScale + (resoByMaxScale / 100));
+    this.get("layer").setMaxResolution(resoByMaxScale + resoByMaxScale / 100);
     this.get("layer").setMinResolution(resoByMinScale);
 };
 /**
@@ -869,23 +997,19 @@ Layer.prototype.getLayers = function () {
 // But set, get and has may stay, because they are convenient:)
 Layer.prototype.set = function (arg1, arg2) {
     if (typeof arg1 === "object") {
-        Object.keys(arg1).forEach(key => {
+        Object.keys(arg1).forEach((key) => {
             if (key === "isSelected") {
                 this.setIsSelected(arg1[key]);
-            }
-            else if (key === "transparency") {
+            } else if (key === "transparency") {
                 this.setTransparency(arg1[key]);
-            }
-            else {
+            } else {
                 this.attributes[key] = arg1[key];
             }
         }, this);
-    }
-    else if (typeof arg1 === "string") {
+    } else if (typeof arg1 === "string") {
         if (arg1 === "isSelected") {
             this.setIsSelected(arg2);
-        }
-        else {
+        } else {
             this.attributes[arg1] = arg2;
         }
     }
@@ -894,8 +1018,7 @@ Layer.prototype.set = function (arg1, arg2) {
 Layer.prototype.get = function (key) {
     if (key === "layer") {
         return this.layer;
-    }
-    else if (key === "layerSource") {
+    } else if (key === "layerSource") {
         if (this.attributes.typ === "GROUP") {
             return this.attributes.layerSource;
         }
@@ -907,8 +1030,7 @@ Layer.prototype.get = function (key) {
 Layer.prototype.has = function (key) {
     if (key === "layer") {
         return this.layer !== undefined;
-    }
-    else if (key === "layerSource") {
+    } else if (key === "layerSource") {
         if (this.attributes.typ === "GROUP") {
             return this.attributes.layerSource !== undefined;
         }
@@ -922,7 +1044,7 @@ Layer.prototype.getLayerStatesArray = function () {
 };
 
 Layer.prototype.toJSON = function () {
-    const atts = {...this.attributes};
+    const atts = { ...this.attributes };
 
     delete atts.layerSource;
     delete atts.layers;
@@ -956,3 +1078,4 @@ Layer.prototype.updateSource = function () {
 Layer.prototype.setIsActive = function () {
     // do nothing
 };
+
