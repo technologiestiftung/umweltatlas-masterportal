@@ -35,5 +35,7 @@ export default {
     currentLayerName: "",
     showUrlGlobal: null,
     infoURL: "",
+    download: "",
+    contact: "",
 };
 

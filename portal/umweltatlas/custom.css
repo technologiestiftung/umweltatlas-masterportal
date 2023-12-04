@@ -111,6 +111,7 @@
     padding: 1em;
     background-color: #edf8f4; /* White background */
     margin-bottom: 2px;
+    padding-top: 0px;
 }
 
 #layer-accordions input:checked + label + .content {
@@ -135,20 +136,43 @@
     margin-top: 5px;
     margin-bottom: 5px;
     --bs-nav-tabs-border-width: 0px;
+    display: flex;
+    border: 1px solid #cccccc;
+    /* position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 1; */
 }
 
 .vue-tool-content-body .nav .nav-item {
     --bs-nav-tabs-border-width: 0px;
+    flex: 1;
 }
 
 .vue-tool-content-body .nav .nav-link {
-    border: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
     background-color: #ffffff;
     color: #cccccc;
+    text-align: center;
+    padding: 10px;
 }
 
 .vue-tool-content-body .nav .nav-item .active {
     background-color: #1a4435;
     color: white !important;
+}
+
+#layerinfo-text {
+    padding: 1em;
+}
+
+#layerinfo-text p {
+    margin: 0px;
+}
+
+.bottom-line {
+    border-bottom: 1px solid #cccccc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 

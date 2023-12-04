@@ -336,21 +336,32 @@ export default {
                             <span class="header-title">Umweltatlas</span>
                         </label>
                         <div class="content">
-                            <p>
-                                Ausführliche Informationen zum ausgewählten
-                                Datensatz, wie Informations- und
-                                Datengrundlagen, Methoden sowie relevante
-                                Begleitliteratur und einem Kartenimpressum
-                                finden Sie im
+                            <div style="display: flex">
+                                <div
+                                    style="
+                                        background-color: black;
+                                        width: 100px;
+                                        height: 80px;
+                                        flex: inherit;
+                                        margin-right: 5px;
+                                    "
+                                ></div>
+                                <p style="flex: 1">
+                                    Ausführliche Informationen zum ausgewählten
+                                    Datensatz, wie Informations- und
+                                    Datengrundlagen, Methoden sowie relevante
+                                    Begleitliteratur und einem Kartenimpressum
+                                    finden Sie im
 
-                                <a
-                                    :href="layerInfo.infoURL"
-                                    target="_blank"
-                                    @click="onClick"
-                                >
-                                    Umweltatlas
-                                </a>
-                            </p>
+                                    <a
+                                        :href="layerInfo.infoURL"
+                                        target="_blank"
+                                        @click="onClick"
+                                    >
+                                        Umweltatlas
+                                    </a>
+                                </p>
+                            </div>
                         </div>
 
                         <input type="checkbox" id="section2" @click="onClick" />
@@ -359,19 +370,28 @@ export default {
                             <span class="header-title">Kontakt</span>
                         </label>
                         <div class="content">
-                            <!-- <img
-                                id="logo"
-                                src="./logo-umweltatlas.svg"
-                                alt="Berliner Umweltatlas"
-                            /> -->
-                            <p>
-                                Ausführliche Informationen zum ausgewählten
-                                Datensatz, wie Informations- und
-                                Datengrundlagen, Methoden sowie relevante
-                                Begleitliteratur und einem Kartenimpressum
-                                finden Sie im
-                                <a href="#">Umweltatlas</a>.
-                            </p>
+                            <div style="display: flex">
+                                <div
+                                    style="
+                                        background-color: black;
+                                        width: 100px;
+                                        height: 80px;
+                                        flex: inherit;
+                                        margin-right: 5px;
+                                    "
+                                ></div>
+                                <div style="flex: 1">
+                                    <p class="bold">
+                                        Ansprechperson zum ausgewählten
+                                        Datensatz
+                                    </p>
+                                    <p class="bold">
+                                        {{ layerInfo?.contact.name }}
+                                    </p>
+                                    <p>{{ layerInfo?.contact.tel }}</p>
+                                    <p>{{ layerInfo?.contact.email }}</p>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Add more sections as needed -->
@@ -388,7 +408,7 @@ export default {
                     />
                     <div
                         id="layerinfo-text"
-                        class="row"
+                        class=""
                         :class="getTabPaneClasses('layerinfo-text')"
                         :show="isActiveTab('layerinfo-text')"
                         :type="String('layerinfo-text')"
@@ -428,29 +448,18 @@ export default {
                                 </li>
                             </ul>
                         </div>
-                        <div v-if="showAdditionalMetaData">
-                            <p
-                                v-for="url in metaURLs"
-                                :key="url"
-                                class="float-end"
-                            >
-                                <a :href="url" target="_blank" @click="onClick">
-                                    {{
-                                        $t(
-                                            "common:modules.layerInformation.additionalMetadata"
-                                        )
-                                    }}
-                                </a>
-                            </p>
-                        </div>
-                        <p v-if="showPublication">
+                        <div
+                            class="abstract bottom-line"
+                            v-html="abstractText"
+                        />
+                        <p v-if="showPublication" class="bottom-line">
                             {{
                                 $t(
                                     "common:modules.layerInformation.publicationCreation"
                                 )
                             }}: {{ datePublication }}
                         </p>
-                        <p v-if="showRevision">
+                        <p v-if="showRevision" class="bottom-line">
                             {{
                                 $t(
                                     "common:modules.layerInformation.lastModified"
@@ -458,14 +467,14 @@ export default {
                             }}:
                             {{ dateRevision }}
                         </p>
-                        <p v-if="showPeriodicity">
+                        <p v-if="showPeriodicity" class="bottom-line">
                             {{
                                 $t(
                                     "common:modules.layerInformation.periodicityTitle"
                                 )
                             }}: {{ $t(periodicityKey) }}
                         </p>
-                        <template v-if="showCustomMetaData">
+                        <template v-if="showCustomMetaData" class="bottom-line">
                             <div v-for="(key, value) in customText" :key="key">
                                 <p v-if="isWebLink(key)" class="mb-0">
                                     {{ value + ": " }}
@@ -478,7 +487,17 @@ export default {
                                 </p>
                             </div>
                         </template>
-                        <div class="mb-2 abstract" v-html="abstractText" />
+                        <div v-if="showAdditionalMetaData">
+                            <p v-for="url in metaURLs" :key="url">
+                                <a :href="url" target="_blank" @click="onClick">
+                                    {{
+                                        $t(
+                                            "common:modules.layerInformation.additionalMetadata"
+                                        )
+                                    }}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                     <div
                         id="LayerInfoDataDownload"
@@ -672,8 +691,16 @@ hr {
     font-weight: bold;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .pt-5 {
     padding-top: 5px;
+}
+
+.content p {
+    margin: 0px;
 }
 </style>
 

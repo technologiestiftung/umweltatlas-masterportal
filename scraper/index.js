@@ -264,15 +264,41 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
             if (!subSubGroups[subSubGroupLinkName.nameNorm]) {
                 subSubGroups[subSubGroupLinkName.nameNorm] = {};
             }
+            console.log("subSubGroupLinkName.link", subSubGroupLinkName.link);
             axios
                 .get("https://www.berlin.de" + subSubGroupLinkName.link)
                 .then((response) => {
                     const body = response.data;
                     const $ = cheerio.load(body);
 
-                    const beschreibungLink =
-                        "https://www.berlin.de" +
-                        $(".modul-text_bild:first li a").attr("href");
+                    const descriptionLink = $(
+                        ".modul-text_bild:first li a"
+                    ).attr("href")
+                        ? "https://www.berlin.de" +
+                          $(".modul-text_bild:first li a").attr("href")
+                        : "";
+
+                    const downloadLink = $(".link--download").attr("href")
+                        ? "https://www.berlin.de" +
+                          $(".link--download").attr("href")
+                        : "";
+
+                    const contact = {
+                        name: $(".modul-contact .textile p").text()
+                            ? $(".modul-contact .textile p").text().trim()
+                            : "",
+                        tel: $(".modul-contact .tel").text()
+                            ? $(".modul-contact .tel")
+                                  .text()
+                                  .trim()
+                                  .replaceAll("Tel.: ", "")
+                            : "",
+                        email: $(".modul-contact .email a").attr("href")
+                            ? $(".modul-contact .email a")
+                                  .attr("href")
+                                  .replace("mailto:", "")
+                            : "",
+                    };
 
                     let iframeLink = $("iframe").attr("src");
                     iframeLink = iframeLink.replace("?lng=de", "");
@@ -290,14 +316,19 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                                 console.log("missing service", d.id);
                             }
 
-                            if(service?.datasets[0]){
-                                if(!service?.datasets[0].csw_url){
-                                    service?.datasets[0].csw_url = "https://gdi.berlin.de/geonetwork/srv/ger/csw"
+                            // add csw_url to datasets so meta data is displayed
+                            if (service?.datasets && service?.datasets[0]) {
+                                if (!service?.datasets[0].csw_url) {
+                                    service.datasets[0].csw_url =
+                                        "https://gdi.berlin.de/geonetwork/srv/ger/csw";
                                 }
                             }
 
-                            // add link to beschreibung
-                            service.infoURL = beschreibungLink;
+                            // add link to description
+                            service.infoURL = descriptionLink;
+                            service.download = downloadLink;
+                            service.contact = contact;
+
                             servicesWant.push(service);
                             const name = service.name;
 

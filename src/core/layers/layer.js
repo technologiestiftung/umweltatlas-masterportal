@@ -924,6 +924,8 @@ Layer.prototype.showLayerInformation = function () {
         showDocUrl: showDocUrl,
         urlIsVisible: this.get("urlIsVisible"),
         infoURL: this.get("infoURL"),
+        download: this.get("download"),
+        contact: this.get("contact"),
     });
 
     store.dispatch("LayerInformation/activate", true);
