@@ -15,7 +15,7 @@ export default {
     },
     data() {
         return {
-            activeTab: "layerinfo-legend",
+            activeTab: "layerinfo-text",
             openDropdown: false,
         };
     },
@@ -241,77 +241,6 @@ export default {
         </template>
         <template #body>
             <div class="body">
-                <h4 class="subtitle" :title="title">
-                    {{ title }}
-                </h4>
-
-                <div v-if="showMoreLayers" class="dropdown mb-2">
-                    <button
-                        id="changeLayerInfo"
-                        class="btn btn-outline-default dropdown-toggle"
-                        :class="{ show: openDropdown }"
-                        type="button"
-                        @click="onClickDropdown"
-                    >
-                        {{
-                            $t(
-                                "common:modules.layerInformation.changeLayerInfo"
-                            )
-                        }}
-                        <span class="caret" />
-                    </button>
-                    <ul class="dropdown-menu" :class="{ show: openDropdown }">
-                        <li v-for="name in layerInfo.layerNames" :key="name">
-                            <a
-                                href="#"
-                                class="dropdown-item abstractChange"
-                                :class="{ active: name === currentLayerName }"
-                                @click="changeLayerAbstract"
-                                >{{ $t(name) }}</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-                <div class="mb-2 abstract" v-html="abstractText" />
-                <div v-if="showAdditionalMetaData">
-                    <p v-for="url in metaURLs" :key="url" class="float-end">
-                        <a :href="url" target="_blank" @click="onClick">
-                            {{
-                                $t(
-                                    "common:modules.layerInformation.additionalMetadata"
-                                )
-                            }}
-                        </a>
-                    </p>
-                </div>
-                <p v-if="showPublication">
-                    {{
-                        $t(
-                            "common:modules.layerInformation.publicationCreation"
-                        )
-                    }}: {{ datePublication }}
-                </p>
-                <p v-if="showRevision">
-                    {{ $t("common:modules.layerInformation.lastModified") }}:
-                    {{ dateRevision }}
-                </p>
-                <p v-if="showPeriodicity">
-                    {{
-                        $t("common:modules.layerInformation.periodicityTitle")
-                    }}: {{ $t(periodicityKey) }}
-                </p>
-                <template v-if="showCustomMetaData">
-                    <div v-for="(key, value) in customText" :key="key">
-                        <p v-if="isWebLink(key)" class="mb-0">
-                            {{ value + ": " }}
-                            <a :href="value" target="_blank">{{ key }}</a>
-                        </p>
-                        <p v-else class="mb-0">
-                            {{ value + ": " + key }}
-                        </p>
-                    </div>
-                </template>
-                <hr />
                 <ul class="nav nav-tabs">
                     <li
                         v-if="legendURL !== 'ignore'"
@@ -327,7 +256,7 @@ export default {
                             class="nav-link"
                             :class="{ active: isActiveTab('layerinfo-text') }"
                             @click="setActiveTab"
-                            >layer text
+                            >Metadaten
                         </a>
                     </li>
                     <li
@@ -399,11 +328,12 @@ export default {
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div id="layer-accordions">
-                        <input type="checkbox" id="section1" />
+                    <div id="layer-accordions" @click="onClick">
+                        <input type="checkbox" id="section1" @click="onClick" />
                         <label for="section1" class="accordion-header">
+                            <span class="header-icon">▾</span>
+
                             <span class="header-title">Umweltatlas</span>
-                            <span class="header-icon">▼</span>
                         </label>
                         <div class="content">
                             <p>
@@ -412,16 +342,28 @@ export default {
                                 Datengrundlagen, Methoden sowie relevante
                                 Begleitliteratur und einem Kartenimpressum
                                 finden Sie im
-                                <a href="#">Umweltatlas</a>.
+
+                                <a
+                                    :href="layerInfo.infoURL"
+                                    target="_blank"
+                                    @click="onClick"
+                                >
+                                    Umweltatlas
+                                </a>
                             </p>
                         </div>
 
-                        <input type="checkbox" id="section2" />
+                        <input type="checkbox" id="section2" @click="onClick" />
                         <label for="section2" class="accordion-header">
-                            <span class="header-title">Umweltatlas</span>
-                            <span class="header-icon">▼</span>
+                            <span class="header-icon">▾</span>
+                            <span class="header-title">Kontakt</span>
                         </label>
                         <div class="content">
+                            <!-- <img
+                                id="logo"
+                                src="./logo-umweltatlas.svg"
+                                alt="Berliner Umweltatlas"
+                            /> -->
                             <p>
                                 Ausführliche Informationen zum ausgewählten
                                 Datensatz, wie Informations- und
@@ -433,6 +375,9 @@ export default {
                         </div>
 
                         <!-- Add more sections as needed -->
+                    </div>
+                    <div v-if="title" id="layer-info-title">
+                        {{ title }}
                     </div>
                     <div
                         v-if="legendURL !== 'ignore'"
@@ -448,18 +393,92 @@ export default {
                         :show="isActiveTab('layerinfo-text')"
                         :type="String('layerinfo-text')"
                     >
-                        <a
-                            :href="layerInfo.infoURL"
-                            target="_blank"
-                            @click="onClick"
-                        >
-                            {{ layerInfo.infoURL }}
-                        </a>
-
-                        <!-- <iframe
-                            src="https://www.berlin.de/umweltatlas/boden/rieselfelder/2010/kartenbeschreibung/"
-                            frameborder="0"
-                        ></iframe> -->
+                        <div v-if="showMoreLayers" class="dropdown mb-2">
+                            <button
+                                id="changeLayerInfo"
+                                class="btn btn-outline-default dropdown-toggle"
+                                :class="{ show: openDropdown }"
+                                type="button"
+                                @click="onClickDropdown"
+                            >
+                                {{
+                                    $t(
+                                        "common:modules.layerInformation.changeLayerInfo"
+                                    )
+                                }}
+                                <span class="caret" />
+                            </button>
+                            <ul
+                                class="dropdown-menu"
+                                :class="{ show: openDropdown }"
+                            >
+                                <li
+                                    v-for="name in layerInfo.layerNames"
+                                    :key="name"
+                                >
+                                    <a
+                                        href="#"
+                                        class="dropdown-item abstractChange"
+                                        :class="{
+                                            active: name === currentLayerName,
+                                        }"
+                                        @click="changeLayerAbstract"
+                                        >{{ $t(name) }}</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-if="showAdditionalMetaData">
+                            <p
+                                v-for="url in metaURLs"
+                                :key="url"
+                                class="float-end"
+                            >
+                                <a :href="url" target="_blank" @click="onClick">
+                                    {{
+                                        $t(
+                                            "common:modules.layerInformation.additionalMetadata"
+                                        )
+                                    }}
+                                </a>
+                            </p>
+                        </div>
+                        <p v-if="showPublication">
+                            {{
+                                $t(
+                                    "common:modules.layerInformation.publicationCreation"
+                                )
+                            }}: {{ datePublication }}
+                        </p>
+                        <p v-if="showRevision">
+                            {{
+                                $t(
+                                    "common:modules.layerInformation.lastModified"
+                                )
+                            }}:
+                            {{ dateRevision }}
+                        </p>
+                        <p v-if="showPeriodicity">
+                            {{
+                                $t(
+                                    "common:modules.layerInformation.periodicityTitle"
+                                )
+                            }}: {{ $t(periodicityKey) }}
+                        </p>
+                        <template v-if="showCustomMetaData">
+                            <div v-for="(key, value) in customText" :key="key">
+                                <p v-if="isWebLink(key)" class="mb-0">
+                                    {{ value + ": " }}
+                                    <a :href="value" target="_blank">{{
+                                        key
+                                    }}</a>
+                                </p>
+                                <p v-else class="mb-0">
+                                    {{ value + ": " + key }}
+                                </p>
+                            </div>
+                        </template>
+                        <div class="mb-2 abstract" v-html="abstractText" />
                     </div>
                     <div
                         id="LayerInfoDataDownload"

@@ -15,6 +15,9 @@
  * Masterportal Default Style (Override of Bootstrap)
  */
 
+$uatlas_orange_light: #e69636;
+$uatlas_black_light: #333333;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -27,7 +30,8 @@ $enable-shadows: true;
 //
 // Style anchor elements.
 
-$link-color: #337ab7;
+// $link-color: #337ab7;
+$link-color: $uatlas_orange_light;
 $link-decoration: none;
 
 // Typography
@@ -92,9 +96,6 @@ $light_grey_outline: #050505;
 * Used for primary buttons like start a search, print etc.
 */
 
-$uatlas_orange_light: #e69636;
-$uatlas_black_light: #333333;
-
 /* PRIMARY: The primary buttons blue
 * Used for primary buttons like start a search, print etc.
 */
@@ -124,8 +125,10 @@ $navbar-light-color: $dark_grey;
  */
 $secondary: $light_grey;
 $secondary_table_style: #f2f2f2; // background for table view style
-$secondary_hover: $light_blue;
-$secondary_focus: $light_blue;
+// $secondary_hover: $light_blue;
+// $secondary_focus: $light_blue;
+$secondary_hover: $uatlas_orange_light;
+$secondary_focus: $uatlas_orange_light;
 $secondary_focus_contrast: #f3f3f3;
 $secondary_active_drop: rgba(227, 227, 227, 0.5);
 $secondary_contrast: #333333;
@@ -136,7 +139,8 @@ $secondary_selected: rgb(184, 89, 0);
  * Action color for certain special accents
  * Examples: fileImport, routing or Quickhelp
  */
-$accent: $light_blue;
+// $accent: $light_blue;
+$accent: $uatlas_orange_light;
 $accent_hover: #3177b1;
 $accent_focus: #204d74;
 $accent_active: #204d74;

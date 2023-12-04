@@ -1,3 +1,12 @@
+#title-text {
+    display: none !important;
+    width: 0px;
+}
+
+#root > li:last-child {
+    display: none !important;
+}
+
 .btn-primary {
     background-color: #e69636 !important;
     border-color: #e69636 !important;
@@ -61,8 +70,6 @@
 /*  layer accordions */
 #layer-accordions {
     width: 100%; /* Or max-width for a specific size */
-    border-top: 3px solid #000; /* Top border as in the image */
-    font-family: Arial, sans-serif; /* Example font */
 }
 
 #layer-accordions input {
@@ -71,13 +78,13 @@
 
 #layer-accordions label {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: #f2f2f2; /* Light grey background */
-    border-bottom: 1px solid #ddd;
+    background-color: #edf8f4;
+    /* border-bottom: 1px solid #ddd; */
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 3px;
 }
 
 #layer-accordions label:hover {
@@ -92,6 +99,7 @@
     font-size: 1.5em;
     transform: rotate(0); /* Arrow pointing down */
     transition: transform 0.3s;
+    margin-right: 3px;
 }
 
 #layer-accordions input:checked + label .header-icon {
@@ -110,8 +118,37 @@
 }
 
 /* Style for the link inside the content */
-#layer-accordions .content a {
-    color: #005bac; /* Blue color for the link */
+/* #layer-accordions .content a {
     text-decoration: none;
+} */
+
+/* TABs */
+
+#layer-info-title {
+    padding: 1em;
+    background-color: #f2f2f2;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+.vue-tool-content-body .nav.nav-tabs {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    --bs-nav-tabs-border-width: 0px;
+}
+
+.vue-tool-content-body .nav .nav-item {
+    --bs-nav-tabs-border-width: 0px;
+}
+
+.vue-tool-content-body .nav .nav-link {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    color: #cccccc;
+}
+
+.vue-tool-content-body .nav .nav-item .active {
+    background-color: #1a4435;
+    color: white !important;
 }
 

@@ -1,10 +1,22 @@
-import {expect} from "chai";
+import { expect } from "chai";
 import sinon from "sinon";
 import getLayerInformationModule from "../../../utils/getLayerInformation";
 
-const relevantKeys = ["featureNS", "featurePrefix", "featureType", "gfiAttributes", "id", "style", "isSelected", "isSecured", "name", "url", "version"],
+const relevantKeys = [
+        "featureNS",
+        "featurePrefix",
+        "featureType",
+        "gfiAttributes",
+        "id",
+        "style",
+        "isSelected",
+        "isSecured",
+        "name",
+        "url",
+        "version",
+    ],
     exampleLayer = {
-        get: key => exampleLayer[key],
+        get: (key) => exampleLayer[key],
         altitudeMode: "clampToGround",
         alwaysOnTop: undefined,
         changeClassDivisionText: "Klasseneinteilung ändern",
@@ -19,7 +31,7 @@ const relevantKeys = ["featureNS", "featurePrefix", "featureType", "gfiAttribute
         hitTolerance: "",
         id: "wfst-layer",
         increaseTransparencyText: "Transparenz erhöhen",
-        infosAndLegendText: "Informationen und Legende",
+        infosAndLegendText: "Informationen",
         intervalAutoRefresh: -1,
         isAutoRefreshing: false,
         isBaseLayer: true,
@@ -74,7 +86,7 @@ const relevantKeys = ["featureNS", "featurePrefix", "featureType", "gfiAttribute
         useProxy: false,
         version: "1.1.0",
         visible: true,
-        zIndex: undefined
+        zIndex: undefined,
     };
 
 describe("src/modules/tools/wfst/utils/getLayerInformation.js", () => {
@@ -86,15 +98,18 @@ describe("src/modules/tools/wfst/utils/getLayerInformation.js", () => {
     afterEach(sinon.restore);
 
     it("should return an object only including the for the module necessary values of the layer", () => {
-        const layerInformation = getLayerInformationModule.getLayerInformation(["wfst-layer"]),
+        const layerInformation = getLayerInformationModule.getLayerInformation([
+                "wfst-layer",
+            ]),
             layerKeys = Object.keys(layerInformation[0]);
 
         expect(Array.isArray(layerInformation)).to.be.true;
         expect(layerInformation.length).to.equal(1);
         expect(layerKeys.length).to.equal(relevantKeys.length);
-        relevantKeys.forEach(key => {
-            expect(layerKeys.find(val => val === key)).to.not.equal(-1);
+        relevantKeys.forEach((key) => {
+            expect(layerKeys.find((val) => val === key)).to.not.equal(-1);
             expect(layerInformation[0][key]).to.eql(exampleLayer[key]);
         });
     });
 });
+

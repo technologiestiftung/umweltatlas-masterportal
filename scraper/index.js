@@ -10,6 +10,10 @@ import servicesMasterLight from "./services-internet-masterportallight.js";
 import missingServices from "./missingServices.js";
 services.push(...missingServices);
 const nameChapterNumberLookup = {};
+const servicesWant = [];
+const fachdaten = {
+    Ordner: [],
+};
 
 const unwantedLayers = [
     "Hintergrund ISU 5 2010",
@@ -38,6 +42,7 @@ function findServiceById(idName) {
             (object) => object.id === idName
         )[0];
     }
+
     return oneService;
 }
 
@@ -48,11 +53,6 @@ async function getData(iframeLink) {
     });
     return await res.json();
 }
-
-const servicesWant = [];
-const fachdaten = {
-    Ordner: [],
-};
 
 try {
     const response = await axios.get(`https://www.berlin.de/umweltatlas/`);
@@ -289,6 +289,13 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                                 };
                                 console.log("missing service", d.id);
                             }
+
+                            if(service?.datasets[0]){
+                                if(!service?.datasets[0].csw_url){
+                                    service?.datasets[0].csw_url = "https://gdi.berlin.de/geonetwork/srv/ger/csw"
+                                }
+                            }
+
                             // add link to beschreibung
                             service.infoURL = beschreibungLink;
                             servicesWant.push(service);

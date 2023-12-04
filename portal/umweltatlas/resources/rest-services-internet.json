@@ -1,8 +1,27 @@
 [
   {
-    "id": "11",
-    "name": "Komoot Photon Suche",
-    "url": "https://photon.komoot.io/api/?",
-    "typ": "WFS"
+    "id": "FBCSW",
+    "name": "CSW FBINTER",
+    "url": "https://fbinter.stadt-berlin.de/fb/csw/?service=CSW&version=2.0.2&request=GetRecordById&typeNames=csw:Record&elementsetname=full",
+    "typ": "CSW"
+  },
+  {
+    "id": "2",
+    "name": "Metadaten-URL",
+    "url": "https://gdk.gdi-de.org/gdi-de/srv/eng/csw?service=CSW&version=2.0.2&request=GetRecordById&namespace=xmlns(csw=http://www.opengis.net/cat/csw/2.0.2),xmlns(gmd=http://www.isotc211.org/2005/gmd)&resultType=results&outputFormat=application/xml&outputSchema=http://www.isotc211.org/2005/gmd&typeNames=csw:Record&elementSetName=full&ID=",
+    "typ": "URL"
+  },
+  {
+    "id": "BKG_SUG",
+    "name": "BKG Geokodierungsdienst Suggest",
+    "url": "https://gdi.berlin.de/searches/bkg/suggest",
+    "typ": "GDZ"
+  },
+  {
+    "id": "BKG_GEO",
+    "name": "BKG Geokodierungsdienst Geosearch",
+    "url": "https://gdi.berlin.de/searches/bkg/geosearch",
+    "typ": "GDZ"
   }
 ]
+

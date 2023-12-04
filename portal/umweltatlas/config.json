@@ -2,18 +2,22 @@
   "Portalconfig": {
     "treeType": "custom",
     "searchBar": {
-      "komoot": {
+      "recommendedListLength": 10,
+      "bkg": {
         "minChars": 3,
-        "serviceId": "11",
-        "limit": 20,
-        "lang": "de",
-        "lat": 53.6,
-        "lon": 10.0,
-        "bbox": "9.6,53.3,10.4,53.8"
+        "suggestServiceId": "BKG_SUG",
+        "geosearchServiceId": "BKG_GEO",
+        "extent": [369097, 5799298, 416865, 5838236],
+        "suggestCount": 10,
+        "epsg": "EPSG:25833",
+        "filter": "filter=(typ:*)",
+        "zoomToResult": true,
+        "score": 0.6
       },
       "visibleVector": {},
-      "tree": {},
-      "startZoomLevel": 9,
+      "tree": { "minChars": 3 },
+      "visibleWFS": { "minChars": 3 },
+      "zoomLevel": 5,
       "placeholder": "Stichwort- und Adresssuche"
     },
     "mapView": {
@@ -130,7 +134,7 @@
         "icon": "bi-book"
       },
       "portalTitle": {
-        "title": "Berliner Umweltatlas",
+        "title": "",
         "logo": "./resources/img/logo-umweltatlas.svg",
         "link": "https://www.berlin.de/umweltatlas/",
         "toolTip": "Umweltatlas Berlin"
@@ -314,7 +318,8 @@
                         },
                         {
                           "id": "wmsk01_06_01bodart2015:3",
-                          "name": "2015 - Torfart"
+                          "name": "2015 - Torfart",
+                          "visibility": true
                         }
                       ]
                     },
