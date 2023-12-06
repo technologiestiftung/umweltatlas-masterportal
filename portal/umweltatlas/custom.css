@@ -68,3 +68,12 @@
     position: fixed;
 }
 
+/* hide the luftbilder folder */
+#Lufbilder1 {
+    display: none !important;
+}
+
+.layer-item .bi-square {
+    margin-left: 22px;
+}
+

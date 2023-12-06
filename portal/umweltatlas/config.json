@@ -22,8 +22,9 @@
     },
     "mapView": {
       "backgroundImage": "./resources/img/backgroundCanvas.jpeg",
-      "startCenter": [384630, 5829290],
-      "extent": [370000, 5822000, 394000, 5840000],
+      "startCenter": [389920, 5819697],
+
+      "extent": [310000, 5760000, 440000, 5865000],
       "startZoomLevel": 0,
       "epsg": "EPSG:25833",
       "options": [
@@ -116,6 +117,97 @@
           "saveSelection": {
             "name": "translate#common:menu.tools.saveSelection",
             "icon": "bi-bookmark-check"
+          },
+          "layerSlider": {
+            "name": "Luftbilder Zeitreihe",
+            "title": "Luftbilder Zeitreihe",
+            "sliderType": "handle",
+            "timeInterval": 4000,
+            "icon": "bi-clock-history",
+            "layerIds": [
+              {
+                "title": "28",
+                "layerId": "k_luftbild1928:0"
+              },
+              {
+                "title": "53",
+                "layerId": "k_luftbild1953:0"
+              },
+              {
+                "title": "02",
+                "layerId": "k_luftbild2002:0"
+              },
+              {
+                "title": "04",
+                "layerId": "luftbild2004:0"
+              },
+              {
+                "title": "06",
+                "layerId": "luftbild2006:0"
+              },
+              {
+                "title": "07",
+                "layerId": "k_luftbild2007:0"
+              },
+              {
+                "title": "09",
+                "layerId": "k_luftbild2009_20:0"
+              },
+              {
+                "title": "10",
+                "layerId": "k_luftbild2010_rgb:0"
+              },
+              {
+                "title": "11",
+                "layerId": "k_luftbild2011_20:0"
+              },
+
+              {
+                "title": "13",
+                "layerId": "k_luftbild2013:0"
+              },
+
+              {
+                "title": "14",
+                "layerId": "k_luftbild2014:0"
+              },
+              {
+                "title": "15",
+                "layerId": "k_luftbild2015_rgb:0"
+              },
+              {
+                "title": "16",
+                "layerId": "k_luftbild2016_rgb:0"
+              },
+              {
+                "title": "17",
+                "layerId": "k_luftbild2017_rgb:0"
+              },
+              {
+                "title": "18",
+                "layerId": "k_luftbild2018_rgb:0"
+              },
+              {
+                "title": "19",
+                "layerId": "k_luftbild2019_rgb:0"
+              },
+              {
+                "title": "20",
+                "layerId": "k_luftbild2020_rgb:0"
+              },
+              {
+                "title": "21",
+                "layerId": "k_luftbild2021_rgb:0"
+              },
+              {
+                "title": "22",
+                "layerId": "k_luftbild2022_true_rgbi:0"
+              },
+              {
+                "title": "23",
+                "layerId": "truedop_2023:truedop_2023:GDIBE:25833"
+              }
+            ]
           }
         },
         "parcelSearch": {
@@ -178,6 +270,32 @@
     },
     "Fachdaten": {
       "Ordner": [
+        {
+          "Titel": "Lufbilder",
+          "isFolderSelectable": false,
+          "Layer": [
+            { "name": "28", "id": "k_luftbild1928:0" },
+            { "name": "53", "id": "k_luftbild1953:0" },
+            { "name": "02", "id": "k_luftbild2002:0" },
+            { "name": "04", "id": "luftbild2004:0" },
+            { "name": "06", "id": "luftbild2006:0" },
+            { "name": "07", "id": "k_luftbild2007:0" },
+            { "name": "09", "id": "k_luftbild2009_20:0" },
+            { "name": "10", "id": "k_luftbild2010_rgb:0" },
+            { "name": "11", "id": "k_luftbild2011_20:0" },
+            { "name": "13", "id": "k_luftbild2013:0" },
+            { "name": "14", "id": "k_luftbild2014:0" },
+            { "name": "15", "id": "k_luftbild2015_rgb:0" },
+            { "name": "16", "id": "k_luftbild2016_rgb:0" },
+            { "name": "17", "id": "k_luftbild2017_rgb:0" },
+            { "name": "18", "id": "k_luftbild2018_rgb:0" },
+            { "name": "19", "id": "k_luftbild2019_rgb:0" },
+            { "name": "20", "id": "k_luftbild2020_rgb:0" },
+            { "name": "21", "id": "k_luftbild2021_rgb:0" },
+            { "name": "22", "id": "k_luftbild2022_true_rgbi:0" },
+            { "name": "23", "id": "truedop_2023:truedop_2023:GDIBE:25833" }
+          ]
+        },
         {
           "Titel": "Boden",
           "isFolderSelectable": false,
@@ -423,10 +541,6 @@
                     {
                       "id": "k01_06_07ph2005:2",
                       "name": "2005 - pH-Werte im Oberboden"
-                    },
-                    {
-                      "id": "k01_06_07ph2010:1",
-                      "name": "2010 - pH-Werte im Oberboden"
                     },
                     {
                       "id": "k01_06_07ph2015:1",
@@ -801,16 +915,6 @@
                         {
                           "id": "wmsk01_11_10bindung2015:1",
                           "name": "2015 - Bindungsstärke für Schwermetalle"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_11_10bindung2010:1",
-                          "name": "2010 - missing service"
                         }
                       ]
                     },
@@ -1463,16 +1567,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrundkarte ISU50",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k02_13_01oabf2005:1",
-                          "name": "2005 - Hintergrundkarte ISU50"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Oberflächenabfluß aus Niederschlägen 2005 (Umweltatlas)",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -1497,42 +1591,26 @@
                 {
                   "Titel": "02.13.2 Versickerung aus Niederschlägen",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Versickerung aus Niederschlägen",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "versick_m_vg:1",
-                          "name": "1990 - Versickerung aus Niederschlägen"
-                        },
-                        {
-                          "id": "versick2001_m_vg:1",
-                          "name": "2001 - Versickerung aus Niederschlägen"
-                        },
-                        {
-                          "id": "k02_13_02vers2005:2",
-                          "name": "2005 - Versickerung aus Niederschlägen"
-                        },
-                        {
-                          "id": "wmsk02_13_02vers2012:1",
-                          "name": "2012 - Versickerung aus Niederschlägen"
-                        },
-                        {
-                          "id": "k02_13_02vers2017:1",
-                          "name": "2017 - Versickerung aus Niederschlägen"
-                        }
-                      ]
+                      "id": "versick_m_vg:1",
+                      "name": "1990 - Versickerung aus Niederschlägen"
                     },
                     {
-                      "Titel": "Hintergrundkarte ISU50",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k02_13_02vers2005:1",
-                          "name": "2005 - Hintergrundkarte ISU50"
-                        }
-                      ]
+                      "id": "versick2001_m_vg:1",
+                      "name": "2001 - Versickerung aus Niederschlägen"
+                    },
+                    {
+                      "id": "k02_13_02vers2005:2",
+                      "name": "2005 - Versickerung aus Niederschlägen"
+                    },
+                    {
+                      "id": "wmsk02_13_02vers2012:1",
+                      "name": "2012 - Versickerung aus Niederschlägen"
+                    },
+                    {
+                      "id": "k02_13_02vers2017:1",
+                      "name": "2017 - Versickerung aus Niederschlägen"
                     }
                   ]
                 },
@@ -1551,16 +1629,6 @@
                         {
                           "id": "k02_13_03gesabf2017:1",
                           "name": "2017 - Gesamtabfluss aus Niederschlägen"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrundkarte ISU50",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k02_13_03gesabf2005:1",
-                          "name": "2005 - Hintergrundkarte ISU50"
                         }
                       ]
                     },
@@ -1655,16 +1723,6 @@
                         {
                           "id": "k02_13_05verd2017:1",
                           "name": "2017 - Verdunstung aus Niederschlägen"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrundkarte ISU50",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k02_13_05verd2005:1",
-                          "name": "2005 - Hintergrundkarte ISU50"
                         }
                       ]
                     },
@@ -2652,16 +2710,6 @@
                         {
                           "id": "k02_17gwneu2017:1",
                           "name": "2017 - Grundwasserneubildung"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrundkarte ISU50",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k02_17gwneu2005:1",
-                          "name": "2005 - Hintergrundkarte ISU50"
                         }
                       ]
                     },
@@ -4430,16 +4478,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_all1989:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen aller Verursacher 1989",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4476,16 +4514,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_all1994:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen aller Verursacher 1994",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4508,16 +4536,6 @@
                         {
                           "id": "emi_nox_all2002:3",
                           "name": "seit-1989 - Alle Verursacher - Anteile der einzelnen Verursachergruppen"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_all2002:4",
-                          "name": "seit-1989 - missing service"
                         }
                       ]
                     },
@@ -4568,16 +4586,6 @@
                       ]
                     },
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_02_4noxemigesamt2005:4",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "NOx Emissionen aller Verursacher 2005",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4600,16 +4608,6 @@
                         {
                           "id": "k03_12_02_5noxemigesamt2009:3",
                           "name": "seit-1989 - Alle Verursacher - Anteile der einzelnen Verursachergruppen"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_02_5noxemigesamt2009:4",
-                          "name": "seit-1989 - missing service"
                         }
                       ]
                     },
@@ -4660,16 +4658,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_haus1989:3",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Hausbrand 1989",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4696,16 +4684,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_haus1994:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Hausbrand 1994",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4721,16 +4699,6 @@
                   "Titel": "03.12.03.3 NOx-Emissionen Hausbrand 2002",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_haus2002:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Hausbrand - Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -4758,16 +4726,6 @@
                   "isFolderSelectable": false,
                   "Ordner": [
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_03_4noxemihaus2005:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Hausbrand - Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4793,16 +4751,6 @@
                   "Titel": "03.12.03.5 NOx-Emissionen Hausbrand 2009",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_03_5noxemihaus2009:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -4850,16 +4798,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_ind1989:3",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Industrie 1989",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4882,16 +4820,6 @@
                         {
                           "id": "emi_nox_ind1994:3",
                           "name": "seit-1989 - Industrie - Emissionsentwicklung als Diagramm mit Zahlenwerten"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_ind1994:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -4922,16 +4850,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_ind2002:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Industrie 2002",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4958,16 +4876,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_04_4noxemiindustrie2005:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "NOx Emissionen Industrie 2004",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -4983,16 +4891,6 @@
                   "Titel": "03.12.04.5 NOx-Emissionen Industrie 2008",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_04_5noxemiindustrie2008:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -5030,16 +4928,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_verkehr1989:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Verkehr 1989",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5066,16 +4954,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_verkehr1994:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Verkehr 1994",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5091,16 +4969,6 @@
                   "Titel": "03.12.05.3 NOx-Emissionen Kfz-Verkehr Gesamtnetz 2002",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_nox_verkehr2002:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Verkehr - Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -5128,16 +4996,6 @@
                   "isFolderSelectable": false,
                   "Ordner": [
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_05_4noxemiverkehr2005:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Verkehr - Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5163,16 +5021,6 @@
                   "Titel": "03.12.05.5 NOx-Emissionen Kfz-Verkehr Gesamtnetz 2009",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_05_5noxemiverkehrges2009:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -5200,16 +5048,6 @@
                   "isFolderSelectable": false,
                   "Ordner": [
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_05_5_1noxemiverkehrhaupt2009:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5235,16 +5073,6 @@
                   "Titel": "03.12.05.5.2 NOx-Emissionen Kfz-Verkehr Nebennetz 2009",
                   "isFolderSelectable": false,
                   "Ordner": [
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_05_5_2noxemiverkehrneben2009:3",
-                          "name": "seit-1989 - missing service"
-                        }
-                      ]
-                    },
                     {
                       "Titel": "Emissionsentwicklung als Diagramm mit Zahlenwerten",
                       "isFolderSelectable": false,
@@ -5288,16 +5116,6 @@
                         {
                           "id": "emi_so2_all1989:4",
                           "name": "seit-1989 - Alle Verursacher - Anteile der einzelnen Verursachergruppen"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_so2_all1989:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -5410,16 +5228,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k03_12_06_4so2emigesamt2005:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "SO2 Emissionen aller Verursacher 2005",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5446,16 +5254,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_so2_haus1989:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Emissionen Hausbrand 1989",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5478,16 +5276,6 @@
                         {
                           "id": "emi_so2_haus1994:3",
                           "name": "seit-1989 - Hausbrand - Emissionsentwicklung als Diagramm mit Zahlenwerten"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "emi_so2_haus1994:2",
-                          "name": "seit-1989 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -5580,13 +5368,6 @@
                       ]
                     },
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        { "id": "myId2", "name": "2014 - missing service" }
-                      ]
-                    },
-                    {
                       "Titel": "Raster Berlin und Umland: Kaltluftvolumenstrom um 22:00 Uhr [m³/s]",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5629,16 +5410,6 @@
                           "name": "2005 - ATKIS-Ausschnitt Umland 1:25.000"
                         }
                       ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_10_01temp22uhr2005:3",
-                          "name": "2005 - Hintergrund 1:5.000"
-                        }
-                      ]
                     }
                   ]
                 },
@@ -5664,13 +5435,6 @@
                           "id": "wmsk_04102_lufttemp2015:13",
                           "name": "2014 - Gebäude (ALK, Stand 06/2014)"
                         }
-                      ]
-                    },
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        { "id": "myId2", "name": "2014 - missing service" }
                       ]
                     },
                     {
@@ -5764,13 +5528,6 @@
                       ]
                     },
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        { "id": "myId2", "name": "2014 - missing service" }
-                      ]
-                    },
-                    {
                       "Titel": "Raster Berlin und Umland: Strahlungstemperatur in 2 m Höhe um 14 Uhr [°C]",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -5797,16 +5554,6 @@
                         {
                           "id": "k04_10_03luftaustausch22uhr2005:4",
                           "name": "2005 - Windfeld um 22.00 Uhr"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_10_03luftaustausch22uhr2005:3",
-                          "name": "2005 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -6013,13 +5760,6 @@
                       ]
                     },
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        { "id": "myId2", "name": "2014 - missing service" }
-                      ]
-                    },
-                    {
                       "Titel": "Raster Berlin und Umland: Bewertungsindex PET in 2 m Höhe um 14 Uhr [°C]",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -6166,16 +5906,6 @@
                         {
                           "id": "k04_10_06massenstrom06uhr2005:4",
                           "name": "2005 - Windfeld um 06.00 Uhr"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_10_06massenstrom06uhr2005:3",
-                          "name": "2005 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -6671,16 +6401,6 @@
                       ]
                     },
                     {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_11_1klimafunktionen2005:5",
-                          "name": "2005 - Hintergrund 1:5.000"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Klimafunktionen",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -6808,16 +6528,6 @@
                         {
                           "id": "k04_11_2plan_stadtklima2005:2",
                           "name": "2005 - NO2-Konzentration >80 µg/m³ kann während austauscharmer Wetterlagen in Grünflächen überschritten werden"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_11_2plan_stadtklima2005:7",
-                          "name": "2005 - Hintergrund 1:5.000"
                         }
                       ]
                     },
@@ -7545,13 +7255,6 @@
                       ]
                     },
                     {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        { "id": "myId2", "name": "2014 - missing service" }
-                      ]
-                    },
-                    {
                       "Titel": "Raster Berlin und Umland: Bewertungsindex PET in 2 m Höhe um 14 Uhr [°C]",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -7698,16 +7401,6 @@
                           "name": "2008 - Mittlere Anzahl der Tage mit Wärmebelastung 1971-2000"
                         }
                       ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_01wb2005:2",
-                          "name": "2008 - Hintergrund 1:5.000"
-                        }
-                      ]
                     }
                   ]
                 },
@@ -7792,16 +7485,6 @@
                         {
                           "id": "k04_12_02wb2005:1",
                           "name": "2008 - Zunahme der mittleren Wärmebelastung 2021 - 2050 zu 1971 - 2000 (Umweltatlas)"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_02wb2005:2",
-                          "name": "2008 - Hintergrund 1:5.000"
                         }
                       ]
                     }
@@ -7890,94 +7573,36 @@
                           "name": "2008 - Zunahme der mittleren Wärmebelastung 2071-2100 zu 1971 - 2000 (Umweltatlas)"
                         }
                       ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_03wb2005:2",
-                          "name": "2008 - Hintergrund 1:5.000"
-                        }
-                      ]
                     }
                   ]
                 },
                 {
                   "Titel": "04.12.4 Jahresmittel der Anzahl der Tage mit Wärmebelastung 1971-2000 (einheitliche Farbreihe in den Karten 04.12.4 bis 04.12.6)",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Gesamtzahl der Tage mit Wärmebelastung 1971-2000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_04wb2005:1",
-                          "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 1971-2000"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "missing service",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_04wb2005:2",
-                          "name": "2008 - missing service"
-                        }
-                      ]
+                      "id": "k04_12_04wb2005:1",
+                      "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 1971-2000"
                     }
                   ]
                 },
                 {
                   "Titel": "04.12.5 Jahresmittel der Anzahl der Tage mit Wärmebelastung 2021 - 2050",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Gesamtzahl der Tage mit Wärmebelastung 2021-2050",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_05wb2005:1",
-                          "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 2021-2050"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_05wb2005:2",
-                          "name": "2008 - Hintergrund 1:5.000"
-                        }
-                      ]
+                      "id": "k04_12_05wb2005:1",
+                      "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 2021-2050"
                     }
                   ]
                 },
                 {
                   "Titel": "04.12.6 Jahresmittel der Anzahl der Tage mit Wärmebelastung 2071 - 2100",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Gesamtzahl der Tage mit Wärmebelastung 2071-2100",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_06wb2005:1",
-                          "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 2071-2100"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Hintergrund 1:5.000",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k04_12_06wb2005:2",
-                          "name": "2008 - Hintergrund 1:5.000"
-                        }
-                      ]
+                      "id": "k04_12_06wb2005:1",
+                      "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 2071-2100"
                     }
                   ]
                 }

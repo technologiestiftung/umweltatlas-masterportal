@@ -622,7 +622,7 @@ export default {
                             >
                                 Hier gibt es bald ein
                                 <br />
-                                Erklärungsvideo
+                                Erklärungvideo
                             </div>
                         </div>
                     </div>

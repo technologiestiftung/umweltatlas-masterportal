@@ -59,9 +59,6 @@ tbd...
 
 ## Notes
 
-This is a time slider
-"layerSlider":
-
 When setting up this had to be removed from devDependencies:
 "canvas": "^2.11.0",
 
