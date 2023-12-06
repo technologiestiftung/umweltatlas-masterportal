@@ -1,18 +1,18 @@
 <script>
-import {mapMutations, mapGetters, mapActions} from "vuex";
-import {getComponent} from "../../../utils/getComponent";
+import { mapMutations, mapGetters, mapActions } from "vuex";
+import { getComponent } from "../../../utils/getComponent";
 import getters from "../store/gettersQuickHelp";
 import mutations from "../store/mutationsQuickHelp";
 import ToolWindow from "../../../share-components/ToolWindow.vue";
-import {translateKeyWithPlausibilityCheck} from "../../../utils/translateKeyWithPlausibilityCheck.js";
-import {applyQuickHelpConfigsToDefaultContents} from "../utils/utilsQuickHelp.js";
+import { translateKeyWithPlausibilityCheck } from "../../../utils/translateKeyWithPlausibilityCheck.js";
+import { applyQuickHelpConfigsToDefaultContents } from "../utils/utilsQuickHelp.js";
 import uniqueId from "../../../utils/uniqueId";
 import configQuickHelp from "../configs/config.quickHelp.js";
 
 export default {
     name: "QuickHelp",
     components: {
-        ToolWindow
+        ToolWindow,
     },
     props: {
         /**
@@ -20,18 +20,18 @@ export default {
          */
         quickHelpConfigJsObject: {
             type: [Object, Boolean],
-            required: true
-        }
+            required: true,
+        },
     },
-    data () {
+    data() {
         return {
             storePath: this.$store.state.QuickHelp,
             contentConfig: configQuickHelp,
-            htmlContent: null
+            htmlContent: null,
         };
     },
     computed: {
-        ...mapGetters("QuickHelp", Object.keys(getters))
+        ...mapGetters("QuickHelp", Object.keys(getters)),
     },
     watch: {
         /**
@@ -39,21 +39,32 @@ export default {
          * @param {Boolean} isActive Value deciding whether the tool gets activated or deactivated.
          * @returns {void}
          */
-        active (isActive) {
+        active(isActive) {
             if (isActive) {
                 if (
-                    Object.prototype.hasOwnProperty.call(this.contentConfig, this.quickHelpKey)
-                    && Object.prototype.hasOwnProperty.call(this.contentConfig[this.quickHelpKey], "content")
+                    Object.prototype.hasOwnProperty.call(
+                        this.contentConfig,
+                        this.quickHelpKey
+                    ) &&
+                    Object.prototype.hasOwnProperty.call(
+                        this.contentConfig[this.quickHelpKey],
+                        "content"
+                    )
                 ) {
                     this.htmlContent = this.contentConfig[this.quickHelpKey];
-                }
-                else {
-                    console.warn("error", "QuickHelp", "The content for the quickHelp Key", this.quickHelpKey, "can't be parsed.");
+                } else {
+                    console.warn(
+                        "error",
+                        "QuickHelp",
+                        "The content for the quickHelp Key",
+                        this.quickHelpKey,
+                        "can't be parsed."
+                    );
                 }
             }
-        }
+        },
     },
-    mounted () {
+    mounted() {
         this.$nextTick(() => {
             this.initialize();
 
@@ -79,11 +90,13 @@ export default {
          * @param {Object} [options=null] the options to use for the translation, if given translationKey must be a translation key
          * @returns {String} the translation or the given param as it is
          */
-        translate (translationKey, options = null) {
+        translate(translationKey, options = null) {
             if (typeof options === "object" && options !== null) {
                 return i18next.t(translationKey, options);
             }
-            return this.translateKeyWithPlausibilityCheck(translationKey, v => i18next.t(v));
+            return this.translateKeyWithPlausibilityCheck(translationKey, (v) =>
+                i18next.t(v)
+            );
         },
 
         /**
@@ -91,8 +104,11 @@ export default {
          * @param {String} imgPath the string to alter
          * @returns {String} the given string with one slash at the end
          */
-        addSlashToImgPath (imgPath) {
-            if (typeof imgPath === "string" && imgPath.charAt(imgPath.length - 1) !== "/") {
+        addSlashToImgPath(imgPath) {
+            if (
+                typeof imgPath === "string" &&
+                imgPath.charAt(imgPath.length - 1) !== "/"
+            ) {
                 return imgPath + "/";
             }
             return imgPath;
@@ -103,8 +119,9 @@ export default {
          * @post a new tab or window is opened and the print process is started
          * @returns {void}
          */
-        print () {
-            const htmlToPrint = document.getElementsByClassName("quick-help-window")[0],
+        print() {
+            const htmlToPrint =
+                    document.getElementsByClassName("quick-help-window")[0],
                 newWin = window.open("");
 
             newWin.document.write(htmlToPrint.outerHTML);
@@ -117,7 +134,7 @@ export default {
          * @post window is closed
          * @returns {void}
          */
-        close () {
+        close() {
             this.setActive(false);
 
             // The value "isActive" of the Backbone model is also set to false to change the CSS class in the menu (menu/desktop/tool/view.toggleIsActiveClass)
@@ -126,8 +143,8 @@ export default {
             if (model) {
                 model.set("isActive", false);
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -152,7 +169,7 @@ export default {
                     @click="print"
                     @keydown.enter="print"
                 >
-                    <i class="bi-printer-fill" />
+                    <i class="bi-printer" />
                 </span>
             </div>
         </template>
@@ -167,10 +184,7 @@ export default {
                         {{ translate(section.title) }}
                     </a>
                 </div>
-                <div
-                    v-for="(section, key) in htmlContent.content"
-                    :key="key"
-                >
+                <div v-for="(section, key) in htmlContent.content" :key="key">
                     <h3 :id="key">
                         {{ translate(section.title) }}
                     </h3>
@@ -183,12 +197,22 @@ export default {
                             v-if="subSection.type === 'text/plain'"
                             class="col-lg-12"
                         >
-                            {{ translate(subSection.text, subSection.interpolation) }}
+                            {{
+                                translate(
+                                    subSection.text,
+                                    subSection.interpolation
+                                )
+                            }}
                         </p>
                         <p
                             v-else-if="subSection.type === 'text/html'"
                             class="col-lg-12"
-                            v-html="translate(subSection.text, subSection.interpolation)"
+                            v-html="
+                                translate(
+                                    subSection.text,
+                                    subSection.interpolation
+                                )
+                            "
                         />
                         <p
                             v-else-if="subSection.imgName"
@@ -196,9 +220,12 @@ export default {
                         >
                             <img
                                 class="img-responsive img-thumbnail"
-                                :src="addSlashToImgPath(subSection.imgPath) + subSection.imgName"
+                                :src="
+                                    addSlashToImgPath(subSection.imgPath) +
+                                    subSection.imgName
+                                "
                                 :alt="subSection.imgName"
-                            >
+                            />
                         </p>
                     </div>
                 </div>
@@ -224,7 +251,7 @@ export default {
 }
 
 .table-of-contents {
-    >a {
+    > a {
         padding: 5px;
         margin: 5px;
         border: 1px solid $light_grey;
@@ -233,13 +260,14 @@ export default {
         text-decoration: none;
         color: $dark_grey;
     }
-    >a:hover, a:focus {
+    > a:hover,
+    a:focus {
         background-color: $accent_hover;
         color: $light_grey_contrast;
         cursor: pointer;
     }
 }
-.content.container-fluid h3:first-child{
+.content.container-fluid h3:first-child {
     clear: both;
     padding-top: 15px;
 }
@@ -248,3 +276,4 @@ export default {
     margin-bottom: 10px;
 }
 </style>
+

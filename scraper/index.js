@@ -6,11 +6,14 @@ import axios from "axios";
 // const { config } = require("process");
 import fetch from "node-fetch";
 import services from "./services-internet.js";
+import baseMaps from "./baseMaps.js";
+
 import servicesMasterLight from "./services-internet-masterportallight.js";
 import missingServices from "./missingServices.js";
 services.push(...missingServices);
 const nameChapterNumberLookup = {};
-const servicesWant = [];
+const servicesWant = [...baseMaps];
+const noServices = [];
 const fachdaten = {
     Ordner: [],
 };
@@ -47,6 +50,9 @@ function findServiceById(idName) {
 }
 
 async function getData(iframeLink) {
+    if (iframeLink.includes("?")) {
+        iframeLink = iframeLink.split("?")[0] + "/";
+    }
     const res = await fetch(iframeLink + "config.json", {
         method: "POST",
         body: "a=1",
@@ -70,7 +76,7 @@ function eachGroup(subjectGroupLinks) {
     // each group: boden, wasser, luft ...
     async.eachSeries(
         subjectGroupLinks,
-        function (groupLink, callbackTwo) {
+        function (groupLink, callbackEachGroup) {
             console.log("Gruppe: ", groupLink);
             axios.get("https://www.berlin.de" + groupLink).then((response) => {
                 const body = response.data;
@@ -87,22 +93,41 @@ function eachGroup(subjectGroupLinks) {
                     .map((i, el) => $(el).attr("href"))
                     .get();
 
-                eachSubGroup(subGroupLinks, group);
+                eachSubGroup(subGroupLinks, group, callbackEachGroup);
             });
         },
         function (err) {
-            console.log("DONE Gruppe: ");
+            fs.writeFile(
+                "./out/done.json",
+                JSON.stringify(fachdaten),
+                (err) => {
+                    fs.writeFile(
+                        "./out/newservices.json",
+                        JSON.stringify(servicesWant),
+                        (err) => {
+                            fs.writeFile(
+                                "./out/noServices.json",
+                                JSON.stringify(noServices),
+                                (err) => {
+                                    console.log("!DONE!");
+                                }
+                            );
+                        }
+                    );
+                }
+            );
         }
     );
 }
 
-function eachSubGroup(subGroupLinks, group) {
+function eachSubGroup(subGroupLinks, group, callbackEachGroup) {
     // each sub group
     async.eachSeries(
         subGroupLinks,
         function (subGroupLink, callbackEachSubGroup) {
             console.log("subGroupLink: ", subGroupLink);
             // const temp = "/umweltatlas/boden/rieselfelder/";
+
             axios
                 .get("https://www.berlin.de" + subGroupLink)
                 .then((response) => {
@@ -129,22 +154,25 @@ function eachSubGroup(subGroupLinks, group) {
                         subGroup,
                         callbackEachSubGroup
                     );
+                })
+                .catch((error) => {
+                    // Handling any errors that occurred during the HTTP request or processing
+
+                    // catch strassenverkehr because it does not exist
+                    // https://www.berlin.de/umweltatlas/luft/strassenverkehr-emissionen-und-immissionen/umweltatlas/luft/strassenverkehr-emissionen-und-immissionen
+
+                    console.error(
+                        "An error occurred during the request:",
+                        error.message
+                    );
+                    callbackEachSubGroup();
+                    return;
                 });
         },
         function (err) {
-            fs.writeFile(
-                "./out/done.json",
-                JSON.stringify(fachdaten),
-                (err) => {
-                    fs.writeFile(
-                        "./out/newservices.json",
-                        JSON.stringify(servicesWant),
-                        (err) => {
-                            console.log("!DONE!");
-                        }
-                    );
-                }
-            );
+            console.log("DONE Gruppe: ");
+
+            callbackEachGroup();
         }
     );
 }
@@ -301,7 +329,14 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                     };
 
                     let iframeLink = $("iframe").attr("src");
+                    // no iFrame
+                    if (!iframeLink) {
+                        noServices.push(subSubGroupLinkName.link);
+                        callback();
+                        return;
+                    }
                     iframeLink = iframeLink.replace("?lng=de", "");
+
                     // console.log("iframeLink", iframeLink);
                     getData(iframeLink).then(function (data) {
                         const fachdaten = data.Themenconfig.Fachdaten.Layer;
@@ -336,7 +371,13 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                                 unwantedLayers.includes(name) ||
                                 unwantedIds.includes(d.id)
                             ) {
-                                console.log("missing service return ", d.id);
+                                console.log(
+                                    "unwanted ",
+                                    "name: ",
+                                    name,
+                                    " id:",
+                                    d.id
+                                );
                                 return;
                             }
 

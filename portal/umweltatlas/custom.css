@@ -62,9 +62,10 @@
     animation: fade 2s infinite;
 }
 
-.right-bar:first-child {
+.elements-positioned-over-map .right-bar.controls {
     bottom: 40px;
     position: absolute;
+    position: fixed;
 }
 
 /*  layer accordions */

@@ -17,6 +17,7 @@ export default {
         return {
             activeTab: "layerinfo-text",
             openDropdown: false,
+            logo: "./resources/img/logo-umweltatlas.svg",
         };
     },
     computed: {
@@ -223,6 +224,12 @@ export default {
             }
             return urlObject.href;
         },
+        copyToClipboard() {
+            const copyText = document.getElementById("wmswmf-input");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            navigator.clipboard.writeText(copyText.value);
+        },
     },
 };
 </script>
@@ -276,7 +283,7 @@ export default {
                             >{{ $t("common:modules.layerInformation.legend") }}
                         </a>
                     </li>
-                    <li
+                    <!-- <li
                         v-if="showDownloadLinks"
                         value="LayerInfoDataDownload"
                         class="nav-item"
@@ -298,7 +305,7 @@ export default {
                                 )
                             }}
                         </a>
-                    </li>
+                    </li> -->
                     <li
                         v-if="showUrl"
                         value="url"
@@ -326,70 +333,100 @@ export default {
                             }}
                         </a>
                     </li>
+
+                    <li
+                        v-if="layerInfo?.download"
+                        value="download-map"
+                        class="nav-item"
+                        role="button"
+                        tabindex="0"
+                        @click="onClick"
+                        @keydown.enter="onClick"
+                    >
+                        <a
+                            href="#download-map"
+                            class="nav-link"
+                            :class="{ active: isActiveTab('download-map') }"
+                            @click="setActiveTab"
+                            >Download
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="layer-accordions" @click="onClick">
-                        <input type="checkbox" id="section1" @click="onClick" />
-                        <label for="section1" class="accordion-header">
-                            <span class="header-icon">▾</span>
+                        <div v-if="layerInfo?.infoURL">
+                            <input
+                                type="checkbox"
+                                id="section1"
+                                @click="onClick"
+                            />
+                            <label for="section1" class="accordion-header">
+                                <span class="header-icon">▾</span>
 
-                            <span class="header-title">Umweltatlas</span>
-                        </label>
-                        <div class="content">
-                            <div style="display: flex">
-                                <div
-                                    style="
-                                        background-color: black;
-                                        width: 100px;
-                                        height: 80px;
-                                        flex: inherit;
-                                        margin-right: 5px;
-                                    "
-                                ></div>
-                                <p style="flex: 1">
-                                    Ausführliche Informationen zum ausgewählten
-                                    Datensatz, wie Informations- und
-                                    Datengrundlagen, Methoden sowie relevante
-                                    Begleitliteratur und einem Kartenimpressum
-                                    finden Sie im
+                                <span class="header-title">Umweltatlas</span>
+                            </label>
+                            <div class="content">
+                                <div style="display: flex">
+                                    <img
+                                        style="
+                                            width: 100px;
+                                            flex: inherit;
+                                            margin-right: 10px;
+                                        "
+                                        alt="umweltatlas logo"
+                                        :src="logo"
+                                    />
+                                    <p style="flex: 1">
+                                        Ausführliche Informationen zum
+                                        ausgewählten Datensatz, wie
+                                        Informations- und Datengrundlagen,
+                                        Methoden sowie relevante
+                                        Begleitliteratur und einem
+                                        Kartenimpressum finden Sie im
 
-                                    <a
-                                        :href="layerInfo.infoURL"
-                                        target="_blank"
-                                        @click="onClick"
-                                    >
-                                        Umweltatlas
-                                    </a>
-                                </p>
+                                        <a
+                                            :href="layerInfo.infoURL"
+                                            target="_blank"
+                                            @click="onClick"
+                                        >
+                                            Umweltatlas
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-
-                        <input type="checkbox" id="section2" @click="onClick" />
-                        <label for="section2" class="accordion-header">
-                            <span class="header-icon">▾</span>
-                            <span class="header-title">Kontakt</span>
-                        </label>
-                        <div class="content">
-                            <div style="display: flex">
-                                <div
-                                    style="
-                                        background-color: black;
-                                        width: 100px;
-                                        height: 80px;
-                                        flex: inherit;
-                                        margin-right: 5px;
-                                    "
-                                ></div>
-                                <div style="flex: 1">
-                                    <p class="bold">
-                                        Ansprechperson zum ausgewählten
-                                        Datensatz
-                                    </p>
-                                    <p class="bold">
-                                        {{ layerInfo?.contact.name }}
-                                    </p>
-                                    <p>{{ layerInfo?.contact.tel }}</p>
-                                    <p>{{ layerInfo?.contact.email }}</p>
+                        <div v-if="layerInfo?.contact">
+                            <input
+                                type="checkbox"
+                                id="section2"
+                                @click="onClick"
+                            />
+                            <label for="section2" class="accordion-header">
+                                <span class="header-icon">▾</span>
+                                <span class="header-title">Kontakt</span>
+                            </label>
+                            <div class="content">
+                                <div style="display: flex">
+                                    <img
+                                        style="
+                                            width: 100px;
+                                            flex: inherit;
+                                            margin-right: 10px;
+                                        "
+                                        alt="umweltatlas logo"
+                                        :src="logo"
+                                    />
+                                    <div style="flex: 1">
+                                        <p class="bold">
+                                            Ansprechperson zum ausgewählten
+                                            Datensatz
+                                        </p>
+                                        <p class="bold">
+                                            {{ layerInfo?.contact.name }}
+                                        </p>
+                                        <p>{{ layerInfo?.contact.tel }}</p>
+                                        <p>{{ layerInfo?.contact.email }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -499,37 +536,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div
-                        id="LayerInfoDataDownload"
-                        class="row"
-                        :class="getTabPaneClasses('LayerInfoDataDownload')"
-                        :show="isActiveTab('LayerInfoDataDownload')"
-                        :type="String('LayerInfoDataDownload')"
-                    >
-                        <div class="col-lg-7">
-                            <ul v-if="showDownloadLinks" class="pt-5">
-                                <li
-                                    v-for="downloadLink in downloadLinks"
-                                    :key="downloadLink.linkName"
-                                >
-                                    <a
-                                        :href="downloadLink.link"
-                                        target="_blank"
-                                        @click="onClick"
-                                    >
-                                        {{ $t(downloadLink.linkName) }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div v-if="showAttachFile" class="col-lg-5 pt-5">
-                            <span class="download-note">{{
-                                $t(
-                                    "common:modules.layerInformation.attachFileMessage"
-                                )
-                            }}</span>
-                        </div>
-                    </div>
+
                     <div
                         v-if="showUrl"
                         id="url"
@@ -537,39 +544,97 @@ export default {
                         :class="getTabPaneClasses('url')"
                         :type="String('url')"
                     >
-                        <div v-if="Array.isArray(layerInfo.url)" class="pt-5">
-                            <ul
-                                v-for="(layerInfoUrl, i) in layerInfo.url"
-                                :key="layerInfoUrl"
+                        <div class="container">
+                            <p>WMS (Web Map Service)</p>
+                            <div class="wmswmf-input-wrapper">
+                                <input
+                                    type="text"
+                                    id="wmswmf-input"
+                                    :value="layerInfo.url"
+                                    readonly
+                                />
+
+                                <div class="input-btns">
+                                    <button
+                                        class="btn copy-btn input-btn"
+                                        @click="copyToClipboard()"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-copy"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+                                            />
+                                        </svg>
+                                    </button>
+
+                                    <a
+                                        :href="layerInfo.url"
+                                        target="_blank"
+                                        @click="onClick"
+                                        class="input-btn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-box-arrow-up-right"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        v-if="showUrl"
+                        id="download-map"
+                        :show="isActiveTab('download-map')"
+                        :class="getTabPaneClasses('download-map')"
+                        :type="String('download-map')"
+                        style="display: flex; margin-top: 10px"
+                    >
+                        <button class="download-btn btn">
+                            <a
+                                :href="layerInfo.download"
+                                target="_blank"
+                                @click="onClick"
                             >
-                                {{
-                                    layerInfo.layerNames[i]
-                                }}
-                                <li>
-                                    <a
-                                        :href="layerUrl[i]"
-                                        target="_blank"
-                                        @click="onClick"
-                                    >
-                                        {{ layerInfoUrl }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div v-else class="pt-5">
-                            <ul>
-                                <li>
-                                    ?????
-                                    <a
-                                        :href="layerUrl"
-                                        target="_blank"
-                                        @click="onClick"
-                                    >
-                                        {{ layerInfo.url }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-download"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                                    />
+                                    <path
+                                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+                                    />
+                                </svg>
+                                PDF
+                            </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -701,6 +766,183 @@ hr {
 
 .content p {
     margin: 0px;
+}
+
+.container {
+    margin-top: 10px;
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    input {
+        padding: 5px;
+        width: 100%;
+        border: none;
+        margin-bottom: 5px;
+        border: 1px solid #cccccc;
+    }
+
+    .wmswmf-input-wrapper {
+        position: relative;
+
+        input:active {
+            border-color: $uatlas_orange_light; /* Orange border */
+        }
+
+        input:focus {
+            outline: none; /* Removes the default focus outline */
+            border-color: $uatlas_orange_light; /* Orange border */
+        }
+
+        .input-btns {
+            border: none;
+            position: absolute;
+            right: 5px;
+            top: 0px;
+        }
+
+        .input-btn {
+            color: #cccccc;
+            border: none;
+            cursor: pointer;
+            padding: 2px;
+            box-shadow: none;
+        }
+
+        .input-btn:hover {
+            color: $uatlas_orange_light;
+        }
+    }
+}
+
+// download btns
+.download-btn {
+    background-color: #e6e6e6; /* Orange background */
+    flex: 1;
+}
+
+.download-btn a {
+    width: 100%;
+    display: inline-block;
+    color: white;
+}
+
+.download-btn:hover {
+    color: white;
+    background-color: #ffa500;
+}
+.download-btn svg {
+    margin-bottom: 5px;
+}
+
+/*  layer accordions */
+#layer-accordions {
+    width: 100%; /* Or max-width for a specific size */
+}
+
+#layer-accordions input {
+    display: none;
+}
+
+#layer-accordions label {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: #edf8f4;
+    /* border-bottom: 1px solid #ddd; */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 3px;
+}
+
+#layer-accordions label:hover {
+    background-color: #edf8f4; /* Slightly darker on hover */
+}
+
+.accordion-header .header-title {
+    font-weight: bold;
+}
+
+.accordion-header .header-icon {
+    font-size: 1.5em;
+    transform: rotate(0); /* Arrow pointing down */
+    transition: transform 0.3s;
+    margin-right: 3px;
+}
+
+#layer-accordions input:checked + label .header-icon {
+    transform: rotate(180deg); /* Arrow pointing up when section is open */
+}
+
+#layer-accordions .content {
+    display: none;
+    padding: 1em;
+    background-color: #edf8f4; /* White background */
+    margin-bottom: 2px;
+    padding-top: 0px;
+}
+
+#layer-accordions input:checked + label + .content {
+    display: block;
+}
+
+/* Style for the link inside the content */
+/* #layer-accordions .content a {
+    text-decoration: none;
+} */
+
+/* TABs */
+
+#layer-info-title {
+    padding: 1em;
+    background-color: #f2f2f2;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+.vue-tool-content-body .nav.nav-tabs {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    --bs-nav-tabs-border-width: 0px;
+    display: flex;
+    border: 1px solid #cccccc;
+    /* position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 1; */
+}
+
+.vue-tool-content-body .nav .nav-item {
+    --bs-nav-tabs-border-width: 0px;
+    flex: 1;
+}
+
+.vue-tool-content-body .nav .nav-link {
+    border-right: 1px solid #cccccc;
+    background-color: #ffffff;
+    color: #cccccc;
+    text-align: center;
+    padding: 10px;
+}
+
+.vue-tool-content-body .nav .nav-item .active {
+    background-color: #1a4435;
+    color: white !important;
+}
+
+#layerinfo-text {
+    padding: 1em;
+}
+
+#layerinfo-text p {
+    margin: 0px;
+}
+
+.bottom-line {
+    border-bottom: 1px solid #cccccc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 </style>
 

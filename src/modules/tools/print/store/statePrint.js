@@ -97,7 +97,7 @@ const state = {
     optimalScale: null,
     DOTS_PER_INCH: 72,
     INCHES_PER_METER: 39.37,
-    icon: "bi-printer-fill",
+    icon: "bi-printer",
     eventListener: undefined,
     eventListener3D: undefined,
     dpiList: [],
@@ -130,7 +130,7 @@ const state = {
         "Default A4 hoch Legende",
         "Default A4 quer Legende",
         "Default A3 hoch Legende",
-        "Default A3 quer Legende"
+        "Default A3 quer Legende",
     ],
     shouldPrintGeometries: false,
     geometries: "[]",
@@ -140,7 +140,8 @@ const state = {
      * useProxy
      */
     useProxy: false,
-    showInvisibleLayerInfo: true
+    showInvisibleLayerInfo: true,
 };
 
 export default state;
+
