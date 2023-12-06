@@ -9,11 +9,12 @@ import services from "./services-internet.js";
 import baseMaps from "./baseMaps.js";
 
 import servicesMasterLight from "./services-internet-masterportallight.js";
-import missingServices from "./missingServices.js";
-services.push(...missingServices);
+// import missingServices from "./missingServices.js";
+// services.push(...missingServices);
 const nameChapterNumberLookup = {};
 const servicesWant = [...baseMaps];
 const noServices = [];
+const missingServices = [];
 const fachdaten = {
     Ordner: [],
 };
@@ -33,6 +34,8 @@ const unwantedLayers = [
     "Hintergrund dig. Karte 1:50.000",
     "Kürzel",
     "Texte geomorphologischer Einheiten",
+    "Hintergrund 1:5.000",
+    "Hintergrundkarte ISU50",
 ];
 
 const unwantedIds = ["k01_06_07ph2010:2", "k01_06_07ph2010:3"];
@@ -98,18 +101,24 @@ function eachGroup(subjectGroupLinks) {
         },
         function (err) {
             fs.writeFile(
-                "./out/done.json",
+                "./out/configFachdaten.json",
                 JSON.stringify(fachdaten),
                 (err) => {
                     fs.writeFile(
-                        "./out/newservices.json",
+                        "./out/services.json",
                         JSON.stringify(servicesWant),
                         (err) => {
                             fs.writeFile(
                                 "./out/noServices.json",
                                 JSON.stringify(noServices),
                                 (err) => {
-                                    console.log("!DONE!");
+                                    fs.writeFile(
+                                        "./out/missingServices.json",
+                                        JSON.stringify(missingServices),
+                                        (err) => {
+                                            console.log("!DONE!");
+                                        }
+                                    );
                                 }
                             );
                         }
@@ -318,8 +327,8 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                         tel: $(".modul-contact .tel").text()
                             ? $(".modul-contact .tel")
                                   .text()
+                                  .replaceAll("Tel.:", "")
                                   .trim()
-                                  .replaceAll("Tel.: ", "")
                             : "",
                         email: $(".modul-contact .email a").attr("href")
                             ? $(".modul-contact .email a")
@@ -343,12 +352,22 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                         fachdaten.forEach((d) => {
                             let service = findServiceById(d.id);
                             if (!service) {
-                                service = {
+                                // service = {
+                                //     id: d.id,
+                                //     missing: true,
+                                //     name: "missing service",
+                                // };
+                                // console.log("missing service", d.id);
+
+                                missingServices.push({
                                     id: d.id,
-                                    missing: true,
-                                    name: "missing service",
-                                };
-                                console.log("missing service", d.id);
+                                    infoURL: descriptionLink,
+                                    download: downloadLink,
+                                    contact: contact,
+                                });
+
+                                callback();
+                                return;
                             }
 
                             // add csw_url to datasets so meta data is displayed

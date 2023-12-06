@@ -112,6 +112,10 @@
             "name": "Karten vergleichen",
             "glyphicon": "fas fa-equals",
             "icon": "bi bi-list"
+          },
+          "saveSelection": {
+            "name": "translate#common:menu.tools.saveSelection",
+            "icon": "bi-bookmark-check"
           }
         },
         "parcelSearch": {
@@ -168,7 +172,7 @@
         },
         {
           "id": "basemap_raster_grau",
-          "visibility": true
+          "visibility": false
         }
       ]
     },

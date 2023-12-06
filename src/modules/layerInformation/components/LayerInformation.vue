@@ -18,6 +18,7 @@ export default {
             activeTab: "layerinfo-text",
             openDropdown: false,
             logo: "./resources/img/logo-umweltatlas.svg",
+            contactPerson: "./resources/img/contact_placeholder.svg",
         };
     },
     computed: {
@@ -371,7 +372,7 @@ export default {
                                         style="
                                             width: 100px;
                                             flex: inherit;
-                                            margin-right: 10px;
+                                            margin-right: 20px;
                                         "
                                         alt="umweltatlas logo"
                                         :src="logo"
@@ -411,10 +412,10 @@ export default {
                                         style="
                                             width: 100px;
                                             flex: inherit;
-                                            margin-right: 10px;
+                                            margin-right: 20px;
                                         "
-                                        alt="umweltatlas logo"
-                                        :src="logo"
+                                        alt="Kontaktperson"
+                                        :src="contactPerson"
                                     />
                                     <div style="flex: 1">
                                         <p class="bold">
@@ -544,8 +545,11 @@ export default {
                         :class="getTabPaneClasses('url')"
                         :type="String('url')"
                     >
-                        <div class="container">
-                            <p>WMS (Web Map Service)</p>
+                        <div class="wmswmf-container">
+                            <p>
+                                <span>{{ $t(layerInfo.typ) }}</span
+                                >-Adresse
+                            </p>
                             <div class="wmswmf-input-wrapper">
                                 <input
                                     type="text"
@@ -599,6 +603,26 @@ export default {
                                         </svg>
                                     </a>
                                 </div>
+                            </div>
+
+                            <p>
+                                Hier finden Sie <a href="">Videoressourcen</a>,
+                                die die Arbeit mit WMS- und WFS- Formate leicht
+                                zugänglich vermitteln.
+                            </p>
+
+                            <div
+                                style="
+                                    width: 100%;
+                                    height: 200px;
+                                    background-color: #ededed;
+                                    text-align: center;
+                                    display: grid;
+                                "
+                            >
+                                Hier gibt es bald ein
+                                <br />
+                                Erklärungsvideo
                             </div>
                         </div>
                     </div>
@@ -768,7 +792,7 @@ hr {
     margin: 0px;
 }
 
-.container {
+.wmswmf-container {
     margin-top: 10px;
 
     p {
@@ -785,6 +809,7 @@ hr {
 
     .wmswmf-input-wrapper {
         position: relative;
+        margin-bottom: 5px;
 
         input:active {
             border-color: $uatlas_orange_light; /* Orange border */
