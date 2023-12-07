@@ -65,6 +65,9 @@ When setting up this had to be removed from devDependencies:
 a tool to search bezirke
 wfsSearch
 
+Layer Information:
+LayerInformation.vue
+
 ## Contributing
 
 Before you create a pull request, write an issue so we can discuss your changes.

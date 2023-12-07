@@ -1,7 +1,7 @@
 <script>
-import {mapGetters, mapMutations, mapActions} from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 import ToolTemplate from "../../ToolTemplate.vue";
-import {getComponent} from "../../../../utils/getComponent";
+import { getComponent } from "../../../../utils/getComponent";
 import getters from "../store/gettersLayerSlider";
 import mutations from "../store/mutationsLayerSlider";
 import LayerSliderHandle from "./LayerSliderHandle.vue";
@@ -12,23 +12,23 @@ export default {
     components: {
         ToolTemplate,
         LayerSliderHandle,
-        LayerSliderPlayer
+        LayerSliderPlayer,
     },
     computed: {
-        ...mapGetters("Tools/LayerSlider", Object.keys(getters))
+        ...mapGetters("Tools/LayerSlider", Object.keys(getters)),
     },
     watch: {
-        active (isActive) {
+        active(isActive) {
             if (!isActive) {
                 this.setWindowsInterval(null);
                 this.resetActiveLayer();
             }
-        }
+        },
     },
-    created () {
+    created() {
         this.$on("close", this.close);
     },
-    mounted () {
+    mounted() {
         this.checkIfAllLayersAvailable(this.layerIds);
         this.addIndexToLayerIds(this.layerIds);
     },
@@ -36,14 +36,14 @@ export default {
         ...mapMutations("Tools/LayerSlider", Object.keys(mutations)),
         ...mapActions("Tools/LayerSlider", [
             "addIndexToLayerIds",
-            "checkIfAllLayersAvailable"
+            "checkIfAllLayersAvailable",
         ]),
 
         /**
          * Sets active to false.
          * @returns {void}
          */
-        close () {
+        close() {
             this.setActive(false);
             // The value "isActive" of the Backbone model is also set to false to change the CSS class in the menu (menu/desktop/tool/view.toggleIsActiveClass)
             const model = getComponent(this.id);
@@ -51,8 +51,8 @@ export default {
             if (model) {
                 model.set("isActive", false);
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -66,31 +66,49 @@ export default {
         :deactivate-gfi="deactivateGFI"
     >
         <template #toolBody>
-            <div
-                v-if="active"
-                id="tool-layer-slider"
-            >
-                <h5>
+            <div v-if="active" id="tool-layer-slider">
+                <!-- <h5>
                     {{ $t(title) }}
-                </h5>
-                <LayerSliderPlayer
-                    v-if="sliderType === 'player'"
-                />
-                <LayerSliderHandle
-                    v-else-if="sliderType === 'handle'"
-                />
+                </h5> -->
+
+                <h3>
+                    Luftbilder-Zeitreihe von Berlin 1928-2023. Klicken Sie ein
+                    bestimmtes Jahr an oder lassen Sie die Luftbilder
+                    automatisch nacheinander abspielen.
+                </h3>
+
+                <p class="color-green" style="margin-top: 15px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-exclamation-circle-fill"
+                        viewBox="0 0 16 16"
+                        style="margin-bottom: 3px"
+                    >
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                        />
+                    </svg>
+                    Bitte Beachten Sie, dass das Neurendern des
+                    Kartenausschnitts beim Zoomen manchmal etwas länger dauern
+                    kann
+                </p>
+                <LayerSliderPlayer v-if="sliderType === 'player'" />
+                <LayerSliderHandle />
             </div>
         </template>
     </ToolTemplate>
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
+@import "~variables";
 
-    #tool-layer-slider {
-        @include media-breakpoint-up(sm) {
-            min-width: 350px;
-        }
+#tool-layer-slider {
+    @include media-breakpoint-up(sm) {
+        min-width: 350px;
     }
-
+}
 </style>
+

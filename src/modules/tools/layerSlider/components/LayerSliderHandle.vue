@@ -1,5 +1,5 @@
 <script>
-import {mapGetters, mapMutations, mapActions} from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 import getters from "../store/gettersLayerSlider";
 import mutations from "../store/mutationsLayerSlider";
 import "bootstrap-slider";
@@ -7,12 +7,12 @@ import "bootstrap-slider";
 export default {
     name: "LayerSliderHandle",
     computed: {
-        ...mapGetters("Tools/LayerSlider", Object.keys(getters))
+        ...mapGetters("Tools/LayerSlider", Object.keys(getters)),
     },
-    created () {
+    created() {
         this.setActiveIndex(0);
     },
-    mounted () {
+    mounted() {
         const dataSliderTicks = this.prepareSliderTicks(this.layerIds);
 
         this.setDataSliderMax(String((this.layerIds.length - 1) * 10));
@@ -23,7 +23,7 @@ export default {
         ...mapMutations("Tools/LayerSlider", Object.keys(mutations)),
         ...mapActions("Tools/LayerSlider", [
             "sendModification",
-            "setActiveIndex"
+            "setActiveIndex",
         ]),
 
         /**
@@ -33,13 +33,18 @@ export default {
          */
         initializeSlider: function () {
             this.$nextTick(() => {
-                $(".slider").slider({
-                    "ticks_labels": this.layerIds.map(layerId => layerId.title)
-                }).on("slide", event => {
-                    this.dragHandle(event.value);
-                }).on("slideStop", event => {
-                    this.dragHandle(event.value);
-                });
+                $(".slider")
+                    .slider({
+                        ticks_labels: this.layerIds.map(
+                            (layerId) => layerId.title
+                        ),
+                    })
+                    .on("slide", (event) => {
+                        this.dragHandle(event.value);
+                    })
+                    .on("slideStop", (event) => {
+                        this.dragHandle(event.value);
+                    });
             });
         },
 
@@ -112,31 +117,32 @@ export default {
          * @returns {void}
          */
         showLayer: function (layerId, transparency, layerIds) {
-            if (layerIds.filter(layer => layer.layerId === layerId).length > 0) {
+            if (
+                layerIds.filter((layer) => layer.layerId === layerId).length > 0
+            ) {
                 this.sendModification({
                     layerId: layerId,
                     status: transparency >= 0 && transparency <= 100,
-                    transparency: transparency
+                    transparency: transparency,
                 });
             }
 
             if (transparency === 0) {
-                const filteredObj = layerIds.filter(obj => obj.layerId === layerId),
+                const filteredObj = layerIds.filter(
+                        (obj) => obj.layerId === layerId
+                    ),
                     index = layerIds.indexOf(filteredObj[0]);
 
                 this.setActiveIndex(index);
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
 <template lang="html">
     <div id="tool-layer-slider-handle">
-        <label
-            id="label-slider"
-            for="slider"
-        />
+        <label id="label-slider" for="slider" />
         <input
             id="slider"
             ref="sliderHandle"
@@ -148,11 +154,12 @@ export default {
             data-slider-value="0"
             :data-slider-ticks="dataSliderTicks"
             data-slider-tooltip="hide"
-        >
+        />
     </div>
 </template>
 
 <style lang="scss" scoped>
+@import "~variables";
 #tool-layer-slider-handle {
     display: flex;
     justify-content: space-evenly;
@@ -161,6 +168,10 @@ export default {
 
     #label-slider {
         flex-basis: 100%;
+    }
+
+    .slider.slider-horizontal {
+        width: 80%;
     }
 }
 </style>
@@ -172,3 +183,4 @@ export default {
     }
 }
 </style>
+

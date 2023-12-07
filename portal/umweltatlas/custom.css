@@ -77,3 +77,39 @@
     margin-left: 22px;
 }
 
+.layer-item .bi-check2-square {
+    margin-left: 22px;
+}
+
+/* Luftbilder slider  */
+.slider-track {
+    /* display: none; */
+}
+
+.slider-handle {
+    background-image: none;
+    background-color: white;
+    border: 5px solid #e69636;
+}
+
+.slider-tick {
+    background-image: none;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.slider-tick.in-selection {
+    background-image: none;
+    background-color: #e69636;
+    border: none;
+}
+
+.slider-selection.tick-slider-selection {
+    background-image: none !important;
+    background-color: #e69636 !important;
+}
+
+.color-green {
+    color: #1a4435;
+}
+
