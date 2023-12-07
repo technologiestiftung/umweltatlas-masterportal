@@ -73,11 +73,11 @@
     display: none !important;
 }
 
-.layer-item .bi-square {
+#Overlayer .layer-item .bi-circle {
     margin-left: 22px;
 }
 
-.layer-item .bi-check2-square {
+#Overlayer .layer-item .bi-check2-circle {
     margin-left: 22px;
 }
 

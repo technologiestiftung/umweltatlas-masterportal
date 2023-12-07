@@ -413,6 +413,7 @@ export default {
                                             width: 100px;
                                             flex: inherit;
                                             margin-right: 20px;
+                                            height: 60px;
                                         "
                                         alt="Kontaktperson"
                                         :src="contactPerson"
@@ -940,11 +941,12 @@ hr {
 
 .vue-tool-content-body .nav .nav-item {
     --bs-nav-tabs-border-width: 0px;
+    border-right: 1px solid #cccccc;
     flex: 1;
+    // align-self: center;
 }
 
 .vue-tool-content-body .nav .nav-link {
-    border-right: 1px solid #cccccc;
     background-color: #ffffff;
     color: #cccccc;
     text-align: center;
@@ -954,6 +956,7 @@ hr {
 .vue-tool-content-body .nav .nav-item .active {
     background-color: #1a4435;
     color: white !important;
+    height: 100%;
 }
 
 #layerinfo-text {
