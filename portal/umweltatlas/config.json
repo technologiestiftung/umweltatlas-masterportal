@@ -390,20 +390,6 @@
                       ]
                     },
                     {
-                      "Titel": "Bodenarten des Feinbodens",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_06_01bodart2010:1",
-                          "name": "2010 - Bodenarten des Feinbodens"
-                        },
-                        {
-                          "id": "wmsk01_06_01bodart2015:1",
-                          "name": "2015 - Bodenarten des Feinbodens"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Bodenarten",
                       "isFolderSelectable": false,
                       "Layer": [
@@ -418,6 +404,14 @@
                         {
                           "id": "k01_06_01bodart2005:1",
                           "name": "2005 - Bodenarten"
+                        },
+                        {
+                          "id": "k01_06_01bodart2010:1",
+                          "name": "2010 - Bodenarten"
+                        },
+                        {
+                          "id": "wmsk01_06_01bodart2015:1",
+                          "name": "2015 - Bodenarten"
                         }
                       ]
                     }
@@ -499,22 +493,16 @@
                   "isFolderSelectable": false,
                   "Ordner": [
                     {
-                      "Titel": "organischer Kohlenstoffvorrat",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k_01_06_6kohlenstoffvor2015:1",
-                          "name": "2015 - organischer Kohlenstoffvorrat"
-                        }
-                      ]
-                    },
-                    {
                       "Titel": "Kohlenstoffvorräte [kg/m²]",
                       "isFolderSelectable": false,
                       "Layer": [
                         {
                           "id": "wmsk_01_06_6kohlenstoffvor2010:4",
                           "name": "2010 - Kohlenstoffvorräte [kg/m²]"
+                        },
+                        {
+                          "id": "k_01_06_6kohlenstoffvor2015:1",
+                          "name": "2015 - Kohlenstoffvorräte [kg/m²]"
                         }
                       ]
                     },
@@ -551,38 +539,26 @@
                 {
                   "Titel": "01.06.8 Summe austauschbarer basischer Kationen des Oberbodens (S-Wert)",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Summe austauschbarer Kationen des Oberbodens",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_06_08sumkat:1",
-                          "name": "2001 - Summe austauschbarer Kationen des Oberbodens"
-                        },
-                        {
-                          "id": "k01_06_08sumkat2005:1",
-                          "name": "2005 - Summe austauschbarer Kationen des Oberbodens"
-                        },
-                        {
-                          "id": "k01_06_08sumkat2010:1",
-                          "name": "2010 - Summe austauschbarer Kationen des Oberbodens"
-                        },
-                        {
-                          "id": "k01_06_08sumkat2015:1",
-                          "name": "2015 - Summe austauschbarer Kationen des Oberbodens"
-                        }
-                      ]
+                      "id": "k01_06_08sumkat1990:1",
+                      "name": "1990 - Summe austauschbarer Kationen des Oberbodens"
                     },
                     {
-                      "Titel": "Basensättigung des Oberbodens",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_06_08sumkat1990:1",
-                          "name": "1990 - Basensättigung des Oberbodens"
-                        }
-                      ]
+                      "id": "kb01_06_08sumkat:1",
+                      "name": "2001 - Summe austauschbarer Kationen des Oberbodens"
+                    },
+                    {
+                      "id": "k01_06_08sumkat2005:1",
+                      "name": "2005 - Summe austauschbarer Kationen des Oberbodens"
+                    },
+                    {
+                      "id": "k01_06_08sumkat2010:1",
+                      "name": "2010 - Summe austauschbarer Kationen des Oberbodens"
+                    },
+                    {
+                      "id": "k01_06_08sumkat2015:1",
+                      "name": "2015 - Summe austauschbarer Kationen des Oberbodens"
                     }
                   ]
                 },
@@ -615,38 +591,26 @@
                 {
                   "Titel": "01.06.10 Gesättigte Wasserdurchlässigkeit (kf)",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Gesättigte Wasserdurchlässigkeit (kf) der Böden",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_06_10wasdur2015:1",
-                          "name": "2015 - Gesättigte Wasserdurchlässigkeit (kf) der Böden"
-                        }
-                      ]
+                      "id": "k01_06_10wasdur1990:1",
+                      "name": "1990 - Wasserdurchlässigkeit (kf) der Böden"
                     },
                     {
-                      "Titel": "Wasserdurchlässigkeit (kf) der Böden",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_06_10wasdur1990:1",
-                          "name": "1990 - Wasserdurchlässigkeit (kf) der Böden"
-                        },
-                        {
-                          "id": "kb01_06_10wasdur:1",
-                          "name": "2001 - Wasserdurchlässigkeit (kf) der Böden"
-                        },
-                        {
-                          "id": "k01_06_10wasdur2005:1",
-                          "name": "2005 - Wasserdurchlässigkeit (kf) der Böden"
-                        },
-                        {
-                          "id": "k01_06_10wasdur2010:1",
-                          "name": "2010 - Wasserdurchlässigkeit (kf) der Böden"
-                        }
-                      ]
+                      "id": "kb01_06_10wasdur:1",
+                      "name": "2001 - Wasserdurchlässigkeit (kf) der Böden"
+                    },
+                    {
+                      "id": "k01_06_10wasdur2005:1",
+                      "name": "2005 - Wasserdurchlässigkeit (kf) der Böden"
+                    },
+                    {
+                      "id": "k01_06_10wasdur2010:1",
+                      "name": "2010 - Wasserdurchlässigkeit (kf) der Böden"
+                    },
+                    {
+                      "id": "k01_06_10wasdur2015:1",
+                      "name": "2015 - Wasserdurchlässigkeit (kf) der Böden"
                     }
                   ]
                 }
@@ -711,38 +675,26 @@
                 {
                   "Titel": "01.11.3 Naturnähe",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Naturnähe der Böden",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_11_03natnae1990:1",
-                          "name": "1990 - Naturnähe der Böden"
-                        },
-                        {
-                          "id": "wmsk01_11_03natnae2015:1",
-                          "name": "2015 - Naturnähe der Böden"
-                        }
-                      ]
+                      "id": "k01_11_03natnae1990:1",
+                      "name": "1990 - Naturnähe der Böden"
                     },
                     {
-                      "Titel": "Naturnähe",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_11_03natnae:1",
-                          "name": "2001 - Naturnähe"
-                        },
-                        {
-                          "id": "k01_11_03natnae2005:1",
-                          "name": "2005 - Naturnähe"
-                        },
-                        {
-                          "id": "k01_11_03natnae2010:1",
-                          "name": "2010 - Naturnähe"
-                        }
-                      ]
+                      "id": "kb01_11_03natnae:1",
+                      "name": "2001 - Naturnähe der Böden"
+                    },
+                    {
+                      "id": "k01_11_03natnae2005:1",
+                      "name": "2005 - Naturnähe der Böden"
+                    },
+                    {
+                      "id": "k01_11_03natnae2010:1",
+                      "name": "2010 - Naturnähe der Böden"
+                    },
+                    {
+                      "id": "wmsk01_11_03natnae2015:1",
+                      "name": "2015 - Naturnähe der Böden"
                     }
                   ]
                 },
@@ -775,38 +727,26 @@
                 {
                   "Titel": "01.11.6 Nährstoffspeichervermögen / Schadstoffbindungsvermögen",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Nährstoffspeicher-/Schadstoffbindungsvermögen",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_11_06schad:1",
-                          "name": "2001 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
-                        },
-                        {
-                          "id": "k01_11_06schad2005:1",
-                          "name": "2005 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
-                        },
-                        {
-                          "id": "k01_11_06schad2010:1",
-                          "name": "2010 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
-                        },
-                        {
-                          "id": "k01_11_06schad2015:1",
-                          "name": "2015 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
-                        }
-                      ]
+                      "id": "k01_11_06schad1990:1",
+                      "name": "1990 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
                     },
                     {
-                      "Titel": "Nährstoffspeicher- / Schadstoffbindungsvermögen der Böden",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_11_06schad1990:1",
-                          "name": "1990 - Nährstoffspeicher- / Schadstoffbindungsvermögen der Böden"
-                        }
-                      ]
+                      "id": "kb01_11_06schad:1",
+                      "name": "2001 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
+                    },
+                    {
+                      "id": "k01_11_06schad2005:1",
+                      "name": "2005 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
+                    },
+                    {
+                      "id": "k01_11_06schad2010:1",
+                      "name": "2010 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
+                    },
+                    {
+                      "id": "k01_11_06schad2015:1",
+                      "name": "2015 - Nährstoffspeicher-/Schadstoffbindungsvermögen"
                     }
                   ]
                 },
@@ -861,72 +801,48 @@
                 {
                   "Titel": "01.11.9 Filtervermögen",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Filtervermögen",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_11_09filter:1",
-                          "name": "2001 - Filtervermögen"
-                        },
-                        {
-                          "id": "k01_11_09filter2005:1",
-                          "name": "2005 - Filtervermögen"
-                        },
-                        {
-                          "id": "k01_11_09filter2010:1",
-                          "name": "2010 - Filtervermögen"
-                        },
-                        {
-                          "id": "k01_11_09filter2015:1",
-                          "name": "2015 - Filtervermögen"
-                        }
-                      ]
+                      "id": "k01_11_09filter1990:1",
+                      "name": "1990 - Filtervermögen"
                     },
                     {
-                      "Titel": "Filtervermögen der Böden",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_11_09filter1990:1",
-                          "name": "1990 - Filtervermögen der Böden"
-                        }
-                      ]
+                      "id": "kb01_11_09filter:1",
+                      "name": "2001 - Filtervermögen"
+                    },
+                    {
+                      "id": "k01_11_09filter2005:1",
+                      "name": "2005 - Filtervermögen"
+                    },
+                    {
+                      "id": "k01_11_09filter2010:1",
+                      "name": "2010 - Filtervermögen"
+                    },
+                    {
+                      "id": "k01_11_09filter2015:1",
+                      "name": "2015 - Filtervermögen"
                     }
                   ]
                 },
                 {
                   "Titel": "01.11.10 Bindungsstärke für Schwermetalle",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Bindungsstärke für Schwermetalle",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_11_10bindung:1",
-                          "name": "2001 - Bindungsstärke für Schwermetalle"
-                        },
-                        {
-                          "id": "k01_11_10bindung2005:1",
-                          "name": "2005 - Bindungsstärke für Schwermetalle"
-                        },
-                        {
-                          "id": "wmsk01_11_10bindung2015:1",
-                          "name": "2015 - Bindungsstärke für Schwermetalle"
-                        }
-                      ]
+                      "id": "k01_11_10bindung1990:1",
+                      "name": "1990 - Bindungsstärke für Schwermetalle"
                     },
                     {
-                      "Titel": "Bindungsstärke der Böden für Schwermetalle",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_11_10bindung1990:1",
-                          "name": "1990 - Bindungsstärke der Böden für Schwermetalle"
-                        }
-                      ]
+                      "id": "kb01_11_10bindung:1",
+                      "name": "2001 - Bindungsstärke für Schwermetalle"
+                    },
+                    {
+                      "id": "k01_11_10bindung2005:1",
+                      "name": "2005 - Bindungsstärke für Schwermetalle"
+                    },
+                    {
+                      "id": "wmsk01_11_10bindung2015:1",
+                      "name": "2015 - Bindungsstärke für Schwermetalle"
                     }
                   ]
                 },
@@ -949,44 +865,26 @@
                 {
                   "Titel": "01.12.1 Lebensraumfunktion für naturnahe und seltene Pflanzengesellschaften",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_12_01lebens2010:1",
-                          "name": "2010 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
-                        },
-                        {
-                          "id": "k01_12_01lebens2015:1",
-                          "name": "2015 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
-                        }
-                      ]
+                      "id": "k01_12_01lebens1990:1",
+                      "name": "1990 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
                     },
                     {
-                      "Titel": "Lebensraumfunktion naturnahe/seltene Pflanzengesellschaften",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "kb01_12_01lebens:1",
-                          "name": "2001 - Lebensraumfunktion naturnahe/seltene Pflanzengesellschaften"
-                        },
-                        {
-                          "id": "k01_12_01lebens2005:1",
-                          "name": "2005 - Lebensraumfunktion naturnahe/seltene Pflanzengesellschaften"
-                        }
-                      ]
+                      "id": "kb01_12_01lebens:1",
+                      "name": "2001 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
                     },
                     {
-                      "Titel": "Lebensraumfunktion für die natürliche Vegetation",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_12_01lebens1990:1",
-                          "name": "1990 - Lebensraumfunktion für die natürliche Vegetation"
-                        }
-                      ]
+                      "id": "k01_12_01lebens2005:1",
+                      "name": "2005 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
+                    },
+                    {
+                      "id": "k01_12_01lebens2010:1",
+                      "name": "2010 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
+                    },
+                    {
+                      "id": "k01_12_01lebens2015:1",
+                      "name": "2015 - Lebensraumfunktion für naturnahe/seltene Pflanzengesellschaften"
                     }
                   ]
                 },
@@ -1129,46 +1027,22 @@
                 {
                   "Titel": "01.13 Planungshinweise zum Bodenschutz",
                   "isFolderSelectable": false,
-                  "Ordner": [
+                  "Layer": [
                     {
-                      "Titel": "Planungshinweise zum Bodenschutz",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_13bodplan2015:1",
-                          "name": "2015 - Planungshinweise zum Bodenschutz"
-                        }
-                      ]
+                      "id": "k01_13bodplan2001:1",
+                      "name": "2001 - Planungshinweise zum Bodenschutz"
                     },
                     {
-                      "Titel": "Planungshinweise zum Bodenschutz 2010",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_13bodplan2010:1",
-                          "name": "2010 - Planungshinweise zum Bodenschutz 2010"
-                        }
-                      ]
+                      "id": "k01_13bodplan2005:1",
+                      "name": "2005 - Planungshinweise zum Bodenschutz"
                     },
                     {
-                      "Titel": "Planungshinweise zum Bodenschutz 2005 (Umweltatlas)",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_13bodplan2005:1",
-                          "name": "2005 - Planungshinweise zum Bodenschutz 2005 (Umweltatlas)"
-                        }
-                      ]
+                      "id": "k01_13bodplan2010:1",
+                      "name": "2010 - Planungshinweise zum Bodenschutz"
                     },
                     {
-                      "Titel": "Planungshinweise zum Bodenschutz (Umweltatlas)",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_13bodplan2001:1",
-                          "name": "2001 - Planungshinweise zum Bodenschutz (Umweltatlas)"
-                        }
-                      ]
+                      "id": "k01_13bodplan2015:1",
+                      "name": "2015 - Planungshinweise zum Bodenschutz"
                     }
                   ]
                 }
@@ -1227,48 +1101,24 @@
                       "isFolderSelectable": false,
                       "Layer": [
                         {
-                          "id": "wmsk01_02versieg2016:1",
-                          "name": "2016 - Versiegelung"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Versiegelung 2011",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_02versieg2011:1",
-                          "name": "2011 - Versiegelung 2011"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Versiegelung 2005",
-                      "isFolderSelectable": false,
-                      "Layer": [
-                        {
-                          "id": "k01_02versieg2005:1",
-                          "name": "2005 - Versiegelung 2005"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Versiegelung 2001",
-                      "isFolderSelectable": false,
-                      "Layer": [
+                          "id": "versiegelung:1",
+                          "name": "1990 - Versiegelung"
+                        },
                         {
                           "id": "versiegelung2001:1",
-                          "name": "2001 - Versiegelung 2001"
-                        }
-                      ]
-                    },
-                    {
-                      "Titel": "Versiegelung 1990",
-                      "isFolderSelectable": false,
-                      "Layer": [
+                          "name": "2001 - Versiegelung"
+                        },
                         {
-                          "id": "versiegelung:1",
-                          "name": "1990 - Versiegelung 1990"
+                          "id": "k01_02versieg2005:1",
+                          "name": "2005 - Versiegelung"
+                        },
+                        {
+                          "id": "k01_02versieg2011:1",
+                          "name": "2011 - Versiegelung"
+                        },
+                        {
+                          "id": "wmsk01_02versieg2016:1",
+                          "name": "2016 - Versiegelung"
                         }
                       ]
                     }
