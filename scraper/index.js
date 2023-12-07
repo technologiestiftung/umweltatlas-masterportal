@@ -7,6 +7,7 @@ import axios from "axios";
 import fetch from "node-fetch";
 import services from "./services-internet.js";
 import baseMaps from "./baseMaps.js";
+import nameCorrections from "./nameCorrections.js";
 
 import servicesMasterLight from "./services-internet-masterportallight.js";
 // import missingServices from "./missingServices.js";
@@ -159,6 +160,8 @@ try {
     const subjectGroupLinks = $("article .inner .more")
         .map((i, el) => $(el).attr("href"))
         .get();
+
+    // const subjectGroupLinks = ["/umweltatlas/boden/"];
     eachGroup(subjectGroupLinks);
 } catch (error) {
     console.error(error);
@@ -451,9 +454,9 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                                 missingServices.push({
                                     iframeLink: iframeLink,
                                     id: d.id,
-                                    infoURL: descriptionLink,
-                                    download: downloadLink,
-                                    contact: contact,
+                                    // infoURL: descriptionLink,
+                                    // download: downloadLink,
+                                    // contact: contact,
                                 });
 
                                 return;
@@ -473,7 +476,10 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                             service.contact = contact;
 
                             servicesWant.push(service);
-                            const name = service.name;
+                            let name = service.name;
+                            if (nameCorrections[d.id]) {
+                                name = nameCorrections[d.id];
+                            }
 
                             if (
                                 unwantedLayers.includes(name) ||
