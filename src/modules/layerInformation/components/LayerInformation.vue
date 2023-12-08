@@ -249,6 +249,7 @@ export default {
         </template>
         <template #body>
             <div class="body">
+                <!-- NAV START -->
                 <ul class="nav nav-tabs">
                     <li
                         v-if="legendURL !== 'ignore'"
@@ -353,6 +354,8 @@ export default {
                         </a>
                     </li>
                 </ul>
+                <!-- NAV END -->
+                <!-- CONTENT START -->
                 <div class="tab-content">
                     <div id="layer-accordions" @click="onClick">
                         <div v-if="layerInfo?.infoURL">
@@ -419,7 +422,7 @@ export default {
                                         :src="contactPerson"
                                     />
                                     <div style="flex: 1">
-                                        <p class="bold">
+                                        <p class="bold color-green">
                                             Ansprechperson zum ausgewählten
                                             Datensatz
                                         </p>
@@ -438,13 +441,8 @@ export default {
                     <div v-if="title" id="layer-info-title">
                         {{ title }}
                     </div>
-                    <div
-                        v-if="legendURL !== 'ignore'"
-                        id="layerinfo-legend"
-                        :class="getTabPaneClasses('layerinfo-legend')"
-                        :show="isActiveTab('layerinfo-legend')"
-                        :type="String('layerinfo-legend')"
-                    />
+
+                    <!-- LAYER INFO: TEXT -->
                     <div
                         id="layerinfo-text"
                         class=""
@@ -527,7 +525,11 @@ export default {
                             </div>
                         </template>
                         <div v-if="showAdditionalMetaData">
-                            <p v-for="url in metaURLs" :key="url">
+                            <p
+                                v-for="url in metaURLs"
+                                :key="url"
+                                style="padding-top: 1rem; padding-bottom: 1rem"
+                            >
                                 <a :href="url" target="_blank" @click="onClick">
                                     {{
                                         $t(
@@ -539,6 +541,16 @@ export default {
                         </div>
                     </div>
 
+                    <!-- LAYER INFO: LEGEND -->
+                    <div
+                        v-if="legendURL !== 'ignore'"
+                        id="layerinfo-legend"
+                        :class="getTabPaneClasses('layerinfo-legend')"
+                        :show="isActiveTab('layerinfo-legend')"
+                        :type="String('layerinfo-legend')"
+                    />
+
+                    <!-- LAYER INFO: SHOW URL -->
                     <div
                         v-if="showUrl"
                         id="url"
@@ -628,38 +640,43 @@ export default {
                         </div>
                     </div>
 
+                    <!-- LAYER INFO DOWNLOAD -->
                     <div
-                        v-if="showUrl"
+                        v-if="layerInfo.download"
                         id="download-map"
                         :show="isActiveTab('download-map')"
                         :class="getTabPaneClasses('download-map')"
                         :type="String('download-map')"
-                        style="display: flex; margin-top: 10px"
                     >
-                        <button class="download-btn btn">
-                            <a
-                                :href="layerInfo.download"
-                                target="_blank"
-                                @click="onClick"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="bi bi-download"
-                                    viewBox="0 0 16 16"
+                        <div style="padding: 1em">
+                            <p>Hier können Sie den Datensatz herunterladen</p>
+                        </div>
+                        <div style="display: flex; margin-top: 10px">
+                            <button class="download-btn btn">
+                                <a
+                                    :href="layerInfo.download"
+                                    target="_blank"
+                                    @click="onClick"
                                 >
-                                    <path
-                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
-                                    />
-                                    <path
-                                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
-                                    />
-                                </svg>
-                                PDF
-                            </a>
-                        </button>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-download"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                                        />
+                                        <path
+                                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+                                        />
+                                    </svg>
+                                    PDF
+                                </a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
