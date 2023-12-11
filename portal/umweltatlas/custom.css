@@ -28,10 +28,6 @@
 }
 /* disabled="disabled" */
 
-#Baselayer .selected {
-    background-color: #1a4435;
-}
-
 .has-feedback .input-group-text {
     background-color: #fcf3e8;
 }
@@ -111,5 +107,88 @@
 
 .color-green {
     color: #1a4435;
+}
+
+/* TREE Hover and select */
+/* .{
+    #1a4435
+} */
+
+#tree {
+    font-family: "MasterPortalFont", "Arial Narrow", Arial, sans-serif !important;
+}
+
+#Baselayer .selected {
+    background-color: none;
+}
+
+.layer-item {
+    color: inherit;
+}
+
+.layer-item.tabable.checked {
+    color: inherit !important;
+}
+
+#tree .tabable:focus {
+    border: none !important;
+    outline: none !important;
+}
+
+#tree .tabable:focus-visible {
+    border: none !important;
+    outline: none !important;
+}
+/* .layer-item.tabable.checked:checked {
+    border: none;
+} */
+
+ul#tree .checked:hover {
+    background-color: inherit !important;
+}
+
+.layer-item.tabable i {
+    color: inherit !important;
+}
+
+#tree .tabable:hover {
+    background-color: inherit !important;
+}
+
+#tree .dropdown-item:hover {
+    color: white !important;
+}
+
+#tree .dropdown-item:hover {
+    background-color: #1a4435;
+    color: white !important;
+}
+
+#tree .layer-dropdown-item:hover {
+    background-color: inherit !important;
+}
+
+#tree .dropdown-item:hover .layer-info-item i {
+    color: #e69636;
+}
+
+#tree .dropdown-item:hover .last-item i {
+    color: #e69636;
+}
+
+#tree .dropdown-item:hover .x-icon i {
+    color: white;
+}
+
+#tree ul li a {
+    color: inherit !important;
+}
+
+.layer-item {
+    color: inherit !important;
+}
+
+.layer-item.tabable {
+    color: inherit !important;
 }
 
