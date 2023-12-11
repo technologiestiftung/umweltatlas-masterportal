@@ -1,5 +1,5 @@
 <script>
-import {mapGetters, mapMutations, mapActions} from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 import getters from "../store/gettersOrientation";
 import mutations from "../store/mutationsOrientation";
 import ControlIcon from "../../ControlIcon.vue";
@@ -9,7 +9,7 @@ import Geolocation from "ol/Geolocation.js";
 import Overlay from "ol/Overlay.js";
 import proj4 from "proj4";
 import * as Proj from "ol/proj.js";
-import {Circle, LineString} from "ol/geom.js";
+import { Circle, LineString } from "ol/geom.js";
 import LoaderOverlay from "../../../../utils/loaderOverlay";
 
 export default {
@@ -17,72 +17,75 @@ export default {
     components: {
         ControlIcon,
         PoiChoice,
-        PoiOrientation
+        PoiOrientation,
     },
     props: {
         /** the zoomMode in config.json */
         zoomMode: {
             type: String,
             required: false,
-            default: "once"
+            default: "once",
         },
         /** the distances in config.json */
         poiDistances: {
             type: [Boolean, Array],
             required: false,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
-    data () {
+    data() {
         return {
             firstGeolocation: true, // flag to check if it the first time
             marker: new Overlay({
                 positioning: "center-center",
-                stopEvent: false
+                stopEvent: false,
             }),
             tracking: false,
             isGeolocationDenied: false,
             isGeoLocationPossible: false,
-            storePath: this.$store.state.controls.orientation
+            storePath: this.$store.state.controls.orientation,
         };
     },
     computed: {
         ...mapGetters("controls/orientation", Object.keys(getters)),
         ...mapGetters("Maps", ["projection"]),
-        poiDistancesLocal () {
-            return this.poiDistances === true ? [500, 1000, 2000] : this.poiDistances;
-        }
+        poiDistancesLocal() {
+            return this.poiDistances === true
+                ? [500, 1000, 2000]
+                : this.poiDistances;
+        },
     },
     watch: {
-        tracking () {
+        tracking() {
             this.trackingChanged();
             this.checkWFS();
         },
-        isGeolocationDenied () {
+        isGeolocationDenied() {
             this.toggleBackground();
             this.checkWFS();
         },
-        position () {
+        position() {
             if (!this.poiModeCurrentPositionEnabled && this.showPoiIcon) {
                 this.showPoiWindow();
             }
-        }
+        },
     },
-    created () {
+    created() {
         this.setIsGeoLocationPossible();
         Radio.channel("ModelList").on("updateVisibleInMapList", this.checkWFS);
     },
-    mounted () {
+    mounted() {
         this.addElement();
         this.checkWFS();
-
     },
     methods: {
         ...mapMutations("controls/orientation", Object.keys(mutations)),
         ...mapActions("Maps", ["setCenter", "setZoomLevel"]),
 
-        setIsGeoLocationPossible () {
-            this.isGeoLocationPossible = window.location.protocol === "https:" || ["localhost", "127.0.0.1"].indexOf(window.location.hostname);
+        setIsGeoLocationPossible() {
+            this.isGeoLocationPossible =
+                window.location.protocol === "https:" ||
+                ["localhost", "127.0.0.1"].indexOf(window.location.hostname);
         },
 
         /**
@@ -90,23 +93,27 @@ export default {
          * @returns {void}
          */
         addElement: function () {
-            this.marker.setElement(document.querySelector("#geolocation_marker"));
+            this.marker.setElement(
+                document.querySelector("#geolocation_marker")
+            );
         },
 
         /**
          * Tracking the geo position
          * @returns {void}
          */
-        track () {
+        track() {
             let geolocation = null;
 
             if (this.isGeolocationDenied === false) {
                 mapCollection.getMap("2D").addOverlay(this.marker);
                 if (this.geolocation === null) {
-                    geolocation = new Geolocation({tracking: true, projection: Proj.get("EPSG:4326")});
+                    geolocation = new Geolocation({
+                        tracking: true,
+                        projection: Proj.get("EPSG:4326"),
+                    });
                     this.setGeolocation(geolocation);
-                }
-                else {
+                } else {
                     geolocation = this.geolocation;
                     this.positioning();
                 }
@@ -114,8 +121,7 @@ export default {
                 geolocation.on("change", this.positioning);
                 geolocation.on("error", this.onError);
                 this.tracking = true;
-            }
-            else {
+            } else {
                 this.onError();
             }
         },
@@ -124,7 +130,7 @@ export default {
          * Untracking the geo position
          * @returns {void}
          */
-        untrack () {
+        untrack() {
             const geolocation = this.geolocation;
 
             geolocation.setTracking(false); // for FireFox - cannot handle geolocation.un(...)
@@ -141,8 +147,15 @@ export default {
          * Show error information and untack if there are errors by trcking the position
          * @returns {void}
          */
-        onError () {
-            this.$store.dispatch("Alerting/addSingleAlert", "<strong>" + i18next.t("common:modules.controls.orientation.geolocationDeniedText") + " </strong>");
+        onError() {
+            this.$store.dispatch(
+                "Alerting/addSingleAlert",
+                "<strong>" +
+                    i18next.t(
+                        "common:modules.controls.orientation.geolocationDeniedText"
+                    ) +
+                    " </strong>"
+            );
             this.isGeolocationDenied = true;
             if (this.geolocation !== null) {
                 this.untrack();
@@ -153,7 +166,7 @@ export default {
          * Removing the overlay of marker from map
          * @returns {void}
          */
-        removeOverlay () {
+        removeOverlay() {
             mapCollection.getMap("2D").removeOverlay(this.marker);
         },
 
@@ -161,15 +174,18 @@ export default {
          * To decide shwo or not to show Poi
          * @returns {void}
          */
-        checkWFS () {
-            const visibleWFSModels = Radio.request("ModelList", "getModelsByAttributes", {isVisibleInMap: true, typ: "WFS"});
+        checkWFS() {
+            const visibleWFSModels = Radio.request(
+                "ModelList",
+                "getModelsByAttributes",
+                { isVisibleInMap: true, typ: "WFS" }
+            );
 
             if (this.poiDistancesLocal.length > 0) {
                 if (!visibleWFSModels.length) {
                     this.setShowPoiIcon(false);
                     this.$store.dispatch("MapMarker/removePointMarker");
-                }
-                else {
+                } else {
                     this.setShowPoiIcon(true);
                 }
             }
@@ -179,15 +195,17 @@ export default {
          * Change the style of button
          * @returns {void}
          */
-        trackingChanged () {
+        trackingChanged() {
             if (this.tracking) {
-                document.querySelector("#geolocate").className += " toggleButtonPressed";
-            }
-            else {
+                document.querySelector("#geolocate").className +=
+                    " toggleButtonPressed";
+            } else {
                 if (this.geolocation !== null) {
                     this.untrack();
                 }
-                document.querySelector("#geolocate").classList.remove("toggleButtonPressed");
+                document
+                    .querySelector("#geolocate")
+                    .classList.remove("toggleButtonPressed");
             }
         },
 
@@ -195,11 +213,10 @@ export default {
          * Getting the current postion or untrack the position
          * @returns {void}
          */
-        getOrientation () {
+        getOrientation() {
             if (!this.tracking) {
                 this.track();
-            }
-            else if (this.geolocation !== null) {
+            } else if (this.geolocation !== null) {
                 this.untrack();
             }
         },
@@ -209,11 +226,10 @@ export default {
          * @param {Object} position the position object from openlayer
          * @returns {void}
          */
-        positionMarker (position) {
+        positionMarker(position) {
             try {
                 this.marker.setPosition(position);
-            }
-            catch (e) {
+            } catch (e) {
                 console.error("wasn't able to set marker");
             }
         },
@@ -223,7 +239,7 @@ export default {
          * @param {Object} position the position object from openlayer
          * @returns {void}
          */
-        zoomAndCenter (position) {
+        zoomAndCenter(position) {
             this.setCenter(position);
             this.setZoomLevel(6);
         },
@@ -232,12 +248,16 @@ export default {
          * Setting the current map on the position
          * @returns {void}
          */
-        positioning () {
+        positioning() {
             const geolocation = this.geolocation,
                 position = geolocation.getPosition(),
                 firstGeolocation = this.firstGeolocation,
                 zoomMode = this.zoomMode,
-                centerPosition = proj4(proj4("EPSG:4326"), proj4(this.projection.getCode()), position);
+                centerPosition = proj4(
+                    proj4("EPSG:4326"),
+                    proj4(this.projection.getCode()),
+                    position
+                );
 
             // setting the center position
             this.setPosition(centerPosition);
@@ -248,18 +268,19 @@ export default {
                     this.positionMarker(centerPosition);
                     this.zoomAndCenter(centerPosition);
                     this.firstGeolocation = false;
-                }
-                else {
+                } else {
                     this.positionMarker(centerPosition);
                 }
-            }
-            else if (zoomMode === "always") {
+            } else if (zoomMode === "always") {
                 this.positionMarker(centerPosition);
                 this.zoomAndCenter(centerPosition);
                 this.firstGeolocation = false;
-            }
-            else {
-                console.error("The configured zoomMode: " + zoomMode + " does not exist. Please use the params 'once' or 'always'!");
+            } else {
+                console.error(
+                    "The configured zoomMode: " +
+                        zoomMode +
+                        " does not exist. Please use the params 'once' or 'always'!"
+                );
             }
 
             this.$store.dispatch("MapMarker/removePointMarker");
@@ -269,13 +290,12 @@ export default {
          * with deactivated localization the button is disabled and poi button is hidden
          * @returns {void}
          */
-        toggleBackground () {
+        toggleBackground() {
             const geolocateIcon = document.getElementById("geolocate");
 
             if (this.isGeolocationDenied) {
                 geolocateIcon.style.backgroundColor = "grey";
-            }
-            else {
+            } else {
                 geolocateIcon.style.backgroundColor = "#E10019";
             }
         },
@@ -284,7 +304,7 @@ export default {
          * Show Poi window
          * @returns {void}
          */
-        getPOI () {
+        getPOI() {
             this.setShowPoiChoice(true);
         },
 
@@ -292,7 +312,7 @@ export default {
          * Tracking the poi
          * @returns {void}
          */
-        trackPOI () {
+        trackPOI() {
             let geolocation = null;
 
             this.removeOverlay();
@@ -301,10 +321,12 @@ export default {
                 this.$store.dispatch("MapMarker/removePointMarker");
                 mapCollection.getMap("2D").addOverlay(this.marker);
                 if (this.geolocation === null) {
-                    geolocation = new Geolocation({tracking: true, projection: Proj.get("EPSG:4326")});
+                    geolocation = new Geolocation({
+                        tracking: true,
+                        projection: Proj.get("EPSG:4326"),
+                    });
                     this.setGeolocation(geolocation);
-                }
-                else {
+                } else {
                     geolocation = this.geolocation;
                     this.setPosition(null);
                     this.showPoiWindow();
@@ -318,14 +340,13 @@ export default {
          * Untracking the poi
          * @returns {void}
          */
-        untrackPOI () {
+        untrackPOI() {
             const geolocation = this.geolocation;
 
             if (this.poiModeCurrentPositionEnabled) {
                 geolocation.un("change", this.showPoiWindow);
                 geolocation.un("error", this.onPOIError);
-            }
-            else {
+            } else {
                 this.removeOverlay();
             }
             this.setShowPoi(false);
@@ -335,12 +356,16 @@ export default {
          * Showing poi window
          * @returns {void}
          */
-        showPoiWindow () {
+        showPoiWindow() {
             if (!this.position) {
                 LoaderOverlay.show();
                 const geolocation = this.geolocation,
                     position = geolocation.getPosition(),
-                    centerPosition = proj4(proj4("EPSG:4326"), proj4(this.projection.getCode()), position);
+                    centerPosition = proj4(
+                        proj4("EPSG:4326"),
+                        proj4(this.projection.getCode()),
+                        position
+                    );
 
                 // setting the center position
                 this.setPosition(centerPosition);
@@ -354,8 +379,16 @@ export default {
          * @param {Object} evt error event
          * @returns {void}
          */
-        onPOIError (evt) {
-            this.$store.dispatch("Alerting/addSingleAlert", "<strong>" + i18next.t("common:modules.controls.orientation.trackingDeniedText") + " </strong>" + evt.message);
+        onPOIError(evt) {
+            this.$store.dispatch(
+                "Alerting/addSingleAlert",
+                "<strong>" +
+                    i18next.t(
+                        "common:modules.controls.orientation.trackingDeniedText"
+                    ) +
+                    " </strong>" +
+                    evt.message
+            );
 
             if (this.geolocation !== null) {
                 this.untrack();
@@ -369,27 +402,40 @@ export default {
          * @param  {Array} centerPosition the center position
          * @return {ol/feature} Array of ol.features list
          */
-        getVectorFeaturesInCircle (distance, centerPosition) {
+        getVectorFeaturesInCircle(distance, centerPosition) {
             const circle = new Circle(centerPosition, distance),
                 circleExtent = circle.getExtent(),
-                visibleWFSLayers = Radio.request("ModelList", "getModelsByAttributes", {isVisibleInMap: true, typ: "WFS"});
+                visibleWFSLayers = Radio.request(
+                    "ModelList",
+                    "getModelsByAttributes",
+                    { isVisibleInMap: true, typ: "WFS" }
+                );
             let featuresAll = [],
                 features = [];
 
-            visibleWFSLayers.forEach(layer => {
+            visibleWFSLayers.forEach((layer) => {
                 if (layer.has("layerSource") === true) {
-                    features = layer.get("layerSource").getFeaturesInExtent(circleExtent);
+                    features = layer
+                        .get("layerSource")
+                        .getFeaturesInExtent(circleExtent);
                     features.forEach(function (feat) {
                         Object.assign(feat, {
                             styleId: layer.get("styleId"),
                             layerName: layer.get("name"),
-                            nearbyTitleText: this.getNearbyTitleText(feat, layer.get("nearbyTitle")),
-                            dist2Pos: this.getDistance(feat, centerPosition)
+                            nearbyTitleText: this.getNearbyTitleText(
+                                feat,
+                                layer.get("nearbyTitle")
+                            ),
+                            dist2Pos: this.getDistance(feat, centerPosition),
                         });
                     }, this);
-                    featuresAll = this.union(features, featuresAll, function (obj1, obj2) {
-                        return obj1 === obj2;
-                    });
+                    featuresAll = this.union(
+                        features,
+                        featuresAll,
+                        function (obj1, obj2) {
+                            return obj1 === obj2;
+                        }
+                    );
                 }
             }, this);
 
@@ -403,7 +449,7 @@ export default {
          * @param  {Function} equalityFunc to compare objects
          * @returns {Array} the union of the two arrays
          */
-        union (arr1, arr2, equalityFunc) {
+        union(arr1, arr2, equalityFunc) {
             const union = arr1.concat(arr2);
             let i = 0,
                 j = 0;
@@ -425,8 +471,10 @@ export default {
          * @param {Number[]} centerPosition the center position
          * @return {number} dist the distance
          */
-        getDistance (feat, centerPosition) {
-            const closestPoint = feat.getGeometry().getClosestPoint(centerPosition),
+        getDistance(feat, centerPosition) {
+            const closestPoint = feat
+                    .getGeometry()
+                    .getClosestPoint(centerPosition),
                 line = new LineString([closestPoint, centerPosition]);
 
             return Math.round(line.getLength());
@@ -438,14 +486,16 @@ export default {
          * @param {(String|String[])} nearbyTitle the attribute(s) of features to show in the nearby list
          * @return {String[]} the text of nearbyTitle
          */
-        getNearbyTitleText (feat, nearbyTitle) {
-            if (typeof nearbyTitle === "string" && feat.get(nearbyTitle) !== undefined) {
+        getNearbyTitleText(feat, nearbyTitle) {
+            if (
+                typeof nearbyTitle === "string" &&
+                feat.get(nearbyTitle) !== undefined
+            ) {
                 return [feat.get(nearbyTitle)];
-            }
-            else if (Array.isArray(nearbyTitle)) {
+            } else if (Array.isArray(nearbyTitle)) {
                 const nearbyTitleText = [];
 
-                nearbyTitle.forEach(attr => {
+                nearbyTitle.forEach((attr) => {
                     if (feat.get(attr) !== undefined) {
                         nearbyTitleText.push(feat.get(attr));
                     }
@@ -454,24 +504,20 @@ export default {
                 return nearbyTitleText;
             }
             return [];
-        }
-    }
-
+        },
+    },
 };
 </script>
 
 <template>
     <div class="orientationButtons">
-        <span
-            id="geolocation_marker"
-            class="bootstrap-icon geolocation_marker"
-        >
-            <i class="bi-geo-alt-fill" />
+        <span id="geolocation_marker" class="bootstrap-icon geolocation_marker">
+            <i class="bi-geo-alt" />
         </span>
         <ControlIcon
             id="geolocate"
             :title="$t('common:modules.controls.orientation.titleGeolocate')"
-            :icon-name="'geo-alt-fill'"
+            :icon-name="'geo-alt'"
             :on-click="getOrientation"
         />
         <ControlIcon
@@ -496,18 +542,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
+@import "~variables";
 
-    .orientationButtons {
-        margin-top: 20px;
-        >.toggleButtonPressed {
-            background-color: rgb(8,88,158);
-        }
+.orientationButtons {
+    margin-top: 20px;
+    > .toggleButtonPressed {
+        background-color: rgb(8, 88, 158);
     }
-    .geolocation_marker {
-        color: $white;
-        padding: 2px 3px 2px 2px;
-        background: none repeat scroll #D42132;
-        border-radius: 50px;
-    }
+}
+.geolocation_marker {
+    color: $white;
+    padding: 2px 3px 2px 2px;
+    background: none repeat scroll #d42132;
+    border-radius: 50px;
+}
 </style>
+

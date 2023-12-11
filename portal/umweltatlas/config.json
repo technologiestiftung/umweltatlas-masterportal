@@ -232,6 +232,7 @@
     },
     "controls": {
       "zoom": true,
+      "fullScreen": true,
       "orientation": {
         "zoomMode": "once"
       },

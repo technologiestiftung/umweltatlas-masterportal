@@ -229,3 +229,48 @@ ul#tree .checked:hover {
     background-color: #fafafa;
 } */
 
+/* controls */
+
+.zoom-buttons button:first-child {
+    margin-bottom: 10px;
+}
+
+.zoom-buttons button {
+    background-color: white !important;
+}
+
+.zoom-buttons button i {
+    color: #333333 !important;
+}
+
+.control-icon:disabled i {
+    color: #e3e3e3 !important;
+}
+
+.right-bar.controls button {
+    border-radius: 6px;
+}
+
+.right-bar.controls button:focus {
+    outline: none;
+}
+
+#geolocate {
+    background-color: white !important;
+    color: #333333 !important;
+}
+
+.attributions-wrapper.bottom-controls button {
+    background-color: white !important;
+    color: #333333 !important;
+}
+
+.fullscreen-button button {
+    background-color: white !important;
+    color: #333333 !important;
+}
+
+.orientationButtons.spaced.top-controls {
+    margin-top: 0px;
+}
+

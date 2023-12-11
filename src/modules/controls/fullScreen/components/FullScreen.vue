@@ -1,5 +1,5 @@
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 import ControlIcon from "../../ControlIcon.vue";
 import TableStyleControl from "../../TableStyleControl.vue";
 import uiStyle from "../../../../utils/uiStyle";
@@ -8,22 +8,19 @@ import uiStyle from "../../../../utils/uiStyle";
  * Enables fullscreen using browser tools.
  * @returns {Boolean} if true: fullscreen has been enabled; if false: unable to enable fullscreen
  */
-function openFullScreen () {
+function openFullScreen() {
     const elem = document.documentElement;
 
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
         return true;
-    }
-    else if (elem.msRequestFullscreen) {
+    } else if (elem.msRequestFullscreen) {
         elem.msRequestFullscreen();
         return true;
-    }
-    else if (elem.mozRequestFullScreen) {
+    } else if (elem.mozRequestFullScreen) {
         elem.mozRequestFullScreen();
         return true;
-    }
-    else if (elem.webkitRequestFullscreen) {
+    } else if (elem.webkitRequestFullscreen) {
         elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
         return true;
     }
@@ -35,20 +32,17 @@ function openFullScreen () {
  * Disables fullscreen using browser tools if fullscreen was enabled before using the same browser tools.
  * @returns {Boolean} if true: fullscreen has been disabled; if false: unable to disable fullscreen
  */
-function closeFullScreen () {
+function closeFullScreen() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
         return true;
-    }
-    else if (document.msExitFullscreen) {
+    } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
         return true;
-    }
-    else if (document.mozCancelFullScreen) {
+    } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
         return true;
-    }
-    else if (document.webkitExitFullscreen) {
+    } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
         return true;
     }
@@ -56,17 +50,16 @@ function closeFullScreen () {
     return false;
 }
 
-
 /**
  * checks if the browser is currently in fullscreen
  * @returns {Boolean}  true - the browser is currently in fullscreen mode
  */
-function isFullScreen () {
+function isFullScreen() {
     return Boolean(
         document.fullscreenElement ||
-        document.mozFullScreenElement ||
-        document.webkitFullscreenElement ||
-        document.msFullscreenElement
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement ||
+            document.msFullscreenElement
     );
 }
 
@@ -79,17 +72,19 @@ export default {
     name: "FullScreen",
     data: function () {
         return {
-            active: isFullScreen()
+            active: isFullScreen(),
         };
     },
     computed: {
         ...mapGetters(["uiStyle"]),
 
-        component () {
-            return uiStyle.getUiStyle() === "TABLE" ? TableStyleControl : ControlIcon;
-        }
+        component() {
+            return uiStyle.getUiStyle() === "TABLE"
+                ? TableStyleControl
+                : ControlIcon;
+        },
     },
-    mounted () {
+    mounted() {
         document.addEventListener("mozfullscreenchange", this.escapeHandler);
         document.addEventListener("MSFullscreenChange", this.escapeHandler);
         document.addEventListener("webkitfullscreenchange", this.escapeHandler);
@@ -101,7 +96,7 @@ export default {
          * Is necessary to capture the termination of the fullscreenmode via the ESC key and to render the fullscreenbutton correctly (on/off) in the further process.
          * @returns {void}
          */
-        escapeHandler () {
+        escapeHandler() {
             this.active = isFullScreen();
         },
 
@@ -109,7 +104,7 @@ export default {
          * Toggles between fullscreen and normal screen.
          * @returns {void}
          */
-        toggleFullScreen () {
+        toggleFullScreen() {
             // if portal is in an iframe, it can't be set to fullscreen - open new tab for better access
             if (window.self !== window.top) {
                 window.open(window.location.href, "_blank");
@@ -117,12 +112,11 @@ export default {
             }
             if (this.active) {
                 this.active = !closeFullScreen();
-            }
-            else {
+            } else {
                 this.active = openFullScreen();
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -130,13 +124,20 @@ export default {
     <div class="fullscreen-button">
         <component
             :is="component"
-            :title="$t(`common:modules.controls.fullScreen.${active ? 'disable' : 'enable'}`)"
-            :icon-name="active ? 'fullscreen-exit' : 'arrows-fullscreen'"
+            :title="
+                $t(
+                    `common:modules.controls.fullScreen.${
+                        active ? 'disable' : 'enable'
+                    }`
+                )
+            "
+            :icon-name="active ? 'fullscreen-exit' : 'fullscreen'"
             :on-click="toggleFullScreen"
         />
     </div>
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
+@import "~variables";
 </style>
+
