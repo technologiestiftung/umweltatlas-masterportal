@@ -256,7 +256,7 @@
         },
         {
           "id": "basemap_raster_grau",
-          "visibility": false
+          "visibility": true
         }
       ]
     },

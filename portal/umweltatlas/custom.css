@@ -3,6 +3,14 @@
     width: 0px;
 }
 
+.btn-search-question > .bootstrap-icon:hover {
+    background-color: #fff !important;
+    color: inherit;
+}
+.btn-search-question {
+    box-shadow: none;
+}
+
 #root > li:last-child {
     display: none !important;
 }

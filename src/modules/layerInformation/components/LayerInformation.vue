@@ -651,7 +651,7 @@ export default {
                         <div style="padding: 1em">
                             <p>Hier können Sie den Datensatz herunterladen</p>
                         </div>
-                        <div style="display: flex; margin-top: 10px">
+                        <div style="display: flex; margin-bottom: 10px">
                             <button class="download-btn btn">
                                 <a
                                     :href="layerInfo.download"
@@ -814,7 +814,8 @@ hr {
     margin-top: 10px;
 
     p {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     input {
@@ -988,6 +989,10 @@ hr {
     border-bottom: 1px solid #cccccc;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.layer-legend-container img {
+    width: 100% !important;
 }
 </style>
 
