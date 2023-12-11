@@ -1,15 +1,15 @@
 export default [
     {
         id: "k5_farbe:k5_sw:gdi_be_25833",
-        name: "Karte von Berlin (K5 SW-Ausgabe)",
+        name: "Karte von Berlin 1:5000 (K5 SW-Ausgabe)",
         name_lang:
-            "Karte von Berlin (K5 SW-Ausgabe) (Karte von Berlin 1:5000 (K5 - Farbausgabe))",
-        url: "https://fbinter.stadt-berlin.de/fb/wmts/senstadt/k5_farbe",
+            "Karte von Berlin 1:5000 (K5 SW-Ausgabe) (Karte von Berlin 1:5000 (K5 SW-Ausgabe))",
+        url: "https://gdi.berlin.de/services/wmts/k5_sw",
         capabilitiesUrl:
-            "https://fbinter.stadt-berlin.de/fb/wmts/senstadt/k5_farbe?request=getcapabilities&service=WMTS&version=1.0.0",
+            "https://gdi.berlin.de/services/wmts/k5_sw?request=getcapabilities&service=WMTS&version=1.0.0",
         typ: "WMTS",
         layers: "k5_sw",
-        tileMatrixSet: "gdi_be_25833",
+        tileMatrixSet: "GDIBE:25833",
         datasets: [
             {
                 md_id: "ed9d0b87-ab8b-3db0-9bf3-7f9218cc004a",
@@ -19,19 +19,19 @@ export default [
         ],
         optionsFromCapabilities: true,
         layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]". Werden auch Daten des Bundeslandes Brandenburg genutzt, ist der Quellenvermerk um den Hinweis "© GeoBasis-DE/LGB (2023), dl-de/by-2-0, Daten geändert" zu ergänzen.',
+            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
     },
     {
         id: "k5_farbe:k5_farbe:gdi_be_25833",
-        name: "Karte von Berlin (K5)",
+        name: "Karte von Berlin 1:5000 (K5 - Farbausgabe)",
         name_lang:
-            "Karte von Berlin (K5) (Karte von Berlin 1:5000 (K5 - Farbausgabe))",
-        url: "https://fbinter.stadt-berlin.de/fb/wmts/senstadt/k5_farbe",
+            "Karte von Berlin 1:5000 (K5 - Farbausgabe) (Karte von Berlin 1:5000 (K5 - Farbausgabe))",
+        url: "https://gdi.berlin.de/services/wmts/k5_farbe",
         capabilitiesUrl:
-            "https://fbinter.stadt-berlin.de/fb/wmts/senstadt/k5_farbe?request=getcapabilities&service=WMTS&version=1.0.0",
+            "https://gdi.berlin.de/services/wmts/k5_farbe?request=getcapabilities&service=WMTS&version=1.0.0",
         typ: "WMTS",
         layers: "k5_farbe",
-        tileMatrixSet: "gdi_be_25833",
+        tileMatrixSet: "GDIBE:25833",
         datasets: [
             {
                 md_id: "ed9d0b87-ab8b-3db0-9bf3-7f9218cc004a",
@@ -41,7 +41,7 @@ export default [
         ],
         optionsFromCapabilities: true,
         layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]". Werden auch Daten des Bundeslandes Brandenburg genutzt, ist der Quellenvermerk um den Hinweis "© GeoBasis-DE/LGB (2023), dl-de/by-2-0, Daten geändert" zu ergänzen.',
+            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
     },
     {
         id: "basemap_raster_farbe",
