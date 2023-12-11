@@ -87,7 +87,8 @@
             "icon": "bi-bounding-box-circles"
           },
           "draw": {
-            "name": "Zeichnen / Schreiben"
+            "name": "Zeichnen / Schreiben",
+            "icon": "bi-pencil"
           },
           "coordToolkit": {
             "name": "Koordinaten"

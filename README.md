@@ -71,6 +71,9 @@ LayerInformation.vue
 Measure Tool
 MeasureInMap.vue
 
+Draw Item
+DrawItem.vue
+
 ## Contributing
 
 Before you create a pull request, write an issue so we can discuss your changes.

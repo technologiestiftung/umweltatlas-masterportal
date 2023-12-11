@@ -4,10 +4,10 @@ import DownloadItem from "../components/DownloadItem.vue";
 import DrawItemFeaturesFilter from "./DrawItemFeaturesFilter.vue";
 import DrawItemAttributes from "./DrawItemAttributes.vue";
 
-import {getComponent} from "../../../../utils/getComponent";
-import {listenToUpdatedSelectedLayerList} from "../utils/RadioBridge";
+import { getComponent } from "../../../../utils/getComponent";
+import { listenToUpdatedSelectedLayerList } from "../utils/RadioBridge";
 
-import {mapActions, mapGetters, mapMutations} from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 import ToolTemplate from "../../ToolTemplate.vue";
 
 export default {
@@ -16,14 +16,14 @@ export default {
         DrawItemFeaturesFilter,
         DrawItemAttributes,
         DownloadItem,
-        ToolTemplate
+        ToolTemplate,
     },
-    data () {
+    data() {
         return {
             mapElement: document.getElementById("map"),
             storePath: this.$store.state.Tools.Draw,
             constants: constants,
-            drawing: true
+            drawing: true,
         };
     },
     computed: {
@@ -34,24 +34,23 @@ export default {
          * @returns {Boolean} drawLayerVisible.
          */
         drawLayerVisibleComputed: {
-            get () {
+            get() {
                 return this.drawLayerVisible;
             },
-            set (value) {
+            set(value) {
                 if (value) {
                     this.setCanvasCursorByInteraction(this.currentInteraction);
-                }
-                else {
+                } else {
                     this.resetCanvasCursor();
                 }
                 this.setDrawLayerVisible(value);
-            }
+            },
         },
         /**
          * Enables or disables all the select or input elements depending on if the currentInteraction is "draw".
          * @returns {Boolean} currentInteraction === "draw": return false and activate the HTML elements, else: return true and deactivate the HTML elements.
          */
-        drawHTMLElements () {
+        drawHTMLElements() {
             // remember: true means disable, false means enable
             return !this.drawLayerVisible || this.currentInteraction !== "draw";
         },
@@ -59,8 +58,11 @@ export default {
          * Enables or disables the select- or input-boxes depending on the state of currentInteraction and selectedFeature.
          * @returns {Boolean} false activates the elements, true deactivates the elements
          */
-        drawHTMLElementsModifyFeature () {
-            if (this.selectedFeature !== null && this.currentInteraction === "modify") {
+        drawHTMLElementsModifyFeature() {
+            if (
+                this.selectedFeature !== null &&
+                this.currentInteraction === "modify"
+            ) {
                 return false;
             }
             // remember: true means disable, false means enable
@@ -70,10 +72,13 @@ export default {
          * Enables the input for the radius if the circleMethod is "defined", for interaction "modify" the rule of drawHTMLElementsModifyFeature takes place.
          * @returns {Boolean} returns true to disable the input, false to enable the input
          */
-        drawCircleMethods () {
+        drawCircleMethods() {
             if (this.currentInteraction === "draw") {
                 // remember: true means disable, false means enable
-                return !this.drawLayerVisible || this.styleSettings?.circleMethod !== "defined";
+                return (
+                    !this.drawLayerVisible ||
+                    this.styleSettings?.circleMethod !== "defined"
+                );
             }
             return this.drawHTMLElementsModifyFeature;
         },
@@ -84,7 +89,7 @@ export default {
              * @info the internal representation of circleRadius is always in meters
              * @returns {Number} the current radius
              */
-            get () {
+            get() {
                 if (this.styleSettings?.unit === "km") {
                     return this.styleSettings?.circleRadius / 1000;
                 }
@@ -96,14 +101,13 @@ export default {
              * @param {Number} value the value to set the target to
              * @returns {void}
              */
-            set (value) {
+            set(value) {
                 if (this.styleSettings?.unit === "km") {
                     this.setCircleRadius(parseInt(value, 10) * 1000);
-                }
-                else {
+                } else {
                     this.setCircleRadius(parseInt(value, 10));
                 }
-            }
+            },
         },
         circleOuterRadiusComputed: {
             /**
@@ -111,7 +115,7 @@ export default {
              * @info the internal representation of circleOuterRadius is always in meters
              * @returns {Number} the current radius
              */
-            get () {
+            get() {
                 if (this.styleSettings?.unit === "km") {
                     return this.styleSettings?.circleOuterRadius / 1000;
                 }
@@ -123,109 +127,120 @@ export default {
              * @param {Number} value the value to set the target to
              * @returns {void}
              */
-            set (value) {
+            set(value) {
                 if (this.styleSettings?.unit === "km") {
                     this.setCircleOuterRadius(parseInt(value, 10) * 1000);
-                }
-                else {
+                } else {
                     this.setCircleOuterRadius(parseInt(value, 10));
                 }
-            }
+            },
         },
         /**
          * computed property for circleMethod of the current drawType
          * @returns {String} "defined" or "interactive"
          */
-        circleMethodComputed () {
+        circleMethodComputed() {
             return this.styleSettings?.circleMethod;
         },
         /**
          * computed property for the unit of the current drawType
          * @returns {String} "m" or "km"
          */
-        unitComputed () {
+        unitComputed() {
             return this.styleSettings?.unit;
         },
         /**
          * computed property for the text of the current drawType
          * @returns {String} the current text
          */
-        textComputed () {
+        textComputed() {
             return this.styleSettings?.text;
         },
         /**
          * computed property for the font-size of the current drawType
          * @returns {Number} the current font-size as number
          */
-        fontSizeComputed () {
+        fontSizeComputed() {
             return this.styleSettings?.fontSize;
         },
         /**
          * computed property for the font family of the current drawType
          * @returns {Number} the current font family
          */
-        fontComputed () {
+        fontComputed() {
             return this.styleSettings?.font;
         },
         /**
          * computed property for the stroke width of the current drawType
          * @returns {Number} the current width as number
          */
-        strokeWidthComputed () {
+        strokeWidthComputed() {
             return this.styleSettings?.strokeWidth;
         },
         /**
          * computed property for the opacity linked to color of the current drawType
          * @returns {Number} the current opacity as css range [0..1] - this is the value, not the caption (!)
          */
-        opacityComputed () {
+        opacityComputed() {
             return this.styleSettings?.opacity;
         },
         /**
          * computed property for the opacity linked to colorContour of the current drawType
          * @returns {Number} the current opacity (of colorContour) as css range [0..1] - this is the value, not the caption (!)
          */
-        opacityContourComputed () {
+        opacityContourComputed() {
             return this.styleSettings?.opacityContour;
         },
         /**
          * computed property for the color of the current drawType
          * @returns {Number[]} the current color as array of numbers - e.g. [0, 0, 0, 1]
          */
-        colorContourComputed () {
+        colorContourComputed() {
             return this.styleSettings?.colorContour;
         },
         /**
          * computed property for the outer color of a double circle
          * @returns {Number[]} the current color as array of numbers - e.g. [0, 0, 0, 1]
          */
-        outerColorContourComputed () {
+        outerColorContourComputed() {
             return this.styleSettings?.outerColorContour;
         },
         /**
          * computed property for the colorContour of the current drawType
          * @returns {Number[]} the current color as array of numbers - e.g. [0, 0, 0, 1]
          */
-        colorComputed () {
+        colorComputed() {
             return this.styleSettings?.color;
         },
         /**
          * computed property of the label for the normal colorContour - in case this is a double circle
          * @returns {String} the label to use for the normal colorContour
          */
-        colorContourLabelComputed () {
-            if (this.drawType.id === "drawDoubleCircle" && this.currentInteraction !== "modify") {
-                return this.$i18n.i18next.t("common:modules.tools.draw.innerColorContour");
+        colorContourLabelComputed() {
+            if (
+                this.drawType.id === "drawDoubleCircle" &&
+                this.currentInteraction !== "modify"
+            ) {
+                return this.$i18n.i18next.t(
+                    "common:modules.tools.draw.innerColorContour"
+                );
             }
-            return this.$i18n.i18next.t("common:modules.tools.draw.colorContour");
+            return this.$i18n.i18next.t(
+                "common:modules.tools.draw.colorContour"
+            );
         },
         /**
          * computed property of the label for the normal innerRadius - in case this is a double circle
          * @returns {String} the label to use for the normal innerRadius
          */
-        innerRadiusLabelComputed () {
-            if (this.drawType.id === "drawDoubleCircle" && this.currentInteraction !== "modify") {
-                return this.$i18n.i18next.t("common:modules.tools.draw.innerRadius");
+        innerRadiusLabelComputed() {
+            if (
+                this.drawType.id === "drawDoubleCircle" &&
+                this.currentInteraction !== "modify"
+            ) {
+                return this.$i18n.i18next.t(
+                    "common:modules.tools.draw.innerRadius"
+                );
             }
             return this.$i18n.i18next.t("common:modules.tools.draw.radius");
         },
@@ -234,12 +249,15 @@ export default {
          * Checks if the filter list is valid.
          * @returns {boolean} True if valid.
          */
-        isFilterListValid () {
+        isFilterListValid() {
             if (this.filterList === null) {
                 return false;
             }
             if (!Array.isArray(this.filterList) || !this.filterList.length) {
-                console.warn(this.filterList, "Die Konfiguration für den Filter ist nicht valide.");
+                console.warn(
+                    this.filterList,
+                    "Die Konfiguration für den Filter ist nicht valide."
+                );
                 return false;
             }
             return true;
@@ -250,8 +268,14 @@ export default {
          *
          * @returns {Boolean} True if there are visible features otherwise false.
          */
-        isFromDrawTool () {
-            const visibleFeatures = this.layer?.getSource()?.getFeatures()?.filter(feature => feature.get("fromDrawTool") && feature.get("isVisible"));
+        isFromDrawTool() {
+            const visibleFeatures = this.layer
+                ?.getSource()
+                ?.getFeatures()
+                ?.filter(
+                    (feature) =>
+                        feature.get("fromDrawTool") && feature.get("isVisible")
+                );
 
             return visibleFeatures?.length > 0;
         },
@@ -260,57 +284,61 @@ export default {
          * Returns the features are setted from drawTool
          * @returns {module:ol/Feature[]} The features from drawTool
          */
-        featuresFromDrawTool () {
-            return this.layer.getSource().getFeatures().filter(feature => feature.get("fromDrawTool"));
-        }
+        featuresFromDrawTool() {
+            return this.layer
+                .getSource()
+                .getFeatures()
+                .filter((feature) => feature.get("fromDrawTool"));
+        },
 
         // NOTE: A nice feature would be that, similar to the interactions with the map, the Undo and Redo Buttons are disabled if not useable.
     },
     watch: {
         /**
-          * Starts the action for processes, if the tool is be activated (active === true).
-          * @param {Boolean} value Value deciding whether the tool gets activated or deactivated.
-          * @returns {void}
+         * Starts the action for processes, if the tool is be activated (active === true).
+         * @param {Boolean} value Value deciding whether the tool gets activated or deactivated.
+         * @returns {void}
          */
-        active (value) {
+        active(value) {
             if (value) {
                 this.setActive(value);
                 this.setCanvasCursorByInteraction(this.currentInteraction);
                 this.setFocusToFirstControl();
-            }
-            else {
+            } else {
                 this.resetModule();
                 this.resetCanvasCursor();
             }
-        }
+        },
     },
-    mounted () {
+    mounted() {
         if (this.active) {
             this.setCanvasCursorByInteraction(this.currentInteraction);
         }
     },
-    created () {
+    created() {
         const channel = Radio.channel("Draw");
 
         channel.reply({
-            "getLayer": function () {
+            getLayer: function () {
                 return this.layer;
             },
-            "downloadWithoutGUI": payload => this.downloadFeaturesWithoutGUI(payload)
+            downloadWithoutGUI: (payload) =>
+                this.downloadFeaturesWithoutGUI(payload),
         });
         channel.on({
-            "initWithoutGUI": prmObject => this.initializeWithoutGUI(prmObject),
-            "deleteAllFeatures": () => this.clearLayer(),
-            "editWithoutGUI": () => this.editFeaturesWithoutGUI(),
-            "cancelDrawWithoutGUI": () => this.cancelDrawWithoutGUI(),
-            "downloadViaRemoteInterface": geomType => this.downloadViaRemoteInterface(geomType)
+            initWithoutGUI: (prmObject) => this.initializeWithoutGUI(prmObject),
+            deleteAllFeatures: () => this.clearLayer(),
+            editWithoutGUI: () => this.editFeaturesWithoutGUI(),
+            cancelDrawWithoutGUI: () => this.cancelDrawWithoutGUI(),
+            downloadViaRemoteInterface: (geomType) =>
+                this.downloadViaRemoteInterface(geomType),
         });
 
-        Radio.trigger("RemoteInterface", "postMessage", {"initDrawTool": true});
+        Radio.trigger("RemoteInterface", "postMessage", { initDrawTool: true });
         this.$on("close", this.close);
 
         if (this.addIconsOfActiveLayers) {
-            listenToUpdatedSelectedLayerList(layerModels => {
+            listenToUpdatedSelectedLayerList((layerModels) => {
                 this.addSymbolsByLayerModels(layerModels);
             });
         }
@@ -324,11 +352,11 @@ export default {
          * @param {Object[]} layerModels The layer models.
          * @returns {void}
          */
-        addSymbolsByLayerModels (layerModels) {
+        addSymbolsByLayerModels(layerModels) {
             if (!Array.isArray(layerModels)) {
                 return;
             }
-            layerModels.forEach(layerModel => {
+            layerModels.forEach((layerModel) => {
                 if (typeof layerModel?.get !== "function") {
                     return;
                 }
@@ -337,20 +365,26 @@ export default {
                 if (!Array.isArray(legend)) {
                     return;
                 }
-                legend.forEach(legendInfo => {
+                legend.forEach((legendInfo) => {
                     if (
-                        typeof legendInfo?.styleObject?.get !== "function"
-                        || typeof legendInfo.styleObject.get("imageScale") !== "number"
-                        || typeof legendInfo.styleObject.get("imagePath") !== "string"
-                        || !legendInfo.styleObject.get("imageName")
+                        typeof legendInfo?.styleObject?.get !== "function" ||
+                        typeof legendInfo.styleObject.get("imageScale") !==
+                            "number" ||
+                        typeof legendInfo.styleObject.get("imagePath") !==
+                            "string" ||
+                        !legendInfo.styleObject.get("imageName")
                     ) {
                         return;
                     }
                     const icon = {
-                        "id": legendInfo.label || legendInfo.styleObject.get("imageName"),
-                        "type": "image",
-                        "scale": legendInfo.styleObject.get("imageScale"),
-                        "value": legendInfo.styleObject.get("imagePath") + legendInfo.styleObject.get("imageName")
+                        id:
+                            legendInfo.label ||
+                            legendInfo.styleObject.get("imageName"),
+                        type: "image",
+                        scale: legendInfo.styleObject.get("imageScale"),
+                        value:
+                            legendInfo.styleObject.get("imagePath") +
+                            legendInfo.styleObject.get("imageName"),
                     };
 
                     this.addSymbolIfNotExists(icon);
@@ -361,7 +395,7 @@ export default {
          * Sets the focus to the first control
          * @returns {void}
          */
-        setFocusToFirstControl () {
+        setFocusToFirstControl() {
             this.$nextTick(() => {
                 if (this.$refs["tool-draw-drawType"]) {
                     this.$refs["tool-draw-drawType"].focus();
@@ -375,13 +409,18 @@ export default {
          * @param {Number[]} b another "color"-array to compare with
          * @returns {Boolean} true: the values at the first 3 positions of the given color arrays are identical
          */
-        isEqualColorArrays (a, b) {
-            if (Array.isArray(a) && Array.isArray(b) && a.length >= 3 && b.length >= 3) {
+        isEqualColorArrays(a, b) {
+            if (
+                Array.isArray(a) &&
+                Array.isArray(b) &&
+                a.length >= 3 &&
+                b.length >= 3
+            ) {
                 return a[0] === b[0] && a[1] === b[1] && a[2] === b[2];
             }
             return false;
         },
-        close () {
+        close() {
             this.resetModule();
             // The value "isActive" of the Backbone model is also set to false to change the CSS class in the menu (menu/desktop/tool/view.toggleIsActiveClass)
             const model = getComponent(this.storePath.id);
@@ -390,43 +429,48 @@ export default {
                 model.set("isActive", false);
             }
         },
-        resetCanvasCursor () {
+        resetCanvasCursor() {
             this.mapElement.style.cursor = "";
             this.mapElement.onmousedown = undefined;
             this.mapElement.onmouseup = undefined;
         },
-        setCanvasCursor (cursorType) {
+        setCanvasCursor(cursorType) {
             this.mapElement.style.cursor = cursorType;
             this.mapElement.onmousedown = this.onMouseDown;
             this.mapElement.onmouseup = this.onMouseUp;
         },
-        setCanvasCursorByInteraction (interaction) {
-            if (interaction === "modify" || interaction === "delete" || interaction === "modifyAttributes") {
+        setCanvasCursorByInteraction(interaction) {
+            if (
+                interaction === "modify" ||
+                interaction === "delete" ||
+                interaction === "modifyAttributes"
+            ) {
                 this.setCanvasCursor("pointer");
-            }
-            else {
+            } else {
                 this.setCanvasCursor("crosshair");
             }
         },
-        onMouseDown () {
+        onMouseDown() {
             if (this.mapElement.style.cursor === "pointer") {
                 this.mapElement.style.cursor = "grabbing";
             }
         },
-        onMouseUp () {
+        onMouseUp() {
             if (this.mapElement.style.cursor === "grabbing") {
                 this.mapElement.style.cursor = "pointer";
             }
         },
-        getIconLabelKey (option) {
+        getIconLabelKey(option) {
             if (option.id) {
                 if (this.$i18n.i18next.exists(option.id)) {
                     return option.id;
-                }
-                else if (this.$i18n.i18next.exists("common:modules.tools.draw.iconList." + option.id)) {
+                } else if (
+                    this.$i18n.i18next.exists(
+                        "common:modules.tools.draw.iconList." + option.id
+                    )
+                ) {
                     return "common:modules.tools.draw.iconList." + option.id;
-                }
-                else if (option.caption) {
+                } else if (option.caption) {
                     return option.caption;
                 }
                 return option.id;
@@ -438,12 +482,11 @@ export default {
          * @param {String[]} keyList The attributes' key list
          * @returns {void}
          */
-        updateAttributesKeyList (keyList) {
+        updateAttributesKeyList(keyList) {
             this.setAttributesKeyList(keyList);
-        }
-    }
+        },
+    },
 };
-
 </script>
 
 <template lang="html">
@@ -459,6 +502,10 @@ export default {
     >
         <template #toolBody>
             <div class="form-group form-group-sm">
+                <h4 style="margin-bottom: 1em">
+                    Editieren Sie eine eigene Karte mit Symbolen, Flächen,
+                    Texten, uvm.
+                </h4>
                 <div class="row">
                     <label
                         class="col-md-5 form-check-label"
@@ -473,7 +520,7 @@ export default {
                             class="form-check-input"
                             type="checkbox"
                             name="checkbox-drawLayerVisible"
-                        >
+                        />
                     </div>
                 </div>
             </div>
@@ -481,7 +528,7 @@ export default {
                 v-if="currentInteraction !== 'modifyAttributes'"
                 class="form-group form-group-sm"
             >
-                <hr>
+                <hr />
                 <div class="row">
                     <label
                         for="tool-draw-drawType"
@@ -504,23 +551,26 @@ export default {
                                 :value="option.geometry"
                                 :selected="option.id === drawType.id"
                             >
-                                {{ $t("common:modules.tools.draw." + option.id) }}
+                                {{
+                                    $t("common:modules.tools.draw." + option.id)
+                                }}
                             </option>
                         </select>
                     </div>
                 </div>
             </div>
-            <hr>
-            <template
-                v-if="isFromDrawTool && isFilterListValid"
-            >
+            <hr />
+            <template v-if="isFromDrawTool && isFilterListValid">
                 <DrawItemFeaturesFilter
                     :filter-list="filterList"
                     :features="featuresFromDrawTool"
                 />
             </template>
             <template
-                v-if="enableAttributesSelector && currentInteraction === 'modifyAttributes'"
+                v-if="
+                    enableAttributesSelector &&
+                    currentInteraction === 'modifyAttributes'
+                "
             >
                 <DrawItemAttributes
                     :selected-feature="selectedFeature"
@@ -536,7 +586,10 @@ export default {
                 @submit.prevent
             >
                 <div
-                    v-if="drawType.id === 'drawCircle' && currentInteraction !== 'modify'"
+                    v-if="
+                        drawType.id === 'drawCircle' &&
+                        currentInteraction !== 'modify'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -554,9 +607,13 @@ export default {
                         >
                             <option
                                 value="interactive"
-                                :selected="circleMethodComputed === 'interactive'"
+                                :selected="
+                                    circleMethodComputed === 'interactive'
+                                "
                             >
-                                {{ $t("common:modules.tools.draw.interactive") }}
+                                {{
+                                    $t("common:modules.tools.draw.interactive")
+                                }}
                             </option>
                             <option
                                 value="defined"
@@ -568,7 +625,10 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id === 'drawCircle' || drawType.id === 'drawDoubleCircle'"
+                    v-if="
+                        drawType.id === 'drawCircle' ||
+                        drawType.id === 'drawDoubleCircle'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -582,13 +642,17 @@ export default {
                             id="tool-draw-circleRadius"
                             v-model="circleRadiusComputed"
                             class="form-control form-control-sm"
-                            :style="{borderColor: innerBorderColor}"
+                            :style="{ borderColor: innerBorderColor }"
                             type="number"
                             step="1"
-                            :placeholder="$t('common:modules.tools.draw.doubleCirclePlaceholder')"
+                            :placeholder="
+                                $t(
+                                    'common:modules.tools.draw.doubleCirclePlaceholder'
+                                )
+                            "
                             :disabled="drawCircleMethods"
                             min="0"
-                        >
+                        />
                     </div>
                 </div>
                 <div
@@ -606,16 +670,23 @@ export default {
                             id="tool-draw-circleOuterRadius"
                             v-model="circleOuterRadiusComputed"
                             class="form-control form-control-sm"
-                            :style="{borderColor: outerBorderColor}"
+                            :style="{ borderColor: outerBorderColor }"
                             type="number"
-                            :placeholder="$t('common:modules.tools.draw.doubleCirclePlaceholder')"
+                            :placeholder="
+                                $t(
+                                    'common:modules.tools.draw.doubleCirclePlaceholder'
+                                )
+                            "
                             :disabled="drawCircleMethods"
                             min="0"
-                        >
+                        />
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id === 'drawCircle' || drawType.id === 'drawDoubleCircle'"
+                    v-if="
+                        drawType.id === 'drawCircle' ||
+                        drawType.id === 'drawDoubleCircle'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -646,10 +717,7 @@ export default {
                     v-if="drawType.id === 'writeText'"
                     class="form-group form-group-sm row"
                 >
-                    <label
-                        class="col-md-5 col-form-label"
-                        for="tool-draw-text"
-                    >
+                    <label class="col-md-5 col-form-label" for="tool-draw-text">
                         {{ $t("common:modules.tools.draw.text") }}
                     </label>
                     <div class="col-md-7">
@@ -657,11 +725,13 @@ export default {
                             id="tool-draw-text"
                             class="form-control form-control-sm"
                             type="text"
-                            :placeholder="$t('common:modules.tools.draw.clickToPlaceText')"
+                            :placeholder="
+                                $t('common:modules.tools.draw.clickToPlaceText')
+                            "
                             :disabled="drawHTMLElementsModifyFeature"
                             :value="textComputed"
                             @input="setText"
-                        >
+                        />
                     </div>
                 </div>
                 <div
@@ -696,10 +766,7 @@ export default {
                     v-if="drawType.id === 'writeText'"
                     class="form-group form-group-sm row"
                 >
-                    <label
-                        class="col-md-5 col-form-label"
-                        for="tool-draw-font"
-                    >
+                    <label class="col-md-5 col-form-label" for="tool-draw-font">
                         {{ $t("common:modules.tools.draw.fontName") }}
                     </label>
                     <div class="col-md-7">
@@ -740,8 +807,11 @@ export default {
                             <!-- NOTE: caption of the iconList is deprecated in 3.0.0 -->
                             <option
                                 v-for="option in iconList"
-                                :key="'draw-icon-' + (option.id ? option.id : option.caption)"
-                                :value="(option.id ? option.id : option.caption)"
+                                :key="
+                                    'draw-icon-' +
+                                    (option.id ? option.id : option.caption)
+                                "
+                                :value="option.id ? option.id : option.caption"
                                 :selected="option.id === symbol.id"
                             >
                                 {{ $t(getIconLabelKey(option)) }}
@@ -750,7 +820,10 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id !== 'drawSymbol' && drawType.id !== 'writeText'"
+                    v-if="
+                        drawType.id !== 'drawSymbol' &&
+                        drawType.id !== 'writeText'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -778,7 +851,11 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id !== 'drawLine' && drawType.id !== 'drawCurve'&& drawType.id !== 'drawSymbol'"
+                    v-if="
+                        drawType.id !== 'drawLine' &&
+                        drawType.id !== 'drawCurve' &&
+                        drawType.id !== 'drawSymbol'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -807,14 +884,19 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id === 'drawLine' || drawType.id === 'drawCurve'"
+                    v-if="
+                        drawType.id === 'drawLine' ||
+                        drawType.id === 'drawCurve'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
                         class="col-md-5 col-form-label"
                         for="tool-draw-opacityContour"
                     >
-                        {{ $t("common:modules.tools.draw.transparencyOutline") }}
+                        {{
+                            $t("common:modules.tools.draw.transparencyOutline")
+                        }}
                     </label>
                     <div class="col-md-7">
                         <select
@@ -825,9 +907,16 @@ export default {
                             @change="setOpacityContour"
                         >
                             <option
-                                v-for="option in constants.transparencyOptions.slice(0, constants.transparencyOptions.length -1)"
-                                :key="'draw-opacityContour-option-' + option.value"
-                                :selected="option.value === opacityContourComputed"
+                                v-for="option in constants.transparencyOptions.slice(
+                                    0,
+                                    constants.transparencyOptions.length - 1
+                                )"
+                                :key="
+                                    'draw-opacityContour-option-' + option.value
+                                "
+                                :selected="
+                                    option.value === opacityContourComputed
+                                "
                                 :value="option.value"
                             >
                                 {{ option.caption }}
@@ -836,7 +925,10 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id !== 'drawSymbol' && drawType.id !== 'writeText'"
+                    v-if="
+                        drawType.id !== 'drawSymbol' &&
+                        drawType.id !== 'writeText'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -856,7 +948,12 @@ export default {
                                 v-for="option in constants.colorContourOptions"
                                 :key="'draw-colorContour-' + option.color"
                                 :value="option.value"
-                                :selected="isEqualColorArrays(option.value, colorContourComputed)"
+                                :selected="
+                                    isEqualColorArrays(
+                                        option.value,
+                                        colorContourComputed
+                                    )
+                                "
                             >
                                 {{ $t("common:colors." + option.color) }}
                             </option>
@@ -884,7 +981,12 @@ export default {
                                 v-for="option in constants.colorContourOptions"
                                 :key="'draw-outerColorContour-' + option.color"
                                 :value="option.value"
-                                :selected="isEqualColorArrays(option.value, outerColorContourComputed)"
+                                :selected="
+                                    isEqualColorArrays(
+                                        option.value,
+                                        outerColorContourComputed
+                                    )
+                                "
                             >
                                 {{ $t("common:colors." + option.color) }}
                             </option>
@@ -892,7 +994,10 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id === 'drawSymbol' && symbol.id === 'iconPoint'"
+                    v-if="
+                        drawType.id === 'drawSymbol' &&
+                        symbol.id === 'iconPoint'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -912,7 +1017,12 @@ export default {
                                 v-for="option in constants.colorOptions"
                                 :key="'draw-color-' + option.color"
                                 :value="option.value"
-                                :selected="isEqualColorArrays(option.value, colorComputed)"
+                                :selected="
+                                    isEqualColorArrays(
+                                        option.value,
+                                        colorComputed
+                                    )
+                                "
                             >
                                 {{ $t("common:colors." + option.color) }}
                             </option>
@@ -920,7 +1030,11 @@ export default {
                     </div>
                 </div>
                 <div
-                    v-if="drawType.id !== 'drawLine' && drawType.id !== 'drawCurve' && drawType.id !== 'drawSymbol'"
+                    v-if="
+                        drawType.id !== 'drawLine' &&
+                        drawType.id !== 'drawCurve' &&
+                        drawType.id !== 'drawSymbol'
+                    "
                     class="form-group form-group-sm row"
                 >
                     <label
@@ -940,7 +1054,12 @@ export default {
                                 v-for="option in constants.colorOptions"
                                 :key="'draw-color-' + option.color"
                                 :value="option.value"
-                                :selected="isEqualColorArrays(option.value, colorComputed)"
+                                :selected="
+                                    isEqualColorArrays(
+                                        option.value,
+                                        colorComputed
+                                    )
+                                "
                             >
                                 {{ $t("common:colors." + option.color) }}
                             </option>
@@ -948,19 +1067,26 @@ export default {
                     </div>
                 </div>
             </form>
-            <hr>
-            <div
-                class="form-horizontal"
-                role="form"
-            >
+            <hr />
+            <div class="form-horizontal" role="form">
                 <div class="form-group form-group-sm row">
                     <div class="col-12 d-grid gap-2">
                         <button
                             id="tool-draw-drawInteraction"
                             class="btn btn-sm"
-                            :class="currentInteraction === 'draw' ? 'btn-primary' : 'btn-secondary'"
-                            :disabled="!drawLayerVisible || currentInteraction === 'draw'"
-                            @click="toggleInteraction('draw'); setCanvasCursorByInteraction('draw')"
+                            :class="
+                                currentInteraction === 'draw'
+                                    ? 'btn-primary'
+                                    : 'btn-secondary'
+                            "
+                            :disabled="
+                                !drawLayerVisible ||
+                                currentInteraction === 'draw'
+                            "
+                            @click="
+                                toggleInteraction('draw');
+                                setCanvasCursorByInteraction('draw');
+                            "
                         >
                             <span class="bootstrap-icon">
                                 <i class="bi-pencil-fill" />
@@ -1004,9 +1130,19 @@ export default {
                         <button
                             id="tool-draw-editInteraction"
                             class="btn btn-sm"
-                            :class="currentInteraction === 'modify' ? 'btn-primary' : 'btn-secondary'"
-                            :disabled="!drawLayerVisible || currentInteraction === 'modify'"
-                            @click="toggleInteraction('modify'); setCanvasCursorByInteraction('modify')"
+                            :class="
+                                currentInteraction === 'modify'
+                                    ? 'btn-primary'
+                                    : 'btn-secondary'
+                            "
+                            :disabled="
+                                !drawLayerVisible ||
+                                currentInteraction === 'modify'
+                            "
+                            @click="
+                                toggleInteraction('modify');
+                                setCanvasCursorByInteraction('modify');
+                            "
                         >
                             <span class="bootstrap-icon">
                                 <i class="bi-wrench" />
@@ -1023,14 +1159,30 @@ export default {
                         <button
                             id="tool-draw-editInteraction"
                             class="btn btn-sm"
-                            :class="currentInteraction === 'modifyAttributes' ? 'btn-primary' : 'btn-secondary'"
-                            :disabled="!drawLayerVisible || currentInteraction === 'modifyAttributes'"
-                            @click="toggleInteraction('modifyAttributes'); setCanvasCursorByInteraction('modifyAttributes')"
+                            :class="
+                                currentInteraction === 'modifyAttributes'
+                                    ? 'btn-primary'
+                                    : 'btn-secondary'
+                            "
+                            :disabled="
+                                !drawLayerVisible ||
+                                currentInteraction === 'modifyAttributes'
+                            "
+                            @click="
+                                toggleInteraction('modifyAttributes');
+                                setCanvasCursorByInteraction(
+                                    'modifyAttributes'
+                                );
+                            "
                         >
                             <span class="bootstrap-icon">
                                 <i class="bi-wrench" />
                             </span>
-                            {{ $t("common:modules.tools.draw.button.editAttributes") }}
+                            {{
+                                $t(
+                                    "common:modules.tools.draw.button.editAttributes"
+                                )
+                            }}
                         </button>
                     </div>
                 </div>
@@ -1039,9 +1191,19 @@ export default {
                         <button
                             id="tool-draw-deleteInteraction"
                             class="btn btn-sm"
-                            :class="currentInteraction === 'delete' ? 'btn-primary' : 'btn-secondary'"
-                            :disabled="!drawLayerVisible || currentInteraction === 'delete'"
-                            @click="toggleInteraction('delete'); setCanvasCursorByInteraction('delete')"
+                            :class="
+                                currentInteraction === 'delete'
+                                    ? 'btn-primary'
+                                    : 'btn-secondary'
+                            "
+                            :disabled="
+                                !drawLayerVisible ||
+                                currentInteraction === 'delete'
+                            "
+                            @click="
+                                toggleInteraction('delete');
+                                setCanvasCursorByInteraction('delete');
+                            "
                         >
                             <span class="bootstrap-icon">
                                 <i class="bi-trash" />
@@ -1061,7 +1223,9 @@ export default {
                             <span class="bootstrap-icon">
                                 <i class="bi-trash" />
                             </span>
-                            {{ $t("common:modules.tools.draw.button.deleteAll") }}
+                            {{
+                                $t("common:modules.tools.draw.button.deleteAll")
+                            }}
                         </button>
                     </div>
                 </div>
@@ -1072,14 +1236,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    @import "~variables";
-    .no-cursor {
-        cursor: none;
-    }
-    .cursor-crosshair {
-        cursor: crosshair;
-    }
-    .btn-sm {
-        font-size: $font-size-base;
-    }
+@import "~variables";
+.no-cursor {
+    cursor: none;
+}
+.cursor-crosshair {
+    cursor: crosshair;
+}
+.btn-sm {
+    font-size: $font-size-base;
+}
 </style>
+
