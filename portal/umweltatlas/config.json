@@ -65,27 +65,9 @@
         "name": "Themen",
         "icon": "bi-map"
       },
-      "selection": {
-        "name": "Auswahl",
-        "icon": "bi-pin-angle"
-      },
-      "contact": {
-        "name": "translate#common:menu.contact",
-        "icon": "bi-envelope",
-        "serviceId": "80002",
-        "includeSystemInfo": true,
-        "from": [
-          {
-            "email": "placeholdere@placeholder.de",
-            "name": "placeholderlHilfe"
-          }
-        ],
-        "to": [
-          {
-            "email": "placeholder@placeholder.de",
-            "name": "placeholderlHilfe"
-          }
-        ]
+      "legend": {
+        "name": "Legende",
+        "icon": "bi-book"
       },
       "tools": {
         "name": "Werkzeuge",
@@ -120,7 +102,7 @@
           },
           "layerSlider": {
             "name": "Luftbilder Zeitreihe",
-            "title": "Luftbilder Zeitreihe",
+            "title": "Luftbilder-Zeitreihe von Berlin 1928-2023. Klicken Sie ein bestimmtes Jahr an oder lassen Sie die Luftbilder automatisch nacheinander abspielen.",
             "sliderType": "handle",
             "timeInterval": 4000,
             "icon": "bi-clock-history",
@@ -225,9 +207,24 @@
           "enableZoomToExtend": true
         }
       },
-      "legend": {
-        "name": "Legende",
-        "icon": "bi-book"
+
+      "contact": {
+        "name": "translate#common:menu.contact",
+        "icon": "bi-envelope",
+        "serviceId": "80002",
+        "includeSystemInfo": true,
+        "from": [
+          {
+            "email": "placeholdere@placeholder.de",
+            "name": "placeholderlHilfe"
+          }
+        ],
+        "to": [
+          {
+            "email": "placeholder@placeholder.de",
+            "name": "placeholderlHilfe"
+          }
+        ]
       },
       "portalTitle": {
         "title": "",

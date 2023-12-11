@@ -67,15 +67,9 @@ export default {
     >
         <template #toolBody>
             <div v-if="active" id="tool-layer-slider">
-                <!-- <h5>
+                <h4>
                     {{ $t(title) }}
-                </h5> -->
-
-                <h3>
-                    Luftbilder-Zeitreihe von Berlin 1928-2023. Klicken Sie ein
-                    bestimmtes Jahr an oder lassen Sie die Luftbilder
-                    automatisch nacheinander abspielen.
-                </h3>
+                </h4>
 
                 <p class="color-green" style="margin-top: 15px">
                     <svg

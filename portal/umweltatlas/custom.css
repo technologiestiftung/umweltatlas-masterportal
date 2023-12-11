@@ -192,3 +192,31 @@ ul#tree .checked:hover {
     color: inherit !important;
 }
 
+/* Search */
+
+#searchInputUL li:hover {
+    background-color: #1a4435 !important;
+    color: white !important;
+}
+
+#searchInputUL li:hover p span {
+    color: white !important;
+}
+
+#searchInputUL .list-group-item.results {
+    background-color: #e69636;
+    color: white;
+}
+
+#searchInputUL .list-group-item.results:hover {
+    background-color: #e69636 !important;
+    color: white !important;
+}
+
+#searchInputUL .list-group-item.results div {
+    text-align: center;
+}
+
+#searchInputUL .list-group-item.results .bootstrap-icon {
+    display: none;
+}
