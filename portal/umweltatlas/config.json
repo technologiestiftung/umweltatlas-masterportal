@@ -83,18 +83,14 @@
             "name": "WMS hinzufügen"
           },
           "measure": {
-            "name": "Strecke / Fläche Messen"
+            "name": "Strecke / Fläche Messen",
+            "icon": "bi-bounding-box-circles"
           },
           "draw": {
             "name": "Zeichnen / Schreiben"
           },
           "coordToolkit": {
             "name": "Koordinaten"
-          },
-          "swipeControl": {
-            "name": "Karten vergleichen",
-            "glyphicon": "fas fa-equals",
-            "icon": "bi bi-list"
           },
           "saveSelection": {
             "name": "translate#common:menu.tools.saveSelection",
