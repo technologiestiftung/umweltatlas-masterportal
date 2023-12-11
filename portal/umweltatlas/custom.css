@@ -286,3 +286,6 @@ ul#tree .checked:hover {
     margin-top: 0px;
 }
 
+#root .tabable:focus {
+    outline: none !important;
+}
