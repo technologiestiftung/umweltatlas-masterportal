@@ -472,7 +472,31 @@ export default {
         :deactivate-gfi="deactivateGFI"
     >
         <template #toolBody>
-            <div v-if="active" id="add-wms" class="addWMS win-body">
+            <div v-if="active" id="add-wms" class="addWMS">
+                <h4 style="margin-bottom: 1em">
+                    Fügen Sie ein eigenes WMS (Web Map Service) als Layer hinzu:
+                    Beispielsweise eigene Gebietsumrisse oder andere relevante
+                    Aol.
+                </h4>
+
+                <p class="color-green" style="margin-top: 15px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-exclamation-circle-fill"
+                        viewBox="0 0 16 16"
+                        style="margin-bottom: 3px"
+                    >
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                        />
+                    </svg>
+                    Bitte Beachten Sie, dass sich Brandenburg-WMS ebenfalls hier
+                    hinzufügen lassen
+                </p>
+
                 <div v-if="invalidUrl" class="addwms_error">
                     {{ $t("common:modules.tools.addWMS.errorEmptyUrl") }}
                 </div>
@@ -500,10 +524,14 @@ export default {
                 </button>
                 <!-- @todo replace -->
                 <br />
+                <p style="margin-top: 30px">
+                    Hier finden Sie eine <a href="">Videoressource</a>, die
+                    Schritt für Schritt das hochladen einer WMS erklärt.
+                </p>
                 <img
                     src="./wmsplacesholder.png"
                     alt=""
-                    style="max-width: 200px; padding-top: 10px"
+                    style="max-width: 100%; padding-top: 10px"
                 />
             </div>
         </template>
@@ -513,7 +541,7 @@ export default {
 <style lang="scss" scoped>
 @import "~variables";
 .addWMS {
-    min-width: 400px;
+    max-width: 400px;
 }
 .WMS_example_text {
     margin-top: 10px;
@@ -521,7 +549,7 @@ export default {
 }
 #addWMSButton {
     margin-top: 15px;
-    width: 50%;
+    width: 100%;
 }
 .addwms_error {
     font-size: $font-size-lg;

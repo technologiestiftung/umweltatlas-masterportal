@@ -17,6 +17,10 @@
     border-color: #e69636 !important;
 }
 
+.upload-button-wrapper:focus {
+    outline: none !important;
+}
+
 .vh-center-outer-wrapper.drop-area-fake {
     border-radius: 0px;
     border-color: #cccccc;

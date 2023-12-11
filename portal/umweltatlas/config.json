@@ -73,9 +73,6 @@
         "name": "Werkzeuge",
         "icon": "bi-tools",
         "children": {
-          "print": {
-            "name": "Drucken"
-          },
           "fileImport": {
             "name": "Datei Import"
           },
