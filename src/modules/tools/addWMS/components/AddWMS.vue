@@ -22,6 +22,7 @@ export default {
             invalidUrl: false,
             wmsUrl: "",
             version: "",
+            videoSrc: "./resources/videos/wms_platzhaltervideo_1080.mp4",
         };
     },
     computed: {
@@ -525,14 +526,15 @@ export default {
                 <!-- @todo replace -->
                 <br />
                 <p style="margin-top: 30px">
-                    Hier finden Sie eine <a href="">Videoressource</a>, die
-                    Schritt für Schritt das hochladen einer WMS erklärt.
+                    Hier finden Sie eine Videoressource, die Schritt für Schritt
+                    das hochladen einer WMS erklärt.
                 </p>
-                <img
-                    src="./wmsplacesholder.png"
-                    alt=""
-                    style="max-width: 100%; padding-top: 10px"
-                />
+
+                <video style="max-width: 100%; padding-top: 10px" controls>
+                    <source :src="videoSrc" type="video/mp4" />
+
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </template>
     </ToolTemplate>

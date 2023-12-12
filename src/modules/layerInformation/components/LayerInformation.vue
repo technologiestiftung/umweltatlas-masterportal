@@ -19,6 +19,7 @@ export default {
             openDropdown: false,
             logo: "./resources/img/logo-umweltatlas.svg",
             contactPerson: "./resources/img/contact_placeholder.svg",
+            videoSrc: "./resources/videos/wms_platzhaltervideo_1080.mp4",
         };
     },
     computed: {
@@ -619,24 +620,15 @@ export default {
                             </div>
 
                             <p>
-                                Hier finden Sie <a href="">Videoressourcen</a>,
-                                die die Arbeit mit WMS- und WFS- Formate leicht
-                                zugänglich vermitteln.
+                                Hier finden Sie Videoressource, die die Arbeit
+                                mit WMS- und WFS- Formate leicht zugänglich
+                                vermitteln.
                             </p>
 
-                            <div
-                                style="
-                                    width: 100%;
-                                    height: 200px;
-                                    background-color: #ededed;
-                                    text-align: center;
-                                    display: grid;
-                                "
-                            >
-                                Hier gibt es bald ein
-                                <br />
-                                Erklärungvideo
-                            </div>
+                            <video width="100%" controls>
+                                <source :src="videoSrc" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
 

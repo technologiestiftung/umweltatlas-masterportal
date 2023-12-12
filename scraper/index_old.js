@@ -3,19 +3,111 @@ import fs from "fs";
 import async from "async";
 import path from "path";
 import axios from "axios";
+// const { config } = require("process");
 import fetch from "node-fetch";
 import services from "./services-internet.js";
 import baseMaps from "./baseMaps.js";
 import nameCorrections from "./nameCorrections.js";
 
 import servicesMasterLight from "./services-internet-masterportallight.js";
-import fachdatenImport from "./fachdaten.js";
-
+// import missingServices from "./missingServices.js";
+// services.push(...missingServices);
 const nameChapterNumberLookup = {};
 const servicesWant = [...baseMaps];
 const noMap = [];
 const missingServices = [];
-const fachdaten = fachdatenImport;
+const fachdaten = {
+    Ordner: [
+        {
+            Titel: "Lufbilder",
+            isFolderSelectable: false,
+            Layer: [
+                {
+                    name: "28",
+                    id: "k_luftbild1928:0",
+                },
+                {
+                    name: "53",
+                    id: "k_luftbild1953:0",
+                },
+                {
+                    name: "02",
+                    id: "k_luftbild2002:0",
+                },
+                {
+                    name: "04",
+                    id: "luftbild2004:0",
+                },
+                {
+                    name: "06",
+                    id: "luftbild2006:0",
+                },
+                {
+                    name: "07",
+                    id: "k_luftbild2007:0",
+                },
+                {
+                    name: "09",
+                    id: "k_luftbild2009_20:0",
+                },
+                {
+                    name: "10",
+                    id: "k_luftbild2010_rgb:0",
+                },
+                {
+                    name: "11",
+                    id: "k_luftbild2011_20:0",
+                },
+
+                {
+                    name: "13",
+                    id: "k_luftbild2013:0",
+                },
+
+                {
+                    name: "14",
+                    id: "k_luftbild2014:0",
+                },
+                {
+                    name: "15",
+                    id: "k_luftbild2015_rgb:0",
+                },
+                {
+                    name: "16",
+                    id: "k_luftbild2016_rgb:0",
+                },
+                {
+                    name: "17",
+                    id: "k_luftbild2017_rgb:0",
+                },
+                {
+                    name: "18",
+                    id: "k_luftbild2018_rgb:0",
+                },
+                {
+                    name: "19",
+                    id: "k_luftbild2019_rgb:0",
+                },
+                {
+                    name: "20",
+                    id: "k_luftbild2020_rgb:0",
+                },
+                {
+                    name: "21",
+                    id: "k_luftbild2021_rgb:0",
+                },
+                {
+                    name: "22",
+                    id: "k_luftbild2022_true_rgbi:0",
+                },
+                {
+                    name: "23",
+                    id: "truedop_2023:truedop_2023:GDIBE:25833",
+                },
+            ],
+        },
+    ],
+};
 
 const unwantedLayers = [
     "Hintergrund ISU 5 2010",
@@ -65,11 +157,11 @@ try {
     const response = await axios.get(`https://www.berlin.de/umweltatlas/`);
     const body = response.data;
     const $ = cheerio.load(body);
-    // const subjectGroupLinks = $("article .inner .more")
-    //     .map((i, el) => $(el).attr("href"))
-    //     .get();
+    const subjectGroupLinks = $("article .inner .more")
+        .map((i, el) => $(el).attr("href"))
+        .get();
 
-    const subjectGroupLinks = ["/umweltatlas/boden/"];
+    // const subjectGroupLinks = ["/umweltatlas/boden/"];
     eachGroup(subjectGroupLinks);
 } catch (error) {
     console.error(error);
@@ -242,7 +334,6 @@ function eachYearOfSubGroup(subGroupYearLinks, subGroup, callbackEachSubGroup) {
                 });
         },
         function (err) {
-            console.log(JSON.stringify(subSubGroups));
             // when done with all subSub Groups and all years
             const newData = {};
             // remove groups names that have only one entry
