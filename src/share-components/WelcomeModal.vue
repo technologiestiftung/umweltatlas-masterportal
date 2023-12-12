@@ -61,214 +61,225 @@ export default {
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Wasser77')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Wasser
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/depositphotos_147902709_xl-2015.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">
+                        Bild: chrissi/ Depositphotos.com
+                    </p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Wie viele Fischarten schwimmen in der Havel? Wo drohen
+                        Überschwemmungen? Welche Schadstoffe sind im
+                        Landwehrkanal zu finden? Und wo kommt eigentlich das
+                        Berliner Trinkwasser her? Hier finden Sie alles, was Sie
+                        über das Wasser und Grundwasser in Berlin wissen wollen.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Luft344')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Luft
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/depositphotos_324010502_xl-2015.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">
+                        Bild: yskandag / depositphotos.com
+                    </p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Berlin ist bunt: Grüne Parkanlagen wechseln sich ab mit
+                        quirligen Kiezen, mittendurch fließt der Verkehr. Wo
+                        viel Leben ist, gibt es häufig auch „dicke Luft“. Wie
+                        andere Großstädte setzt sich Berlin seit langem gegen
+                        Luftschadstoffe ein. Informieren Sie sich hier über die
+                        Luftqualität der Stadt.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Klima465')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Klima
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/fotolia_26968330_subscription_monthly_l.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">Bild: © alm1982 - Fotolia.com</p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Lufttemperatur, Feuchtigkeit, die Lage, Bebauung,
+                        Grünflächen und noch ein paar Dinge mehr sind
+                        entscheidend für das Stadtklima. Wie sich das Klima und
+                        seine entscheidenden Faktoren in Berlin verhalten und
+                        wie ihre Wirkung auf den Menschen positiv beeinflusst
+                        werden kann, erfahren Sie hier.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Biotope759')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Biotope
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/fotolia_42033806_subscription_monthly_xxl.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">Bild: © photocreo - Fotolia.com</p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Es grünt so grün … – Machen Sie sich im Themenbereich
+                        „Biotope“ ein Bild davon, wie es um die Grünflächen
+                        Berlins steht. Lesen Sie außerdem, welche Faktoren sich
+                        positiv wie negativ auf Lebensräume für Pflanzen und
+                        Tiere auswirken – und wie die Biotope in Berlin
+                        geschützt werden können.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Nutzung803')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Nutzung
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/depositphotos_182915374_xl-2015_fransz.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">Bild: depositphotos - fransz</p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Die Stadtstruktur Berlins ist so vielfältig wie das
+                        Leben in den Kiezen selbst. Mal dichte und mal
+                        aufgelockerte Bebauung, mal viele Einwohner pro Hektar
+                        und mal wenige.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'VerkehrLrm891')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Verkehr / Lärm
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/fotolia_46452680_subscription_monthly_xl.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">
+                        Bild: berlinphotos030 - Fotolia.com
+                    </p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Flugzeuge, Bahn und Bus oder der eigene Pkw bringen die
+                        Menschen heute immer schneller und bequemer von A nach
+                        B. Doch dabei entstehen Lärm und Emissionen, die der
+                        Gesundheit und Umwelt schaden können. Lesen Sie hier,
+                        wie sich der Berliner Verkehr und Lärm in den
+                        vergangenen Jahren entwickelt hat.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Energie1044')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Energie
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/fotolia_35979355_subscription_monthly_xl.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">
+                        Bild: Thorsten Schier - Fotolia.com
+                    </p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Strom und Heizwärme werden in Berlin zu großen Teilen
+                        mit fossilen Energieträgern erzeugt. Hier erfahren Sie
+                        zum Beispiel, an welchen Orten in der Stadt die Anlagen
+                        mit den höchsten CO₂-Emissionen stehen und welche
+                        Gebiete mit Fernwärme versorgt werden.
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Boden2')">
+                    <button @click="close($event, 'Mensch1080')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
                                     class="bootstrap-icon d-sm-none d-md-inline-block"
                                     ><i class="bi-arrow-right-short"></i
                                 ></span>
-                                Boden
+                                Mensch
                             </span>
                             <img
                                 loading="lazy"
-                                src="./welcome-img/fotolia_40771294_subscription_monthly_xxl.jpg"
+                                src="./welcome-img/depositphotos_15819245_xl-2015.jpg"
                             />
                         </span>
                     </button>
-                    <p class="img-copyright">Bild: Samiylenko - Forolia.com</p>
+                    <p class="img-copyright">
+                        Bild: Kuzmafoto/depositphoto.com
+                    </p>
                     <p class="info">
-                        Böden sind im wahrsten Sinne des Wortes die Grundlage
-                        für unser Leben. Und noch mehr als das: Sie sind
-                        Zeitzeugen von Natur- und Kulturgeschichte. Lesen Sie im
-                        Themenbereich „Boden“, was das Berliner Erdreich über
-                        den Werdegang der Stadt verrät und erfahren Sie, worauf
-                        Sie stehen und gehen.
+                        Von Friedrichshain-Kreuzberg bis Marzahn-Hellersdorf: Im
+                        Themenbereich „Mensch“ erfahren Sie, wie es um die
+                        Lebensqualität in den Berliner Bezirken bestellt ist und
+                        welche Faktoren diese besonders beeinflussen
                     </p>
                 </div>
             </div>
+            <p class="info-text">
+                Das Umweltatlas-Geoportal ist die Kartenzentrierte Erweiterung
+                des
+                <a href="https://www.berlin.de/umweltatlas/" target="_blank"
+                    >Umweltatlas</a
+                >
+            </p>
         </div>
     </div>
 </template>
@@ -293,7 +304,7 @@ export default {
 .modal-content {
     position: relative;
     background-color: #f7f7f7;
-    padding: 40px;
+    padding: 60px;
     // border-radius: 5px;
     width: 800px;
     max-width: 90%;
@@ -301,6 +312,24 @@ export default {
     background-color: white;
     max-height: 80%;
     overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        padding: 20px;
+    }
+
+    .row {
+        margin-top: 30px;
+    }
+}
+
+.info-text {
+    font-size: 15px;
+    color: #666666;
+    text-align: center;
+    margin-top: 1em;
 }
 
 .close-button {
@@ -315,6 +344,10 @@ export default {
 
 .row {
     // margin-top: 30px;
+
+    .col-md-4 {
+        margin-bottom: 10px;
+    }
 
     .img-wrapper {
         position: relative;
