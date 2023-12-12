@@ -201,25 +201,11 @@
           "enableZoomToExtend": true
         }
       },
-
-      "contact": {
-        "name": "translate#common:menu.contact",
-        "icon": "bi-envelope",
-        "serviceId": "80002",
-        "includeSystemInfo": true,
-        "from": [
-          {
-            "email": "placeholdere@placeholder.de",
-            "name": "placeholderlHilfe"
-          }
-        ],
-        "to": [
-          {
-            "email": "placeholder@placeholder.de",
-            "name": "placeholderlHilfe"
-          }
-        ]
+      "mailto": {
+        "name": "Kontakt",
+        "icon": "bi-envelope"
       },
+
       "portalTitle": {
         "title": "",
         "logo": "./resources/img/logo-umweltatlas.svg",

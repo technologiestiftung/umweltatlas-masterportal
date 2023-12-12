@@ -2,20 +2,29 @@
 // TODO this is just the HTML copied in - functions/CSS are still to be migrated
 import PortalTitle from "./modules/portalTitle/components/PortalTitle.vue";
 import LegendMenu from "./modules/legend/components/LegendMenu.vue";
-import {mapState, mapGetters} from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
     name: "MainNav",
     components: {
         PortalTitle,
-        LegendMenu
+        LegendMenu,
     },
     computed: {
         ...mapState([
             // listen to configJson changes for mounting the tools
-            "configJson"
+            "configJson",
         ]),
-        ...mapGetters(["legendConfig"])
-    }
+        ...mapGetters(["legendConfig"]),
+    },
+    created() {
+        setTimeout(() => {
+            const contactLink = document.querySelector(`li[title="Kontakt"] a`);
+            contactLink.href = "mailto:umweltatlas@senstadt.berlin.de";
+            contactLink.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+        }, 1000);
+    },
 };
 </script>
 
@@ -27,10 +36,7 @@ export default {
             role="navigation"
         >
             <div class="container-fluid">
-                <div
-                    id="navbarRow"
-                    class="w-100"
-                >
+                <div id="navbarRow" class="w-100">
                     <div class="navbar-header d-flex justify-content-between">
                         <button
                             type="button"
@@ -44,14 +50,8 @@ export default {
                             <span class="navbar-toggler-icon" />
                         </button>
                     </div>
-                    <div
-                        id="navbarMenu"
-                        class="collapse navbar-collapse"
-                    >
-                        <ul
-                            id="root"
-                            class="nav-menu"
-                        />
+                    <div id="navbarMenu" class="collapse navbar-collapse">
+                        <ul id="root" class="nav-menu" />
                     </div>
                     <LegendMenu v-if="legendConfig" />
                     <PortalTitle />
@@ -62,16 +62,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    #main-nav{
-        flex-grow:0;
-    }
+#main-nav {
+    flex-grow: 0;
+}
 
-    .navbar-toggler {
-        margin: 8px 15px 8px 0;
-    }
+.navbar-toggler {
+    margin: 8px 15px 8px 0;
+}
 
-    .navbar-toggler-icon {
-        width: 1.125em;
-        height: 1.125em;
-    }
+.navbar-toggler-icon {
+    width: 1.125em;
+    height: 1.125em;
+}
 </style>
+
