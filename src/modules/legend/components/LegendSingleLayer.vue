@@ -166,12 +166,12 @@ export default {
         }
     }
 }
-.layer-legend-container {
-    position: relative;
-    img {
-        width: 100%;
-    }
-}
+// .layer-legend-container {
+//     position: relative;
+//     img {
+//         width: 100%;
+//     }
+// }
 .layer-legend.collapsing {
     -webkit-transition: none;
     transition: none;
