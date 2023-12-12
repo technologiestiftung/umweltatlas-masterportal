@@ -16,15 +16,15 @@ export default {
         ]),
         ...mapGetters(["legendConfig"]),
     },
-    created() {
-        setTimeout(() => {
-            const contactLink = document.querySelector(`li[title="Kontakt"] a`);
-            contactLink.href = "mailto:umweltatlas@senstadt.berlin.de";
-            contactLink.addEventListener("click", function (e) {
-                e.stopPropagation();
-            });
-        }, 1000);
-    },
+    // created() {
+    //     setTimeout(() => {
+    //         const contactLink = document.querySelector(`li[title="Kontakt"] a`);
+    //         contactLink.href = "mailto:umweltatlas@senstadt.berlin.de";
+    //         contactLink.addEventListener("click", function (e) {
+    //             e.stopPropagation();
+    //         });
+    //     }, 1000);
+    // },
 };
 </script>
 
