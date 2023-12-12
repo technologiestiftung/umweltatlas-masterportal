@@ -34,6 +34,7 @@ export default {
             </button>
 
             <div class="row">
+                <h2>Berliner Unweltatlas</h2>
                 <div class="col-md-4">
                     <button @click="close($event, 'Boden2')">
                         <span class="img-wrapper">
@@ -314,6 +315,10 @@ export default {
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow-x: hidden;
+
+    h2 {
+        margin-bottom: 1em;
+    }
 }
 
 @media only screen and (max-width: 600px) {
