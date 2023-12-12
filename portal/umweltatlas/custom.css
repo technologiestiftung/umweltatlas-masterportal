@@ -49,7 +49,12 @@
 }
 #root .nav-link:hover {
     background-color: #333333 !important;
-    color: white important;
+    color: white !important;
+    border-radius: 0px !important;
+}
+
+.layer-catalog > .menu-row.header.row {
+    background-color: #333333 !important;
 }
 
 .portal-title .tabable:hover {
