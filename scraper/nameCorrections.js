@@ -1,6 +1,6 @@
 export default {
-    "k01_06_01bodart2010:1": "Bodenarten",
-    "wmsk01_06_01bodart2015:1": "Bodenarten",
+    // "k01_06_01bodart2010:1": "Bodenarten",
+    // "wmsk01_06_01bodart2015:1": "Bodenarten",
     "k_01_06_6kohlenstoffvor2015:1": "Kohlenstoffvorräte [kg/m²]",
     "k01_06_08sumkat1990:1": "Summe austauschbarer Kationen des Oberbodens",
     "k01_06_10wasdur2015:1": "Wasserdurchlässigkeit (kf) der Böden",
@@ -24,3 +24,4 @@ export default {
     "versiegelung2001:1": "Versiegelung",
     "versiegelung:1": "Versiegelung",
 };
+

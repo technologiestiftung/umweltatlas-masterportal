@@ -332,13 +332,9 @@ function toFolderStructure(inputData, structuredData) {
 toFolderStructure(newData, newDataFolderStructure);
 
 function toYearFolderStructure(inputData, structuredData) {
-    // console.log("inputData,inputData", inputData);
     const byYear = {};
     Object.keys(inputData).forEach((key) => {
         Object.keys(inputData[key]).forEach((keyKey) => {
-            // console.log("---", inputData[key][keyKey]);
-            // inputData[key]
-
             if (!byYear[keyKey]) {
                 byYear[keyKey] = [];
             }
@@ -356,9 +352,5 @@ function toYearFolderStructure(inputData, structuredData) {
             })),
         });
     });
-
-    console.log("structuredData", JSON.stringify(structuredData));
 }
-
-// console.log(JSON.stringify(newDataFolderStructure));
 
