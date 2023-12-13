@@ -11,6 +11,20 @@ export default {
             this.showModal = false;
         },
         close(event, folderId) {
+            const listEl = document
+                .querySelector("#Overlayer")
+                .getElementsByTagName("li");
+
+            // let folderIdInList = undefined;
+            // Object.keys(listEl).forEach((d) => {
+            //     if (oo[d].id.includes(folderId)) {
+            //         folderIdInList = oo[d].id;
+            //     }
+            // });
+            // if (folderIdInList) {
+            //     window.zoomToDesktopTopicTreeFolder(folderIdInList);
+            // }
+
             window.zoomToDesktopTopicTreeFolder(folderId);
             event.preventDefault();
             event.stopImmediatePropagation();
@@ -62,7 +76,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Wasser77')">
+                    <button @click="close($event, 'Wasser69')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -89,7 +103,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Luft344')">
+                    <button @click="close($event, 'Luft272')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -117,7 +131,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Klima465')">
+                    <button @click="close($event, 'Klima334')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -143,7 +157,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Biotope759')">
+                    <button @click="close($event, 'Biotope441')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -169,7 +183,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Nutzung803')">
+                    <button @click="close($event, 'Nutzung469')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -193,7 +207,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'VerkehrLrm891')">
+                    <button @click="close($event, 'VerkehrLrm553')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -221,7 +235,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Energie1044')">
+                    <button @click="close($event, 'Energie640')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span
@@ -248,7 +262,7 @@ export default {
                     </p> -->
                 </div>
                 <div class="col-md-4">
-                    <button @click="close($event, 'Mensch1080')">
+                    <button @click="close($event, 'Mensch656')">
                         <span class="img-wrapper">
                             <span class="img-text">
                                 <span

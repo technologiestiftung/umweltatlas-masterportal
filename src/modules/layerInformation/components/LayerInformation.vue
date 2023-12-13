@@ -329,7 +329,7 @@ export default {
                                           "common:modules.layerInformation.multiAddress"
                                       )
                                     : $t(layerInfo.typ) +
-                                      " - " +
+                                      "-" +
                                       $t(
                                           "common:modules.layerInformation.addressSuffix"
                                       )
@@ -889,13 +889,16 @@ hr {
     /* border-bottom: 1px solid #ddd; */
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 3px;
+    margin-top: 8px;
 }
 
 #layer-accordions label:hover {
     background-color: #edf8f4; /* Slightly darker on hover */
 }
 
+.accordion-header .header-title {
+    font-weight: bold;
+}
 .accordion-header .header-title {
     font-weight: bold;
 }
@@ -933,7 +936,7 @@ hr {
 #layer-info-title {
     padding: 1em;
     background-color: #f2f2f2;
-    margin-top: 3px;
+    margin-top: 8px;
     font-weight: bold;
 }
 

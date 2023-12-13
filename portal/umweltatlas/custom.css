@@ -218,6 +218,16 @@ ul#tree .checked:hover {
     color: inherit !important;
 }
 
+#searchInput:focus {
+    box-shadow: none !important;
+    border-color: #e69636 !important;
+}
+
+#searchForm .btn:hover {
+    background-color: #e69636 !important;
+    /* color: #333 !important; */
+}
+
 /* Search */
 
 #searchInputUL li:hover {
