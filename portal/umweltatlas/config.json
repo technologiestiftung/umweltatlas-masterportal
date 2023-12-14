@@ -219,7 +219,18 @@
           }
         ]
       },
-
+      "newDatasets": {
+        "name": "Aktuelles",
+        "icon": "bi-newspaper",
+        "datasets": [
+          { "datum": "06/2023", "name": "Test Datensatz 1" },
+          { "datum": "07/2023", "name": "Test Datensatz 2" },
+          { "datum": "08/2023", "name": "Test Datensatz 3" },
+          { "datum": "09/2023", "name": "Test Datensatz 4" },
+          { "datum": "10/2023", "name": "Test Datensatz 5" },
+          { "datum": "11/2023", "name": "Test Datensatz 6" }
+        ]
+      },
       "portalTitle": {
         "title": "",
         "logo": "./resources/img/logo-umweltatlas.svg",

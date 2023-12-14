@@ -936,6 +936,11 @@
       "scaleSwitcher": {
         "label": "Maßstab"
       },
+      "newDatasets": {
+        "header": "Folgende Datensätze wurden zuletzt aktualisiert",
+        "date": "Datum",
+        "datatitle": "Datensatztitel"
+      },
       "bufferAnalysis": {
         "sourceSelectLabel": "Quell-Layer",
         "targetSelectLabel": "Ziel-Layer",

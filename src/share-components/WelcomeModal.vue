@@ -362,6 +362,9 @@ export default {
     cursor: pointer;
 }
 
+h2 {
+    font-family: "MasterPortalFont Bold", "Arial Narrow Bold", Arial, sans-serif;
+}
 .row {
     // margin-top: 30px;
 

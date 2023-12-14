@@ -24,6 +24,7 @@ import StyleVT from "./styleVT/components/StyleVT.vue";
 import SupplyCoord from "./supplyCoord/components/SupplyCoord.vue";
 import WfsSearch from "./wfsSearch/components/WfsSearch.vue";
 import WfsTransaction from "./wfst/components/WfsTransaction.vue";
+import NewDatasets from "./NewDatasets/components/NewDatasets.vue";
 
 /**
  * User type definition
@@ -58,9 +59,11 @@ const state = {
         styleVT: StyleVT,
         supplyCoord: SupplyCoord,
         wfsSearch: WfsSearch,
-        wfst: WfsTransaction
+        wfst: WfsTransaction,
+        newDatasets: NewDatasets,
     },
-    configuredTools: []
+    configuredTools: [],
 };
 
 export default state;
+
