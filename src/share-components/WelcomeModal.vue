@@ -48,7 +48,7 @@ export default {
             </button>
 
             <div class="row">
-                <h2>Berliner Unweltatlas</h2>
+                <h2>Berliner Umweltatlas</h2>
                 <div class="col-md-4">
                     <button @click="close($event, 'Boden2')">
                         <span class="img-wrapper">

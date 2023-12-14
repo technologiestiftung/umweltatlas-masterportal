@@ -476,8 +476,7 @@ export default {
             <div v-if="active" id="add-wms" class="addWMS">
                 <h4 style="margin-bottom: 1em">
                     Fügen Sie ein eigenes WMS (Web Map Service) als Layer hinzu:
-                    Beispielsweise eigene Gebietsumrisse oder andere relevante
-                    Aol.
+                    Beispielsweise eigene Gebietsumrisse.
                 </h4>
 
                 <p class="color-green" style="margin-top: 15px">
