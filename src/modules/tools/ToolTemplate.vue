@@ -1,5 +1,5 @@
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 import BasicDragHandle from "../../share-components/BasicDragHandle.vue";
 import BasicResizeHandle from "../../share-components/BasicResizeHandle.vue";
 
@@ -7,56 +7,56 @@ export default {
     name: "ToolTemplate",
     components: {
         BasicDragHandle,
-        BasicResizeHandle
+        BasicResizeHandle,
     },
     props: {
         title: {
             type: String,
-            required: true
+            required: true,
         },
         icon: {
             type: String,
-            required: true
+            required: true,
         },
         active: {
             type: Boolean,
             default: false,
-            required: false
+            required: false,
         },
         renderToWindow: {
             type: Boolean,
             default: true,
-            required: false
+            required: false,
         },
         resizableWindow: {
             type: Boolean,
             default: false,
-            required: false
+            required: false,
         },
         initialWidth: {
             type: Number,
             default: -1,
-            required: false
+            required: false,
         },
         initialWidthMobile: {
             type: Number,
             default: -1,
-            required: false
+            required: false,
         },
         deactivateGFI: {
             type: Boolean,
             default: true,
-            required: false
+            required: false,
         },
         focusToCloseIcon: {
             type: Boolean,
             default: false,
-            required: false
-        }
+            required: false,
+        },
     },
-    data () {
+    data() {
         return {
-            isMinified: false
+            isMinified: false,
         };
     },
     computed: {
@@ -66,7 +66,7 @@ export default {
          * Mobile mode always renders in window.
          * @returns {Boolean} Render to window.
          */
-        renderToWindowMobile () {
+        renderToWindowMobile() {
             return this.mobile || this.renderToWindow;
         },
 
@@ -74,12 +74,14 @@ export default {
          * Calculates initial width of sidebar or window for Desktop and Mobile (if props are given).
          * @returns {Array} initialToolWidth and initialToolWidthMobile for CSS
          */
-        widths () {
+        widths() {
             return {
                 "--initialToolWidth": this.getWidth(this.initialWidth),
-                "--initialToolWidthMobile": this.getWidth(this.initialWidthMobile)
+                "--initialToolWidthMobile": this.getWidth(
+                    this.initialWidthMobile
+                ),
             };
-        }
+        },
     },
     watch: {
         /**
@@ -105,16 +107,14 @@ export default {
 
                     if (newValue && el) {
                         el.style.display = "block";
-                    }
-                    else if (el) {
+                    } else if (el) {
                         el.style.display = "none";
                     }
                 }
             });
-
-        }
+        },
     },
-    mounted () {
+    mounted() {
         if (this.active) {
             this.updateMap();
         }
@@ -125,7 +125,7 @@ export default {
          * @param {String} inputWidth the width setting
          * @returns {String} Width style in px
          */
-        getWidth (inputWidth) {
+        getWidth(inputWidth) {
             let pixelWidth = parseFloat(inputWidth);
 
             if (pixelWidth < 0 || isNaN(pixelWidth)) {
@@ -144,7 +144,11 @@ export default {
          * @return {void}
          */
         minifyTool: function (event) {
-            if (event.type === "click" || event.which === 32 || event.which === 13) {
+            if (
+                event.type === "click" ||
+                event.which === 32 ||
+                event.which === 13
+            ) {
                 this.isMinified = true;
                 this.$emit("toolMinified");
             }
@@ -155,7 +159,11 @@ export default {
          * @return {void}
          */
         maximizeTool: function (event) {
-            if (event.type === "click" || event.which === 32 || event.which === 13) {
+            if (
+                event.type === "click" ||
+                event.which === 32 ||
+                event.which === 13
+            ) {
                 this.isMinified = false;
                 this.$emit("toolMaximized");
             }
@@ -165,7 +173,7 @@ export default {
          * @param {Event} event the dom event
          * @returns {void}
          */
-        onEndResizing (event) {
+        onEndResizing(event) {
             this.$emit("endResizing", event);
         },
         /**
@@ -173,7 +181,7 @@ export default {
          * @param {Event} event the dom event
          * @return {void}
          */
-        updateMap (event) {
+        updateMap(event) {
             if (this.renderToWindowMobile) {
                 return;
             }
@@ -185,13 +193,17 @@ export default {
          * @param {Event} event the dom event
          * @return {void}
          */
-        close (event) {
-            if (event.type === "click" || event.which === 32 || event.which === 13) {
+        close(event) {
+            if (
+                event.type === "click" ||
+                event.which === 32 ||
+                event.which === 13
+            ) {
                 // emit event to parent e.g. coordToolKit (which uses the tool as component and is therefor the parent)
                 this.$parent.$emit("close", event);
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -203,7 +215,7 @@ export default {
         :class="{
             'tool-window-vue': renderToWindowMobile,
             'table-tool-win-all-vue': uiStyle === 'TABLE',
-            'is-minified': isMinified
+            'is-minified': isMinified,
         }"
         :style="widths"
     >
@@ -225,10 +237,7 @@ export default {
                 </span>
             </div>
 
-            <div
-                v-if="!renderToWindowMobile"
-                class="heading-element flex-grow"
-            >
+            <div v-if="!renderToWindowMobile" class="heading-element flex-grow">
                 <h2 class="title">
                     {{ title }}
                 </h2>
@@ -245,10 +254,7 @@ export default {
                 </h2>
             </BasicDragHandle>
 
-            <div
-                v-if="renderToWindowMobile"
-                class="heading-element"
-            >
+            <div v-if="renderToWindowMobile" class="heading-element">
                 <span
                     v-if="!isMinified"
                     class="bootstrap-icon"
@@ -286,10 +292,7 @@ export default {
             </div>
         </div>
 
-        <div
-            id="vue-tool-content-body"
-            class="win-body-vue"
-        >
+        <div id="vue-tool-content-body" class="win-body-vue">
             <slot name="toolBody" />
         </div>
         <div v-if="resizableWindow && renderToWindowMobile">
@@ -308,194 +311,219 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    @import "~/css/mixins.scss";
-    @import "~variables";
+@import "~/css/mixins.scss";
+@import "~variables";
 
-    #vue-tool-content-body {
-        display:block;
+#vue-tool-content-body {
+    display: block;
 
-        &:focus {
-            @include primary_action_focus;
-        }
+    &:focus {
+        @include primary_action_focus;
     }
+}
 
-    .win-heading {
-        border-bottom: 1px solid $light_grey;
-        font-family: $font_family_accent;
-        display:flex;
-        flex-direction:row;
-        width:100%;
-        height: 35px;
-        padding-left: 10px;
+.win-heading {
+    border-bottom: 1px solid $light_grey;
+    font-family: $font_family_accent;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
 
-        .heading-element {
-            white-space: nowrap;
-            color: $secondary_contrast;
-            font-size: $font_size_big;
+    .heading-element {
+        white-space: nowrap;
+        color: $secondary_contrast;
+        font-size: $font_size_big;
 
-            &.flex-grow {
-                flex-grow:99;
-                overflow: hidden;
-                > .title {
-                    @include tool-headings-h2();
-                }
-            }
-
+        &.flex-grow {
+            flex-grow: 99;
+            overflow: hidden;
             > .title {
                 @include tool-headings-h2();
             }
+        }
 
-            > .bootstrap-icon {
-                padding: 8px;
-                &:focus {
-                    @include primary_action_focus;
-                }
+        > .title {
+            @include tool-headings-h2();
+        }
+
+        > .bootstrap-icon {
+            padding: 8px;
+            &:focus {
+                @include primary_action_focus;
             }
+        }
 
-            > span {
-                > .bi-dash-lg { top: 3px; }
-                &:hover {
-                    &:not(.win-icon) {
-                        @include primary_action_hover;
-                    }
+        > span {
+            > .bi-dash-lg {
+                top: 3px;
+            }
+            &:hover {
+                &:not(.win-icon) {
+                    @include primary_action_hover;
                 }
             }
         }
     }
+}
 
-    .tool-window-vue {
-        background-color: $white;
-        display: block;
-        position: absolute;
-        padding:0;
-        top: 20px;
-        left: 20px;
-        box-shadow: $tool_box_shadow;
-        z-index: 999;
-        min-width: 280px;
-        width: var(--initialToolWidth);
+.tool-window-vue {
+    background-color: $white;
+    display: block;
+    position: absolute;
+    padding: 0;
+    top: 10px;
+    right: 10px;
+    box-shadow: $tool_box_shadow;
+    z-index: 999;
+    min-width: 280px;
+    width: var(--initialToolWidth);
 
-        @include media-breakpoint-down(sm) {
-            right: 20px;
-        }
+    @include media-breakpoint-down(sm) {
+        right: 20px;
+    }
 
-        @include media-breakpoint-down(md) {
-            width: var(--initialToolWidthMobile);
-        }
-
-        .win-body-vue {
-            max-height: 72vh;
-        }
-
-        .basic-resize-handle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-        }
-        #basic-resize-handle-tl { top: 0; left: 0; }
-        #basic-resize-handle-tr { top: 0; right: 0;}
-        #basic-resize-handle-br { bottom: 0; right: 0;}
-        #basic-resize-handle-bl { bottom: 0; left: 0;}
-
-        &.is-minified {
-            width:auto !important;
-            height:auto !important;
-
-            #vue-tool-content-body { display:none; }
-            .win-heading{
-                background-color: $primary;
-                .bootstrap-icon, .title {
-                    color: $white;
-                }
-                border-bottom: none;
-                overflow: hidden;
-            }
-        }
+    @include media-breakpoint-down(md) {
+        width: var(--initialToolWidthMobile);
     }
 
     .win-body-vue {
-        position: relative;
-        padding: $padding;
-        -webkit-overflow-scrolling: touch;
-        background-color: $white;
-        overflow: auto;
-        width: 100%;
+        max-height: 72vh;
     }
 
-    .table-tool-win-all-vue {
-        display:none;
-        border-radius: 12px;
-        margin-bottom: 30px;
+    .basic-resize-handle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+    }
+    #basic-resize-handle-tl {
+        top: 0;
+        left: 0;
+    }
+    #basic-resize-handle-tr {
+        top: 0;
+        right: 0;
+    }
+    #basic-resize-handle-br {
+        bottom: 0;
+        right: 0;
+    }
+    #basic-resize-handle-bl {
+        bottom: 0;
+        left: 0;
+    }
+
+    &.is-minified {
+        width: auto !important;
+        height: auto !important;
+
+        #vue-tool-content-body {
+            display: none;
+        }
         .win-heading {
-            border-top-left-radius: 12px;
+            background-color: $primary;
+            .bootstrap-icon,
+            .title {
+                color: $white;
+            }
+            border-bottom: none;
+            overflow: hidden;
+        }
+    }
+}
+
+.win-body-vue {
+    position: relative;
+    padding: $padding;
+    -webkit-overflow-scrolling: touch;
+    background-color: $white;
+    overflow: auto;
+    width: 100%;
+}
+
+.table-tool-win-all-vue {
+    display: none;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    .win-heading {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        font-size: $font_size_big;
+        background-color: $dark_grey;
+        .heading-element {
             border-top-right-radius: 12px;
-            font-size: $font_size_big;
-            background-color: $dark_grey;
-            .heading-element {
+            :last-child:hover {
                 border-top-right-radius: 12px;
-                :last-child:hover {
-                    border-top-right-radius: 12px;
-                }
-                > .title {
-                    color: $white;
-                    font-size: $font_size_big;
-                }
-                > .buttons { color: $white; }
-                > .bootstrap-icon { color: $white; }
+            }
+            > .title {
+                color: $white;
+                font-size: $font_size_big;
+            }
+            > .buttons {
+                color: $white;
+            }
+            > .bootstrap-icon {
+                color: $white;
             }
         }
-        .win-body-vue {
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            background-color: $secondary_table_style;
-            * { border-radius: 12px; }
+    }
+    .win-body-vue {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: $secondary_table_style;
+        * {
+            border-radius: 12px;
         }
     }
+}
 
-    #tool-sidebar-vue {
-        background-color: $white;
-        padding: 0 0 0 12px;
-        height: 100%;
-        width: var(--initialToolWidth);
-        max-width: 90vw;
-
-        @include media-breakpoint-down(md) {
-            width: var(--initialToolWidthMobile);
-        }
-
-        .win-body-vue {
-            height: calc(100% - 35px);
-        }
-    }
-
-    #basic-resize-handle-sidebar{
-        position:absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        padding:6px;
-        transition:background-color 0.25s;
-        background-color: $light_grey;
-
-        &>div {
-            position: absolute;
-            top:50%;
-            margin-top:-8px;
-        }
-    }
-
+#tool-sidebar-vue {
+    background-color: $white;
+    padding: 0 0 0 12px;
+    height: 100%;
+    width: var(--initialToolWidth);
+    max-width: 90vw;
 
     @include media-breakpoint-down(md) {
-        .tool-window { right: 0; }
-        #tool-sidebar-vue {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1050;
-            overflow-x: hidden;
-            overflow-y: auto;
-            margin: 0;
-        }
+        width: var(--initialToolWidthMobile);
     }
+
+    .win-body-vue {
+        height: calc(100% - 35px);
+    }
+}
+
+#basic-resize-handle-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 6px;
+    transition: background-color 0.25s;
+    background-color: $light_grey;
+
+    & > div {
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .tool-window {
+        right: 0;
+    }
+    #tool-sidebar-vue {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1050;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0;
+    }
+}
 </style>
+
