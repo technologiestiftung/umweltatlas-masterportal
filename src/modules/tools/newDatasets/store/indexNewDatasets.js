@@ -1,5 +1,5 @@
 import actions from "./actionsNewDatasets";
-import mutations from "./mutationsScaleSwitcher";
+import mutations from "./mutationsNewDatasets";
 import getters from "./gettersScaleSwitcher";
 import state from "./stateNewDatasets";
 

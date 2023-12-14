@@ -2,10 +2,8 @@
 import { mapGetters, mapMutations } from "vuex";
 import { getComponent } from "../../../../utils/getComponent";
 import ToolTemplate from "../../ToolTemplate.vue";
-// import getters from "../store/gettersNewDatasets";
-// import mutations from "../store/mutationsNewDatasets";
+import mutations from "../store/mutationsNewDatasets";
 import getters from "../store/gettersScaleSwitcher";
-import mutations from "../store/mutationsScaleSwitcher";
 
 /**
  * Tool to switch the scale of the map. Listens to changes of the map's scale and sets the scale to this value.
