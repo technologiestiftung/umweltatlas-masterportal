@@ -32,7 +32,7 @@ import StyleVT from "./styleVT/store/indexStyleVT";
 import SupplyCoord from "./supplyCoord/store/indexSupplyCoord";
 import WfsSearch from "./wfsSearch/store/indexWfsSearch";
 import Wfst from "./wfst/store/indexWfst";
-import NewDatasets from "./NewDatasets/store/indexNewDatasets";
+import NewDatasets from "./newDatasets/store/indexNewDatasets";
 
 /**
  * This is here to test app-store/utils/composeModules.
