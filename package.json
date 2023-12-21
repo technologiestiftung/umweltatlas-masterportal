@@ -168,8 +168,8 @@
     "npm": "^8.1.2 || ^9.5.1"
   },
   "browser": {
-    "./src/modules/tools/newDatasets/components/NewDatasets.vue": "./src/modules/tools/NewDatasets/components/NewDatasets.vue",
-    "./src/modules/tools/newDatasets/store/indexNewDatasets": "./src/modules/tools/NewDatasets/store/indexNewDatasets"
+    "./src/modules/tools/newDatasets/components/NewDatasets.vue": "./src/modules/tools/newDatasets/components/NewDatasets.vue",
+    "./src/modules/tools/newDatasets/store/indexNewDatasets": "./src/modules/tools/newDatasets/store/indexNewDatasets"
   }
 }
 
