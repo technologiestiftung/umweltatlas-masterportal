@@ -6,56 +6,19 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# {repo-template}
+# Umweltatlas Prototyp
 
-## TODO (after you generated the repo)
+This is a functional MVP of a map-based 'Umweltatlas' prototype that is implemented with the master portal software. On the one hand, this is intended to explore the technical feasibility and the effort required to implement the proposals and, on the other hand, to provide an improved decision-making basis for final requirements for an extension or further development of the existing environmental atlas.
 
--   [ ] Review the content of the README.md and adjust to your liking
--   [ ] Read the README.md till the end and adjust the content licensing,
-        logos, etc (I know you stopped at tbd...)
--   [ ] Adjust the file [.github/CODEOWNERS](./.github/CODEOWNERS)
--   [ ] Adjust the files under [.github/ISSUE_TEMPLATE](./.github/ISSUE_TEMPLATE)
--   [ ] If you use staging and main branches use this template for [.github/renovate.json](./.github/renovate.json)
+*This readme is work in progress.*
 
-```json
-{
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["github>technologiestiftung/renovate-config"],
-    "baseBranches": ["staging"]
-}
-```
 
--   [ ] Do you want to honor all kinds of contributions? Use [all-contributors](https://allcontributors.org/)
+## Masterportal
 
-```bash
-npx all-contributors-cli check
-npx all-contributors-cli add ff6347 doc
-```
+The Masterportal is a tool-kit to create geo web applications based on [OpenLayers](https://openlayers.org), [Vue.js](https://vuejs.org/) and [Backbone.js](https://backbonejs.org). The Masterportal is Open Source Software published under the [MIT License](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt).
 
-You can use it on GitHub just by commenting on PRs and issues:
+The Masterportal is a project by [Geowerkstatt Hamburg](https://www.hamburg.de/geowerkstatt/).
 
-```plain
-@all-contributors please add @ff6347 for infrastructure, tests and code
-```
-
--   [ ] Add your project description
--   [ ] Get fancy shields at https://shields.io
-
-## Prerequisites
-
-tbd...
-
-## Installation
-
-tbd...
-
-## Usage or Deployment
-
-tbd...
-
-## Development
-
-tbd...
 
 ## Notes
 
@@ -97,35 +60,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-## Content Licensing
-
-Texts and content available as [CC BY](https://creativecommons.org/licenses/by/3.0/de/).
-
-Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 
 ## Credits
 
 <table>
   <tr>
     <td>
-      Made by <a href="https://citylab-berlin.org/de/start/">
-        <br />
-        <br />
-        <img width="200" src="https://logos.citylab-berlin.org/logo-citylab-berlin.svg" />
-      </a>
-    </td>
-    <td>
       A project by <a href="https://www.technologiestiftung-berlin.de/">
         <br />
         <br />
         <img width="150" src="https://logos.citylab-berlin.org/logo-technologiestiftung-berlin-de.svg" />
-      </a>
-    </td>
-    <td>
-      Supported by <a href="https://www.berlin.de/rbmskzl/">
-        <br />
-        <br />
-        <img width="80" src="https://logos.citylab-berlin.org/logo-berlin-senatskanzelei-de.svg" />
       </a>
     </td>
   </tr>
