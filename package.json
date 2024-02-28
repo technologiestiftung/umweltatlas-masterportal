@@ -126,7 +126,7 @@
     "inquirer": "^8.2.4",
     "jaguarjs-jsdoc": "^1.1.0",
     "jsdoc": "^4.0.2",
-    "jsdom": "14.1.0",
+    "jsdom": "16.5.0",
     "jsdom-global": "^3.0.2",
     "markdown-it": "^13.0.1",
     "mini-css-extract-plugin": "^0.12.0",
