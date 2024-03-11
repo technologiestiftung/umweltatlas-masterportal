@@ -165,7 +165,7 @@
   },
   "engines": {
     "node": "^16.13.2 || ^18.16.0",
-    "npm": "^8.1.2 || ^9.5.1"
+    "npm": "^8.1.2 || ^9.5.1 || ^10.0.0"
   },
   "browser": {
     "./src/modules/tools/newDatasets/components/NewDatasets.vue": "./src/modules/tools/newDatasets/components/NewDatasets.vue",
