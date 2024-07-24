@@ -4,7 +4,7 @@ import async from "async";
 import path from "path";
 import axios from "axios";
 import fetch from "node-fetch";
-import services from "./services-internet.js";
+import services from "./services-internet-umweltatlas.js";
 import baseMaps from "./baseMaps.js";
 import nameCorrections from "./nameCorrections.js";
 
@@ -13,6 +13,7 @@ import fachdatenImport from "./fachdaten.js";
 
 const nameChapterNumberLookup = {};
 const servicesWant = [...baseMaps];
+
 const noMap = [];
 const missingServices = [];
 const fachdaten = fachdatenImport;
@@ -88,20 +89,6 @@ async function getData(iframeLink) {
     return await res.json();
 }
 
-try {
-    const response = await axios.get(`https://www.berlin.de/umweltatlas/`);
-    const body = response.data;
-    const $ = cheerio.load(body);
-    const subjectGroupLinks = $("article .inner .more")
-        .map((i, el) => $(el).attr("href"))
-        .get();
-
-    // const subjectGroupLinks = ["/umweltatlas/boden/"];
-    eachGroup(subjectGroupLinks);
-} catch (error) {
-    // console.error(error);
-}
-
 function eachGroup(subjectGroupLinks) {
     // each group: boden, wasser, luft ...
     async.eachSeries(
@@ -114,11 +101,11 @@ function eachGroup(subjectGroupLinks) {
                     const $ = cheerio.load(body);
                     const title = $(".herounit-article h1").text();
                     const group = {
-                        Titel: title,
-                        isFolderSelectable: false,
-                        Ordner: [],
+                        name: title,
+                        type: "folder",
+                        elements: [],
                     };
-                    fachdaten.Ordner.push(group);
+                    fachdaten.elements.push(group);
 
                     const subGroupLinks = $("article .inner .more")
                         .map((i, el) => $(el).attr("href"))
@@ -173,11 +160,11 @@ function eachSubGroup(subGroupLinks, group, callbackEachGroup) {
                     const $ = cheerio.load(body);
                     const title = $(".herounit-article h1").text();
                     const subGroup = {
-                        Titel: title,
-                        isFolderSelectable: false,
-                        Ordner: [],
+                        name: title,
+                        type: "folder",
+                        elements: [],
                     };
-                    group.Ordner.push(subGroup);
+                    group.elements.push(subGroup);
 
                     const subGroupYearLinks = $(
                         "#layout-grid__area--maincontent section:first .textile a"
@@ -292,9 +279,9 @@ function eachYearOfSubGroup(subGroupYearLinks, subGroup, callbackEachSubGroup) {
 
                 Object.keys(byYear).forEach((year) => {
                     structuredData.push({
-                        Titel: year,
-                        isFolderSelectable: true,
-                        Layer: byYear[year].map((y) => ({
+                        name: year,
+                        type: "folder",
+                        elements: byYear[year].map((y) => ({
                             id: y.id,
                             name: y.name,
                         })),
@@ -306,13 +293,14 @@ function eachYearOfSubGroup(subGroupYearLinks, subGroup, callbackEachSubGroup) {
             const newDataFolderStructure = [];
             function toFolderStructure(inputData, structuredData) {
                 Object.keys(inputData).forEach((key) => {
-                    const keys = Object.keys(inputData[key]);
+                    let keys = Object.keys(inputData[key]);
+
                     const hasLayers = inputData[key][keys[0]]?.year;
                     if (hasLayers) {
                         structuredData.push({
-                            Titel: key,
-                            isFolderSelectable: false,
-                            Layer: keys.map((layerKey) => ({
+                            name: key,
+                            type: "folder",
+                            elements: keys.map((layerKey) => ({
                                 id: inputData[key][layerKey].id,
                                 name: inputData[key][layerKey].name,
                             })),
@@ -320,9 +308,9 @@ function eachYearOfSubGroup(subGroupYearLinks, subGroup, callbackEachSubGroup) {
                     } else {
                         const subssss = [];
                         structuredData.push({
-                            Titel: key,
-                            isFolderSelectable: false,
-                            Ordner: subssss,
+                            name: key,
+                            type: "folder",
+                            elements: subssss,
                         });
 
                         toYearFolderStructure(inputData[key], subssss);
@@ -331,7 +319,7 @@ function eachYearOfSubGroup(subGroupYearLinks, subGroup, callbackEachSubGroup) {
             }
             toFolderStructure(newData, newDataFolderStructure);
 
-            subGroup.Ordner.push(...newDataFolderStructure);
+            subGroup.elements.push(...newDataFolderStructure);
 
             console.log("DONE fachdaten");
 
@@ -389,7 +377,9 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
                 let iframeLink = $("iframe").attr("src");
                 // no iFrame
                 if (!iframeLink) {
-                    noMap.push(subSubGroupLinkName.link);
+                    noMap.push(
+                        "https://www.berlin.de" + subSubGroupLinkName.link
+                    );
                     callback();
                     return;
                 }
@@ -475,5 +465,21 @@ function goToEachMap(subSubGroupLinksNames, subSubGroups, eachYearCallback) {
             eachYearCallback();
         }
     );
+}
+
+// 1 - get links for Subjects e.g. "/umweltatlas/boden/"
+try {
+    const response = await axios.get(`https://www.berlin.de/umweltatlas/`);
+    const body = response.data;
+    const $ = cheerio.load(body);
+    const subjectGroupLinks = $("article .inner .more")
+        .map((i, el) => $(el).attr("href"))
+        .get();
+
+    // for testing BODEN
+    // const subjectGroupLinks = ["/umweltatlas/boden/"];
+    eachGroup(subjectGroupLinks);
+} catch (error) {
+    // console.error(error);
 }
 

@@ -91,7 +91,6 @@ export default [
             },
         ],
     },
-
     {
         id: "k_luftbild1928:0",
         name: "Luftbildplan 1928",
@@ -662,23 +661,70 @@ export default [
     },
     {
         id: "truedop_2023:truedop_2023:GDIBE:25833",
+
         name: "Digitale farbige TrueOrthophotos 2023 (DOP20RGBI)",
+
         name_lang:
             "Digitale farbige TrueOrthophotos 2023 (DOP20RGBI) (Digitale farbige TrueOrthophotos 2023 (DOP20RGBI))",
+
         url: "https://gdi.berlin.de/services/wmts/truedop_2023",
+
         capabilitiesUrl:
             "https://gdi.berlin.de/services/wmts/truedop_2023?request=getcapabilities&service=WMTS&version=1.0.0",
+
         typ: "WMTS",
+
         layers: "truedop_2023",
+
         tileMatrixSet: "GDIBE:25833",
+
         datasets: [
             {
                 md_id: "c68a287b-7ad0-4cc9-87f5-2cffebaf7113",
+
                 rs_id: "https://registry.gdi-de.org/id/de.be.csw/1d0094bb-ee61-385a-8fc4-5ba731069b85",
+
                 csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
             },
         ],
+
         optionsFromCapabilities: true,
+
+        layerAttribution:
+            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
+    },
+
+    {
+        id: "truedop_2024:truedop_2024:GDIBE:25833",
+
+        name: "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI)",
+
+        name_lang:
+            "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI) (Digitale farbige TrueOrthophotos 2024 (DOP20RGBI))",
+
+        url: "https://gdi.berlin.de/services/wmts/truedop_2024",
+
+        capabilitiesUrl:
+            "https://gdi.berlin.de/services/wmts/truedop_2024?request=getcapabilities&service=WMTS&version=1.0.0",
+
+        typ: "WMTS",
+
+        layers: "truedop_2024",
+
+        tileMatrixSet: "GDIBE:25833",
+
+        datasets: [
+            {
+                md_id: "aff8a8a5-2b48-44e8-949b-ea5f7d382a4f",
+
+                rs_id: "https://registry.gdi-de.org/id/de.be.csw/f8e73787-217b-3242-8aa5-80dedf9f05cf",
+
+                csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
+            },
+        ],
+
+        optionsFromCapabilities: true,
+
         layerAttribution:
             'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
     },

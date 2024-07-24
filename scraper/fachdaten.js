@@ -1,9 +1,17 @@
+// "Ordner": [ -> "elements": [
+
+// "isFolderSelectable": false, -> "type": "folder",
+
+// "Titel": -> "name":
+
+// "Layer": [  -> "elements": [
+
 export default {
-    Ordner: [
+    elements: [
         {
-            Titel: "Lufbilder",
-            isFolderSelectable: false,
-            Layer: [
+            name: "Lufbilder",
+            type: "folder",
+            elements: [
                 {
                     name: "28",
                     id: "k_luftbild1928:0",
@@ -90,3 +98,4 @@ export default {
         },
     ],
 };
+
