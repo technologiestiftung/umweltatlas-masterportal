@@ -142,7 +142,7 @@ export default {
         text-decoration: none;
         display: block;
         img {
-            margin: 0 5px 0 5px;
+            margin: 0 5px 5px 5px;
             max-height: 40px;
             display: inline-block;
             vertical-align: middle;
