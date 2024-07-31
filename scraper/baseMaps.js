@@ -1,49 +1,5 @@
 export default [
     {
-        id: "k5_farbe:k5_sw:gdi_be_25833",
-        name: "Karte von Berlin 1:5000 (K5 SW-Ausgabe)",
-        name_lang:
-            "Karte von Berlin 1:5000 (K5 SW-Ausgabe) (Karte von Berlin 1:5000 (K5 SW-Ausgabe))",
-        url: "https://gdi.berlin.de/services/wmts/k5_sw",
-        capabilitiesUrl:
-            "https://gdi.berlin.de/services/wmts/k5_sw?request=getcapabilities&service=WMTS&version=1.0.0",
-        typ: "WMTS",
-        layers: "k5_sw",
-        tileMatrixSet: "GDIBE:25833",
-        datasets: [
-            {
-                md_id: "ed9d0b87-ab8b-3db0-9bf3-7f9218cc004a",
-                rs_id: "https://registry.gdi-de.org/id/de.be.csw/08f2353b-b31f-3c48-abe7-bff6594d61c7",
-                csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
-            },
-        ],
-        optionsFromCapabilities: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
-    },
-    {
-        id: "k5_farbe:k5_farbe:gdi_be_25833",
-        name: "Karte von Berlin 1:5000 (K5 - Farbausgabe)",
-        name_lang:
-            "Karte von Berlin 1:5000 (K5 - Farbausgabe) (Karte von Berlin 1:5000 (K5 - Farbausgabe))",
-        url: "https://gdi.berlin.de/services/wmts/k5_farbe",
-        capabilitiesUrl:
-            "https://gdi.berlin.de/services/wmts/k5_farbe?request=getcapabilities&service=WMTS&version=1.0.0",
-        typ: "WMTS",
-        layers: "k5_farbe",
-        tileMatrixSet: "GDIBE:25833",
-        datasets: [
-            {
-                md_id: "ed9d0b87-ab8b-3db0-9bf3-7f9218cc004a",
-                rs_id: "https://registry.gdi-de.org/id/de.be.csw/08f2353b-b31f-3c48-abe7-bff6594d61c7",
-                csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
-            },
-        ],
-        optionsFromCapabilities: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
-    },
-    {
         id: "basemap_raster_farbe",
         name: "basemap.de Web Raster Farbe",
         name_lang: "basemap.de Web Raster Farbe",
@@ -51,12 +7,10 @@ export default [
             "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/WMTSCapabilities.xml",
         url: "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/",
         typ: "WMTS",
-        tileMatrixSet: "DE_EPSG_25833_ADV",
         layers: "de_basemapde_web_raster_farbe",
         optionsFromCapabilities: true,
         crs: "http://www.opengis.net/def/crs/EPSG/0/25833",
         legend: "https://sgx.geodatenzentrum.de/wms_basemapde?format=image%2Fpng&layer=de_basemapde_web_raster_farbe&sld_version=1.1.0&request=GetLegendGraphic&service=WMS&version=1.1.1&styles=",
-        layerAttribution: "© basemap.de / BKG (Monat) (Jahr)",
         datasets: [
             {
                 md_id: "FE1D2837-ABE0-46B5-9821-BB11BAF22531",
@@ -75,12 +29,10 @@ export default [
             "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/WMTSCapabilities.xml",
         url: "https://sgx.geodatenzentrum.de/wmts_basemapde/1.0.0/",
         typ: "WMTS",
-        tileMatrixSet: "DE_EPSG_25833_ADV",
         layers: "de_basemapde_web_raster_grau",
         optionsFromCapabilities: true,
         crs: "http://www.opengis.net/def/crs/EPSG/0/25833",
         legend: "https://sgx.geodatenzentrum.de/wms_basemapde?format=image/png&layer=de_basemapde_web_raster_grau&sld_version=1.1.0&request=GetLegendGraphic&service=WMS&version=1.1.1&styles=",
-        layerAttribution: "© basemap.de / BKG (Monat) (Jahr)",
         datasets: [
             {
                 md_id: "FE1D2837-ABE0-46B5-9821-BB11BAF22531",
@@ -90,6 +42,99 @@ export default [
                     "https://gdz.bkg.bund.de/index.php/default/wmts-basemapde-webraster-wmts-basemapde-webraster.html#",
             },
         ],
+    },
+    {
+        id: "webatlas_wms_farb",
+        name: "WebAtlas halbton",
+        name_lang: "WebAtlas halbton",
+        crs: "http://www.opengis.net/def/crs/EPSG/0/25833",
+        url: "https://isk.geobasis-bb.de/mapproxy/webatlasde/service/wms",
+        legend: "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_webatlas.png",
+        typ: "WMS",
+        layers: "WebAtlasDE_BEBB_halbton",
+        format: "image/png",
+        version: "1.3.0",
+        singleTile: false,
+        transparent: true,
+        transparency: 0,
+        urlIsVisible: true,
+        tilesize: 512,
+        gutter: 0,
+        infoFormat: "text/xml",
+        gfiAttributes: "ignore",
+        gfiTheme: "default",
+        gfiComplex: false,
+        cache: false,
+        featureCount: 1,
+        datasets: [
+            {
+                md_id: "d2eaa212-f68d-4e2d-a7e7-8e8063d1b855",
+                rs_id: "https://registry.gdi-de.org/id/de.bb.metadata/d2eaa212-f68d-4e2d-a7e7-8e8063d1b855",
+                csw_url: "https://gdk.gdi-de.org/gdi-de/srv/ger/csw",
+                show_doc_url:
+                    "https://geobroker.geobasis-bb.de/gbss.php?MODE=GetProductInformation&PRODUCTID=d2eaa212-f68d-4e2d-a7e7-8e8063d1b855#",
+            },
+        ],
+    },
+    {
+        id: "webatlas_wms_grau",
+        name: "WebAtlas Grau",
+        name_lang: "WebAtlas Grau",
+        crs: "http://www.opengis.net/def/crs/EPSG/0/25833",
+        url: "https://isk.geobasis-bb.de/mapproxy/webatlasde/service/wms",
+        legend: "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_webatlas_grau.png",
+        typ: "WMS",
+        layers: "WebAtlasDE_BEBB_grau",
+        format: "image/png",
+        version: "1.3.0",
+        singleTile: false,
+        transparent: true,
+        transparency: 0,
+        urlIsVisible: true,
+        tilesize: 512,
+        gutter: 0,
+        infoFormat: "text/xml",
+        gfiAttributes: "ignore",
+        gfiTheme: "default",
+        gfiComplex: "false",
+        cache: false,
+        featureCount: 1,
+        datasets: [
+            {
+                md_id: "d2eaa212-f68d-4e2d-a7e7-8e8063d1b855",
+                rs_id: "https://registry.gdi-de.org/id/de.bb.metadata/d2eaa212-f68d-4e2d-a7e7-8e8063d1b855",
+                csw_url: "https://gdk.gdi-de.org/gdi-de/srv/ger/csw",
+                show_doc_url:
+                    "https://geobroker.geobasis-bb.de/gbss.php?MODE=GetProductInformation&PRODUCTID=d2eaa212-f68d-4e2d-a7e7-8e8063d1b855#",
+            },
+        ],
+    },
+    {
+        id: "truedop_2024:truedop_2024",
+        name: "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI)",
+        name_lang:
+            "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI) (Digitale farbige TrueOrthophotos 2024 (DOP20RGBI))",
+        crs: "EPSG:25833",
+        url: "https://gdi.berlin.de/services/wms/truedop_2024",
+        typ: "WMS",
+        gfiAttributes: "ignore",
+        layers: "truedop_2024",
+        legend: true,
+        datasets: [
+            {
+                md_name: "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI)",
+                md_id: "aff8a8a5-2b48-44e8-949b-ea5f7d382a4f",
+                rs_id: "https://registry.gdi-de.org/id/de.be.csw/f8e73787-217b-3242-8aa5-80dedf9f05cf",
+                csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
+            },
+        ],
+        format: "image/png",
+        version: "1.3.0",
+        featureCount: "5",
+        gfiTheme: "default",
+        transparent: true,
+        singleTile: true,
+        infoFormat: "application/json",
     },
     {
         id: "k_luftbild1928:0",
@@ -117,8 +162,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild1953:0",
@@ -146,8 +189,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2002:0",
@@ -176,8 +217,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "luftbild2004:0",
@@ -206,8 +245,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "luftbild2006:0",
@@ -236,8 +273,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2007:0",
@@ -266,8 +301,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2009_20:0",
@@ -296,8 +329,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2010_rgb:0",
@@ -326,8 +357,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2011_20:0",
@@ -356,8 +385,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2013:0",
@@ -386,8 +413,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2014:0",
@@ -416,8 +441,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2015_rgb:0",
@@ -446,8 +469,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2016_rgb:0",
@@ -476,8 +497,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2017_rgb:0",
@@ -506,8 +525,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2018_rgb:0",
@@ -536,8 +553,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2019_rgb:0",
@@ -566,8 +581,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2020_rgb:0",
@@ -596,8 +609,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2021_rgb:0",
@@ -626,8 +637,6 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "k_luftbild2022_true_rgbi:0",
@@ -656,77 +665,48 @@ export default [
         gfiTheme: "default",
         transparent: true,
         singleTile: true,
-        layerAttribution:
-            'Für die Nutzung der Daten ist die  Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2)  der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]".',
     },
     {
         id: "truedop_2023:truedop_2023:GDIBE:25833",
-
         name: "Digitale farbige TrueOrthophotos 2023 (DOP20RGBI)",
-
         name_lang:
             "Digitale farbige TrueOrthophotos 2023 (DOP20RGBI) (Digitale farbige TrueOrthophotos 2023 (DOP20RGBI))",
-
         url: "https://gdi.berlin.de/services/wmts/truedop_2023",
-
         capabilitiesUrl:
             "https://gdi.berlin.de/services/wmts/truedop_2023?request=getcapabilities&service=WMTS&version=1.0.0",
-
         typ: "WMTS",
-
         layers: "truedop_2023",
-
         tileMatrixSet: "GDIBE:25833",
-
         datasets: [
             {
                 md_id: "c68a287b-7ad0-4cc9-87f5-2cffebaf7113",
-
                 rs_id: "https://registry.gdi-de.org/id/de.be.csw/1d0094bb-ee61-385a-8fc4-5ba731069b85",
-
                 csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
             },
         ],
-
         optionsFromCapabilities: true,
-
         layerAttribution:
             'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
     },
-
     {
         id: "truedop_2024:truedop_2024:GDIBE:25833",
-
         name: "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI)",
-
         name_lang:
             "Digitale farbige TrueOrthophotos 2024 (DOP20RGBI) (Digitale farbige TrueOrthophotos 2024 (DOP20RGBI))",
-
         url: "https://gdi.berlin.de/services/wmts/truedop_2024",
-
         capabilitiesUrl:
             "https://gdi.berlin.de/services/wmts/truedop_2024?request=getcapabilities&service=WMTS&version=1.0.0",
-
         typ: "WMTS",
-
         layers: "truedop_2024",
-
         tileMatrixSet: "GDIBE:25833",
-
         datasets: [
             {
                 md_id: "aff8a8a5-2b48-44e8-949b-ea5f7d382a4f",
-
                 rs_id: "https://registry.gdi-de.org/id/de.be.csw/f8e73787-217b-3242-8aa5-80dedf9f05cf",
-
                 csw_url: "https://gdi.berlin.de/geonetwork/srv/ger/csw",
             },
         ],
-
         optionsFromCapabilities: true,
-
-        layerAttribution:
-            'Für die Nutzung der Daten ist die Datenlizenz Deutschland - Namensnennung - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/by-2-0 abrufbar. Der Quellenvermerk gemäß (2) der Lizenz lautet "Geoportal Berlin / [Titel des Datensatzes]"',
     },
 ];
 

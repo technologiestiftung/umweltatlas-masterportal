@@ -9,90 +9,93 @@
 export default {
     elements: [
         {
-            name: "Lufbilder",
+            name: "Luftbilder",
             type: "folder",
+            visibility: false,
             elements: [
                 {
-                    name: "28",
+                    name: "1928",
                     id: "k_luftbild1928:0",
                 },
                 {
-                    name: "53",
+                    name: "1953",
                     id: "k_luftbild1953:0",
                 },
                 {
-                    name: "02",
+                    name: "2002",
                     id: "k_luftbild2002:0",
                 },
                 {
-                    name: "04",
+                    name: "2004",
                     id: "luftbild2004:0",
                 },
                 {
-                    name: "06",
+                    name: "2006",
                     id: "luftbild2006:0",
                 },
                 {
-                    name: "07",
+                    name: "2007",
                     id: "k_luftbild2007:0",
                 },
                 {
-                    name: "09",
+                    name: "2009",
                     id: "k_luftbild2009_20:0",
                 },
                 {
-                    name: "10",
+                    name: "2010",
                     id: "k_luftbild2010_rgb:0",
                 },
                 {
-                    name: "11",
+                    name: "2011",
                     id: "k_luftbild2011_20:0",
                 },
-
                 {
-                    name: "13",
+                    name: "2013",
                     id: "k_luftbild2013:0",
                 },
-
                 {
-                    name: "14",
+                    name: "2014",
                     id: "k_luftbild2014:0",
                 },
                 {
-                    name: "15",
+                    name: "2015",
                     id: "k_luftbild2015_rgb:0",
                 },
                 {
-                    name: "16",
+                    name: "2016",
                     id: "k_luftbild2016_rgb:0",
                 },
                 {
-                    name: "17",
+                    name: "2017",
                     id: "k_luftbild2017_rgb:0",
                 },
                 {
-                    name: "18",
+                    name: "2018",
                     id: "k_luftbild2018_rgb:0",
                 },
                 {
-                    name: "19",
+                    name: "2019",
                     id: "k_luftbild2019_rgb:0",
                 },
                 {
-                    name: "20",
+                    name: "2020",
                     id: "k_luftbild2020_rgb:0",
                 },
                 {
-                    name: "21",
+                    name: "2021",
                     id: "k_luftbild2021_rgb:0",
                 },
                 {
-                    name: "22",
+                    name: "2022",
                     id: "k_luftbild2022_true_rgbi:0",
                 },
                 {
-                    name: "23",
-                    id: "truedop_2023:truedop_2023:GDIBE:25833",
+                    name: "2023",
+                    id: "truedop_2023:truedop_2023",
+                },
+                {
+                    name: "2024",
+                    id: "truedop_2024:truedop_2024",
                 },
             ],
         },

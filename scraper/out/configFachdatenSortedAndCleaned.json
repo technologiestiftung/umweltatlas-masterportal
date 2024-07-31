@@ -3568,7 +3568,7 @@
               ]
             },
             {
-              "name": "03.12.02.5 NOx-Gesamtemissionen 2008/2009",
+              "name": "03.12.02.5 NOx-Gesamtemissionen",
               "type": "folder",
               "elements": [
                 {
@@ -5145,7 +5145,7 @@
               "elements": []
             },
             {
-              "name": "04.02.1 Jahresmittel Lufttemperatur 1981-2010",
+              "name": "04.02.1 Jahresmittel Lufttemperatur",
               "type": "folder",
               "elements": [
                 {
@@ -5154,30 +5154,30 @@
                   "elements": [
                     {
                       "id": "k04_02_1ltempmittel:5",
-                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen 1981-2010"
+                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen"
                     },
                     {
                       "id": "k04_02_1ltempmittel:4",
-                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen"
                     },
                     {
                       "id": "k04_02_1ltempmittel:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen"
                     },
                     {
                       "id": "k04_02_1ltempmittel:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen"
                     },
                     {
                       "id": "k04_02_1ltempmittel:1",
-                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.02.2 Mittel Lufttemperatur Frühling 1981-2010",
+              "name": "04.02.2 Mittel Lufttemperatur Frühling",
               "type": "folder",
               "elements": [
                 {
@@ -5186,30 +5186,30 @@
                   "elements": [
                     {
                       "id": "k04_02_2ltempmittel_frueh:5",
-                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Frühling 1981-2010"
+                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Frühling"
                     },
                     {
                       "id": "k04_02_2ltempmittel_frueh:4",
-                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Frühling 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Frühling"
                     },
                     {
                       "id": "k04_02_2ltempmittel_frueh:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Frühling 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Frühling"
                     },
                     {
                       "id": "k04_02_2ltempmittel_frueh:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Frühling 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Frühling"
                     },
                     {
                       "id": "k04_02_2ltempmittel_frueh:1",
-                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Frühling 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Frühling"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.02.3 Mittel Lufttemperatur Sommer 1981-2010",
+              "name": "04.02.3 Mittel Lufttemperatur Sommer",
               "type": "folder",
               "elements": [
                 {
@@ -5218,30 +5218,30 @@
                   "elements": [
                     {
                       "id": "k04_02_3ltempmittel_som:5",
-                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Sommer 1981-2010"
+                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Sommer"
                     },
                     {
                       "id": "k04_02_3ltempmittel_som:4",
-                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Sommer 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Sommer"
                     },
                     {
                       "id": "k04_02_3ltempmittel_som:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Sommer 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Sommer"
                     },
                     {
                       "id": "k04_02_3ltempmittel_som:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Sommer 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Sommer"
                     },
                     {
                       "id": "k04_02_3ltempmittel_som:1",
-                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Sommer 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Sommer"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.02.4 Mittel Lufttemperatur Herbst 1981-2010",
+              "name": "04.02.4 Mittel Lufttemperatur Herbst",
               "type": "folder",
               "elements": [
                 {
@@ -5250,30 +5250,30 @@
                   "elements": [
                     {
                       "id": "k04_02_4ltempmittel_herbst:5",
-                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Herbst 1981-2010"
+                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Herbst"
                     },
                     {
                       "id": "k04_02_4ltempmittel_herbst:4",
-                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Herbst 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Herbst"
                     },
                     {
                       "id": "k04_02_4ltempmittel_herbst:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Herbst 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Herbst"
                     },
                     {
                       "id": "k04_02_4ltempmittel_herbst:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Herbst 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Herbst"
                     },
                     {
                       "id": "k04_02_4ltempmittel_herbst:1",
-                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Herbst 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Herbst"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.02.5 Mittel Lufttemperatur Winter 1981-2010",
+              "name": "04.02.5 Mittel Lufttemperatur Winter",
               "type": "folder",
               "elements": [
                 {
@@ -5282,23 +5282,23 @@
                   "elements": [
                     {
                       "id": "k04_02_5ltempmittel_wint:5",
-                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Winter 1981-2010"
+                      "name": "1981-2010 - Isolinien der Jahresmitteltemperaturen Winter"
                     },
                     {
                       "id": "k04_02_5ltempmittel_wint:4",
-                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Winter 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Jahresmitteltemperaturen Winter"
                     },
                     {
                       "id": "k04_02_5ltempmittel_wint:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Winter 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Jahresmitteltemperaturen Winter"
                     },
                     {
                       "id": "k04_02_5ltempmittel_wint:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Winter 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Jahresmitteltemperaturen Winter"
                     },
                     {
                       "id": "k04_02_5ltempmittel_wint:1",
-                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Winter 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Jahresmitteltemperaturen Winter"
                     }
                   ]
                 }
@@ -5410,7 +5410,7 @@
                   "elements": [
                     {
                       "id": "k04_12_01wb2005:1",
-                      "name": "2008 - Mittlere Anzahl der Tage mit Wärmebelastung 1971-2000"
+                      "name": "2008 - Mittlere Anzahl der Tage mit Wärmebelastung"
                     }
                   ]
                 }
@@ -5522,7 +5522,7 @@
               "elements": [
                 {
                   "id": "k04_12_04wb2005:1",
-                  "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung 1971-2000"
+                  "name": "2008 - Gesamtzahl der Tage mit Wärmebelastung"
                 }
               ]
             },
@@ -5601,7 +5601,7 @@
           "type": "folder",
           "elements": [
             {
-              "name": "04.08.1 Jahresniederschlag 1991-2020",
+              "name": "04.08.1 Jahresniederschlag",
               "type": "folder",
               "elements": [
                 {
@@ -5610,23 +5610,23 @@
                   "elements": [
                     {
                       "id": "k04_08_1lniederschl2020:0",
-                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung 1991-2020"
+                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl2020:1",
-                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung 1991-2020"
+                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl2020:2",
-                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung 1991-2020"
+                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl2020:3",
-                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung 1991-2020"
+                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl2020:4",
-                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung 1991-2020"
+                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung"
                     }
                   ]
                 },
@@ -5636,30 +5636,30 @@
                   "elements": [
                     {
                       "id": "k04_08_1lniederschl:5",
-                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung 1981-2010"
+                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl:4",
-                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung"
                     },
                     {
                       "id": "k04_08_1lniederschl:1",
-                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.08.2 Sommerhalbjahr 1991-2020",
+              "name": "04.08.2 Sommerhalbjahr",
               "type": "folder",
               "elements": [
                 {
@@ -5668,23 +5668,23 @@
                   "elements": [
                     {
                       "id": "k04_08_2lniederschl2020:0",
-                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung Sommerhalbjahr 1991-2020"
+                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl2020:1",
-                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung Sommerhalbjahr 1991-2020"
+                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl2020:2",
-                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr 1991-2020"
+                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl2020:3",
-                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr 1991-2020"
+                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl2020:4",
-                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung Sommerhalbjahr 1991-2020"
+                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung Sommerhalbjahr"
                     }
                   ]
                 },
@@ -5694,30 +5694,30 @@
                   "elements": [
                     {
                       "id": "k04_08_2lniederschl:5",
-                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung Sommerhalbjahr 1981-2010"
+                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl:4",
-                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung Sommerhalbjahr 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung Sommerhalbjahr"
                     },
                     {
                       "id": "k04_08_2lniederschl:1",
-                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung Sommerhalbjahr 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung Sommerhalbjahr"
                     }
                   ]
                 }
               ]
             },
             {
-              "name": "04.08.3 Winterhalbjahr 1991-2020",
+              "name": "04.08.3 Winterhalbjahr",
               "type": "folder",
               "elements": [
                 {
@@ -5726,23 +5726,23 @@
                   "elements": [
                     {
                       "id": "k04_08_3lniederschl2020:0",
-                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung Winterhalbjahr 1991-2020"
+                      "name": "1991-2020 - Isolinien der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl2020:1",
-                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung Winterhalbjahr 1991-2020"
+                      "name": "1991-2020 - Isoflächen der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl2020:2",
-                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Winterhalbjahr 1991-2020"
+                      "name": "1991-2020 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl2020:3",
-                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung Winterhalbjahr 1991-2020"
+                      "name": "1991-2020 - Straßenflächenzuordnung der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl2020:4",
-                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung Winterhalbjahr 1991-2020"
+                      "name": "1991-2020 - Rasterflächen der Niederschlagsverteilung Winterhalbjahr"
                     }
                   ]
                 },
@@ -5752,23 +5752,23 @@
                   "elements": [
                     {
                       "id": "k04_08_3lniederschl:5",
-                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung Winterhalbjahr 1981-2010"
+                      "name": "1981-2010 - Isolinien der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl:4",
-                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung Winterhalbjahr 1981-2010"
+                      "name": "1981-2010 - Isoflächen der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl:2",
-                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Winterhalbjahr 1981-2010"
+                      "name": "1981-2010 - Block- und Blockteilflächenzuordnung der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl:3",
-                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung Winterhalbjahr 1981-2010"
+                      "name": "1981-2010 - Straßenflächenzuordnung der Niederschlagsverteilung Winterhalbjahr"
                     },
                     {
                       "id": "k04_08_3lniederschl:1",
-                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung Winterhalbjahr 1981-2010"
+                      "name": "1981-2010 - Rasterflächen der Niederschlagsverteilung Winterhalbjahr"
                     }
                   ]
                 }
@@ -7666,7 +7666,7 @@
               "elements": [
                 {
                   "id": "schallschutzfensterprogramm:schallschutzfensterprogramm",
-                  "name": "2022 - Schallschutzfensterprogramm 2024/2025"
+                  "name": "2022 - Schallschutzfensterprogramm"
                 }
               ]
             },
@@ -8187,7 +8187,7 @@
           "type": "folder",
           "elements": [
             {
-              "name": "09.01.1 Lärmbelastung 2021/2022",
+              "name": "09.01.1 Lärmbelastung",
               "type": "folder",
               "elements": [
                 {
@@ -8229,7 +8229,7 @@
               ]
             },
             {
-              "name": "09.01.2 Luftbelastung 2021/2022",
+              "name": "09.01.2 Luftbelastung",
               "type": "folder",
               "elements": [
                 {
@@ -8271,7 +8271,7 @@
               ]
             },
             {
-              "name": "09.01.3 Grünversorgung 2021/2022",
+              "name": "09.01.3 Grünversorgung",
               "type": "folder",
               "elements": [
                 {
@@ -8313,7 +8313,7 @@
               ]
             },
             {
-              "name": "09.01.4 Thermische Belastung 2021/2022",
+              "name": "09.01.4 Thermische Belastung",
               "type": "folder",
               "elements": [
                 {
@@ -8355,7 +8355,7 @@
               ]
             },
             {
-              "name": "09.01.5 Soziale Benachteiligung 2021/2022",
+              "name": "09.01.5 Soziale Benachteiligung",
               "type": "folder",
               "elements": [
                 {
@@ -8397,7 +8397,7 @@
               ]
             },
             {
-              "name": "09.01.6 Mehrfachbelastung Umwelt 2021/2022",
+              "name": "09.01.6 Mehrfachbelastung Umwelt",
               "type": "folder",
               "elements": [
                 {
@@ -8439,7 +8439,7 @@
               ]
             },
             {
-              "name": "09.01.7 Mehrfachbelastung Umwelt und Soziale Benachteiligung 2021/2022",
+              "name": "09.01.7 Mehrfachbelastung Umwelt und Soziale Benachteiligung",
               "type": "folder",
               "elements": [
                 {
@@ -8485,7 +8485,7 @@
               ]
             },
             {
-              "name": "09.01.9 Integrierte Mehrfachbelastungskarte – Berliner Umweltgerechtigkeitskarte 2021/2022",
+              "name": "09.01.9 Integrierte Mehrfachbelastungskarte – Berliner Umweltgerechtigkeitskarte",
               "type": "folder",
               "elements": [
                 {
