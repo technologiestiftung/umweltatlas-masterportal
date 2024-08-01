@@ -20,6 +20,14 @@ function removeYearRangeWithSlashFromString(input) {
     return input.replace(regex, "").trim(); // trim to clean up any resulting leading/trailing spaces
 }
 
+function removeYearRangeFromString(input) {
+    // Define the regex pattern that matches a year range from 1900 to 2050 at the end of the string
+    const regex = /\s(19\d{2}-20[0-4]\d|19\d{2}-2050)$/;
+
+    // Replace the year range with an empty string if it matches the pattern
+    return input.replace(regex, "");
+}
+
 function replaceNames(input) {
     // Check if the input is an object (and not null or an array)
     if (input !== null && typeof input === "object" && !Array.isArray(input)) {
@@ -35,6 +43,10 @@ function replaceNames(input) {
                     "fortlaufend-aktualisiert",
                     "0000"
                 );
+                if (input[key] === "seit-1989") {
+                    input[key] = input[key].replace("seit-1989", "0000");
+                }
+
                 input[key] = removeYearFromString(input[key]);
                 input[key] = removeYearRangeFromString(input[key]);
                 input[key] = removeYearRangeWithSlashFromString(input[key]);
