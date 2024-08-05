@@ -8,10 +8,11 @@
 
 # Umweltatlas Prototyp
 
-This is a functional MVP of a map-based 'Umweltatlas' prototype that is implemented with the master portal software. On the one hand, this is intended to explore the technical feasibility and the effort required to implement the proposals and, on the other hand, to provide an improved decision-making basis for final requirements for an extension or further development of the existing environmental atlas.
+This is a functional MVP of a map-based 'Umweltatlas' prototype that is implemented with the master v2 portal software. On the one hand, this is intended to explore the technical feasibility and the effort required to implement the proposals and, on the other hand, to provide an improved decision-making basis for final requirements for an extension or further development of the existing environmental atlas.
 
-*This readme is work in progress.*
+Update: It was decided to implement the new map-based 'Umweltatlas' using the masterportal v3 software. The repo can be found [here](https://github.com/technologiestiftung/umweltatlas-masterportal-v3)
 
+_This readme is a work in progress._
 
 ## Masterportal
 
@@ -19,23 +20,33 @@ The Masterportal is a tool-kit to create geo web applications based on [OpenLaye
 
 The Masterportal is a project by [Geowerkstatt Hamburg](https://www.hamburg.de/geowerkstatt/).
 
-
 ## Notes
 
 When setting up this had to be removed from devDependencies:
 "canvas": "^2.11.0",
 
-a tool to search bezirke
-wfsSearch
+## About the scraper
 
-Layer Information:
-LayerInformation.vue
+The scraper, scrapes the Umweltaltas website and creates a Masterportal "Themenbaum" that is structured like the website.
 
-Measure Tool
-MeasureInMap.vue
+Important: The script has been adapted to the Masterportal v3 logic.
 
-Draw Item
-DrawItem.vue
+Run these scripts in order:
+
+```bash
+// the actual scraper
+  node index.js
+  // corrects names and structur in the Themenbaum
+  node sortAndCleanResult.js
+  // update services
+  node updateServices.js
+```
+
+The files we need for the Masterportal v3 are found in the out folder:
+
+configFachdatenSortedAndCleaned.json
+and
+servicesUpdated.json
 
 ## Contributing
 
@@ -59,7 +70,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
 
 ## Credits
 
