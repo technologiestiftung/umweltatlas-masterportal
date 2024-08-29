@@ -150,7 +150,7 @@
     "svg-url-loader": "^7.1.1",
     "text-loader": "^0.0.1",
     "vue-loader": "^15.9.8",
-    "webpack": "^4.47.0",
+    "webpack": "^5.0.0",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.3",
